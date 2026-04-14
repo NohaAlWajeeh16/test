@@ -13,6 +13,6 @@ New-Item -ItemType Directory -Path (Join-Path $dist 'images') | Out-Null
 
 Copy-Item -LiteralPath (Join-Path $root 'index.html') -Destination $dist
 Copy-Item -LiteralPath (Join-Path $root 'data\audit-data.js') -Destination (Join-Path $dist 'data')
-Copy-Item -LiteralPath (Join-Path $root 'images\*') -Destination (Join-Path $dist 'images') -Recurse
+Copy-Item -Path (Join-Path $root 'images\*') -Destination (Join-Path $dist 'images') -Recurse
 
 Write-Host "Built dist at $dist"
