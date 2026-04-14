@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحليل تجربة نون</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg: #0b0c0d;
+      --sidebar: rgba(12, 13, 15, 0.92);
+      --panel: rgba(18, 20, 22, 0.88);
+      --panel-soft: rgba(255, 255, 255, 0.04);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(195, 255, 69, 0.18);
+      --text: #f4f6f3;
+      --muted: #a1a9a0;
+      --muted-2: #7f877f;
+      --accent: #c3ff45;
+      --accent-soft: rgba(195, 255, 69, 0.12);
+      --ok: #83f3af;
+      --warn: #ffd56b;
+      --danger: #ff7f7f;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 20px;
+      --space-5: 28px;
+      --space-6: 48px;
+      --font-display: "IBM Plex Sans Arabic", "Segoe UI", Arial, sans-serif;
+      --font-body: "IBM Plex Sans Arabic", "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(195, 255, 69, 0.08), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(195, 255, 69, 0.05), transparent 26%),
+        linear-gradient(180deg, #121315 0%, #0b0c0d 48%, #090a0b 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.3;
+    }
+
+    a, button { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .app-shell {
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+      gap: var(--space-4);
+      width: min(1420px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: var(--space-4) 0 var(--space-5);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      align-self: start;
+      min-height: calc(100vh - 40px);
+      background: linear-gradient(180deg, rgba(12, 13, 15, 0.96), rgba(18, 19, 22, 0.88));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: var(--space-4) var(--space-3);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: var(--space-4);
+      z-index: 1;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand,
+    .profile-top,
+    .topbar,
+    .topbar-actions,
+    .section-head,
+    .insight-top,
+    .shot-head,
+    .modal-toolbar,
+    .modal-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      padding: 8px 10px 16px;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(195,255,69,0.08);
+      border: 1px solid var(--line-strong);
+    }
+
+    .brand-copy small,
+    .metric-label,
+    .section-kicker,
+    .eyebrow,
+    .tag,
+    .status-pill,
+    .mini-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 18px;
+      margin-top: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    .profile-card,
+    .sidebar-stat,
+    .metric-card,
+    .hero-card,
+    .hero-side-card,
+    .journey-card,
+    .insight-card,
+    .shot-card,
+    .log-card,
+    .verdict-card,
+    .list-card {
+      background: linear-gradient(180deg, rgba(20,22,24,0.92), rgba(14,16,18,0.84));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card,
+    .sidebar-stat,
+    .hero-card,
+    .hero-side-card,
+    .journey-card,
+    .verdict-card,
+    .list-card {
+      padding: 22px;
+    }
+
+    .profile-card,
+    .sidebar-footer,
+    .hero-side-card,
+    .persona-list,
+    .recommendation-list,
+    .verdict-list,
+    .log-card,
+    .shot-body,
+    .content,
+    .section {
+      display: grid;
+      gap: 18px;
+    }
+
+    .nav {
+      display: grid;
+      gap: var(--space-1);
+    }
+
+    .nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 18px;
+      text-decoration: none;
+      color: #d8ddd8;
+      border: 1px solid transparent;
+      transition: 160ms ease;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(195,255,69,0.12);
+    }
+
+    .nav-bullet {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.24);
+      flex: 0 0 auto;
+    }
+
+    .nav a.active .nav-bullet {
+      background: var(--accent);
+      box-shadow: 0 0 0 7px rgba(195,255,69,0.08);
+    }
+
+    .content { min-width: 0; padding-bottom: var(--space-4); }
+    .section { gap: 24px; padding-top: 56px; }
+    .topbar {
+      position: sticky;
+      top: 20px;
+      z-index: 2;
+      padding: 18px 22px;
+      background: rgba(14, 16, 17, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .top-badge,
+    .tag,
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .top-badge {
+      background: var(--accent-soft);
+      color: #f5ffd8;
+      border-color: rgba(195,255,69,0.18);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(24px, 2.4vw, 32px);
+      line-height: 1.3;
+      margin: 12px 0 16px;
+    }
+
+    h2 {
+      font-size: clamp(18px, 1.6vw, 22px);
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 15px;
+      line-height: 1.38;
+    }
+
+    .section-head {
+      align-items: end;
+    }
+
+    .section-head p,
+    .hero-summary,
+    .copy,
+    .muted-copy {
+      margin: 0;
+      line-height: 2.05;
+      color: #d8ddd8;
+    }
+
+    .section-head p {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .hero-grid,
+    .dual-grid,
+    .metric-grid,
+    .journey-grid,
+    .insight-grid,
+    .recommend-grid,
+    .timeline-grid,
+    .log-grid,
+    .hero-meta,
+    .modal-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-grid { grid-template-columns: minmax(0, 1.45fr) 300px; }
+    .dual-grid { grid-template-columns: 1.2fr 0.8fr; }
+    .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .journey-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .insight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .recommend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .timeline-grid { grid-template-columns: 1fr; }
+    .log-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .modal-grid { grid-template-columns: 1.1fr 0.9fr; }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -80px -60px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(195,255,69,0.08), rgba(195,255,69,0));
+      pointer-events: none;
+    }
+
+    .meta-chip,
+    .mini-card,
+    .journey-step,
+    .rec-item,
+    .log-item,
+    .detail-box {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .meta-chip span,
+    .mini-card span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 7px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .persona-list,
+    .recommendation-list,
+    .verdict-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-summary {
+      max-width: 46ch;
+      font-size: 13px;
+      color: #cfd6cf;
+    }
+
+    .copy {
+      font-size: 13px;
+      color: #eef2ee;
+    }
+
+    .muted-copy {
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+
+    .profile-card strong,
+    .sidebar-stat strong,
+    .hero-side-card strong,
+    .detail-box strong,
+    .log-item strong {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .sidebar-stat strong {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .persona-list li,
+    .verdict-list li,
+    .recommendation-list li {
+      padding: 13px 15px;
+      border-radius: 18px;
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+      line-height: 2;
+      color: #d7dcd7;
+    }
+
+    .persona-list li,
+    .recommendation-list li,
+    .verdict-list li,
+    .log-item,
+    .detail-box,
+    .meta-chip,
+    .mini-card {
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .insight-card .copy,
+    .shot-body .copy,
+    .verdict-card .copy {
+      max-width: 58ch;
+    }
+
+    .shot-body .muted-copy,
+    .log-item .muted-copy,
+    .insight-card .muted-copy {
+      max-width: 56ch;
+    }
+
+    .metric-card,
+    .insight-card {
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+      min-height: 128px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::after { content: none; }
+
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .journey-step {
+      min-height: 126px;
+      position: relative;
+      display: grid;
+      gap: 14px;
+    }
+
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      inset-inline-end: 14px;
+      inset-block-start: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 0 0 7px rgba(255,255,255,0.03);
+    }
+
+    .journey-step.completed::before { background: var(--ok); }
+    .journey-step.partial::before { background: var(--warn); }
+    .journey-step.failed::before { background: var(--danger); }
+    .journey-step.not-reached::before { background: var(--muted-2); }
+
+    .status-pill.completed { color: #cbffe1; background: rgba(131,243,175,0.12); border-color: rgba(131,243,175,0.18); }
+    .status-pill.partial { color: #ffe3a2; background: rgba(255,213,107,0.12); border-color: rgba(255,213,107,0.18); }
+    .status-pill.failed { color: #ffc0c0; background: rgba(255,127,127,0.12); border-color: rgba(255,127,127,0.18); }
+    .status-pill.not-reached { color: #d3d7d2; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); }
+
+    .tag {
+      color: var(--muted);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .tag.severity-low { color: #cbffe1; }
+    .tag.severity-medium { color: #ffe3a2; }
+    .tag.severity-high,
+    .tag.severity-critical { color: #ffc0c0; }
+
+    .insight-top {
+      align-items: start;
+    }
+
+    .detail-box,
+    .log-item {
+      display: grid;
+      gap: 10px;
+    }
+
+    .shot-card {
+      overflow: hidden;
+    }
+
+    .shot-cover {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: #0f1112;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .shot-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 180ms ease;
+    }
+
+    .shot-card:hover .shot-cover img {
+      transform: scale(1.025);
+    }
+
+    .shot-open {
+      position: absolute;
+      inset-block-start: 12px;
+      inset-inline-start: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(8, 9, 11, 0.7);
+      color: var(--text);
+    }
+
+    .shot-body,
+    .log-card {
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .compact-copy {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .compact-copy-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(7, 8, 10, 0.82);
+      backdrop-filter: blur(14px);
+      z-index: 20;
+    }
+
+    .modal.open { display: flex; }
+
+    .modal-dialog {
+      width: min(1180px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      padding: 18px;
+      border-radius: 28px;
+      background: rgba(13, 15, 17, 0.96);
+      border: 1px solid var(--line-strong);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 16px;
+    }
+
+    .modal-grid img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: #101112;
+    }
+
+    .icon-btn {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+
+    .empty {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 1260px) {
+      .app-shell { grid-template-columns: 1fr; }
+      .sidebar { position: static; min-height: auto; grid-template-rows: auto; }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .dual-grid, .modal-grid { grid-template-columns: 1fr; }
+      .metric-grid, .journey-grid, .insight-grid, .recommend-grid, .log-grid, .hero-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .app-shell {
+        width: min(100% - 18px, 100%);
+        padding-top: 10px;
+      }
+
+      .topbar,
+      .hero-card,
+      .hero-side-card,
+      .journey-card,
+      .verdict-card,
+      .list-card,
+      .metric-card,
+      .insight-card,
+      .log-card,
+      .shot-body { padding: 16px; }
+
+      .section-head,
+      .topbar { flex-direction: column; align-items: start; }
+
+      .metric-grid, .journey-grid, .insight-grid, .recommend-grid, .timeline-grid, .log-grid, .hero-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="التنقل الجانبي">
+      <div class="brand">
+        <div class="brand-mark">UX</div>
+        <div class="brand-copy">
+          <small>لوحة مراقبة</small>
+          <strong>تحليل نون</strong>
+        </div>
+      </div>
+      <div class="profile-card" id="sidebarProfile"></div>
+      <nav class="nav" id="sidebarNav"></nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-stat" id="sidebarCompletion"></div>
+        <div class="sidebar-stat" id="sidebarBlockers"></div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">لوحة تنفيذية مرتبة لعرض رحلة الاستخدام</div>
+          <strong id="topTitle">تحليل تجربة نون</strong>
+        </div>
+        <div class="topbar-actions">
+          <span class="top-badge" id="topResult">بانتظار البيانات</span>
+          <span class="tag" id="topDevice">سطح مكتب</span>
+          <span class="tag" id="topProduct">iPhone 17 Pro Max</span>
+        </div>
+      </header>
+      <div id="app" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="modal" id="lightbox" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <div class="modal-toolbar">
+        <div>
+          <h2 id="lightbox-title">معاينة لقطة الشاشة</h2>
+          <p class="muted-copy" id="lightbox-caption"></p>
+        </div>
+        <div class="modal-actions">
+          <button class="icon-btn" id="prevShot" type="button">السابق</button>
+          <button class="icon-btn" id="nextShot" type="button">التالي</button>
+          <button class="icon-btn" id="closeLightbox" type="button">إغلاق</button>
+        </div>
+      </div>
+      <div class="modal-grid">
+        <img id="lightboxImage" alt="لقطة شاشة من رحلة الاستخدام">
+        <div class="detail-box" id="lightboxPanel"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/audit-data.js"></script>
+  <script>
+    const data = window.auditData || {};
+    const orderedSteps = ["homepage", "search", "results", "product", "add_to_cart", "cart", "checkout"];
+    const statusMap = { completed: "مكتملة", partial: "جزئية", failed: "فاشلة", "not reached": "غير متحققة" };
+    const severityMap = { low: "منخفضة", medium: "متوسطة", high: "مرتفعة", critical: "حرجة" };
+    const stepMap = {
+      homepage: "الصفحة الرئيسية",
+      search: "البحث",
+      results: "النتائج",
+      product: "صفحة المنتج",
+      add_to_cart: "الإضافة إلى السلة",
+      cart: "السلة",
+      checkout: "الدفع"
+    };
+
+    function safeList(items, fallback = []) {
+      return Array.isArray(items) && items.length ? items : fallback;
+    }
+
+    function percent(value) {
+      return `${value ?? 0}%`;
+    }
+
+    function statusClass(value) {
+      return (value || "not reached").replace(/\s+/g, "-");
+    }
+
+    function journeyMap() {
+      return new Map((data.journey || []).map((item) => [item.step, item]));
+    }
+
+    function sectionHead(id, kicker, title, summary) {
+      return `
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">${kicker}</div>
+            <h2 id="${id}">${title}</h2>
+          </div>
+          <p>${summary}</p>
+        </div>
+      `;
+    }
+
+    function renderHero() {
+      const meta = data.meta || {};
+      const persona = meta.persona || {};
+      const verdict = data.finalVerdict || {};
+      const shortSummary = verdict.conciseConclusion || meta.finalTaskOutcome || "لا توجد خلاصة تنفيذية متاحة بعد.";
+      const shortJudgment = verdict.uxJudgment || "سيظهر الحكم بعد توفر نتائج الجلسة.";
+      return `
+        <section class="section" id="overview">
+          ${sectionHead("overview-title", "نظرة عامة", "ملخص الجلسة", "واجهة مختصرة وواضحة تجمع نتيجة الجلسة، نوع المستخدم، وطبيعة المهمة في أول شاشة دون تكدس غير ضروري.")}
+          <div class="hero-grid">
+            <article class="hero-card">
+              <div class="eyebrow">${meta.platform || "منصة غير محددة"} • ${meta.device || "جهاز غير محدد"}</div>
+              <h1>${meta.testTitle || "تحليل تجربة الاستخدام"}</h1>
+              <p class="hero-summary">${shortSummary}</p>
+              <div class="hero-meta">
+                <div class="meta-chip"><span>المنتج</span>${meta.productSearched || "-"}</div>
+                <div class="meta-chip"><span>الشخصية</span>${persona.name || "-"}${persona.age ? `، ${persona.age} سنة` : ""}</div>
+                <div class="meta-chip"><span>المستوى التقني</span>${persona.techLevel || "-"}</div>
+                <div class="meta-chip"><span>النتيجة النهائية</span>${verdict.outcome || "-"}</div>
+              </div>
+            </article>
+            <aside class="hero-side-card">
+              <div>
+                <div class="section-kicker">ملف سارة</div>
+                <h3>السلوك الشرائي المتوقع</h3>
+              </div>
+              <ul class="persona-list">
+                ${safeList(persona.behavior, ["لا توجد بيانات سلوكية متاحة."]).slice(0, 2).map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+              <div class="mini-card">
+                <span>الحكم التنفيذي</span>
+                <strong>${shortJudgment}</strong>
+              </div>
+            </aside>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderMetrics() {
+      const metrics = data.metrics || {};
+      const cards = [
+        ["صحة الرحلة", `${percent(metrics.completionRate)} • ${percent(metrics.easeOfUseScore)}`, "الإنجاز وسهولة الاستخدام في قراءة واحدة."],
+        ["الثقة والوضوح", `${percent(metrics.trustScore)} • ${percent(metrics.clarityScore)}`, "قدرة الواجهة على الإقناع بدون ارتباك."],
+        ["الاحتكاك", `${metrics.totalFrictionPoints ?? 0} • ${metrics.totalBlockers ?? 0}`, "إجمالي نقاط التعطيل والعوائق المؤثرة."],
+        ["الإشارات السلوكية", `${metrics.totalHesitationMoments ?? 0} • ${metrics.totalPositiveSignals ?? 0}`, "التردد مقابل العناصر التي دعمت التقدم."]
+      ];
+      return `
+        <section class="section" id="metrics">
+          ${sectionHead("metrics-title", "المؤشرات", "بطاقات الأداء", "القياسات الأساسية موضوعة في صفوف منتظمة حتى يتمكن صاحب القرار من قراءة الحالة بسرعة قبل النزول للتفاصيل.")}
+          <div class="metric-grid">
+            ${cards.map(([label, value, note]) => `
+              <article class="metric-card">
+                <div class="metric-label">${label}</div>
+                <div class="metric-value">${value}</div>
+                <div class="muted-copy">${note}</div>
+              </article>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderJourney() {
+      const map = journeyMap();
+      return `
+        <section class="section" id="journey">
+          ${sectionHead("journey-title", "المسار", "تقدم الرحلة", "كل خطوة أصبحت بطاقة مستقلة بحالة واضحة ووصف مختصر بدل شريط طويل مزدحم، وهذا يسهل تتبع أين نجحت الرحلة وأين تعطلت.")}
+          <article class="journey-card">
+            <div class="journey-grid">
+              ${orderedSteps.map((step) => {
+                const item = map.get(step) || { status: "not reached" };
+                const status = item.status || "not reached";
+                return `
+                  <div class="journey-step ${statusClass(status)}">
+                    <div class="status-pill ${statusClass(status)}">${statusMap[status] || status}</div>
+                    <h3>${stepMap[step]}</h3>
+                    <div class="muted-copy">${item.error || item.label || "لا توجد ملاحظات إضافية."}</div>
+                  </div>
+                `;
+              }).join("")}
+            </div>
+          </article>
+        </section>
+      `;
+    }
+
+    function renderIssues() {
+      const issues = safeList(data.issues);
+      return `
+        <section class="section" id="issues">
+          ${sectionHead("issues-title", "الألم", "المشكلات الرئيسية", "المشكلات مرتبة في بطاقات متجانسة بحيث يظهر التصنيف والشدة والخطوة المتأثرة بشكل أسرع وأسهل للمراجعة.")}
+          <div class="insight-grid">
+            ${issues.length ? issues.map((issue) => `
+              <article class="insight-card">
+                <div class="insight-top">
+                  <span class="tag">${issue.category}</span>
+                  <span class="tag severity-${issue.severity}">${severityMap[issue.severity] || issue.severity}</span>
+                </div>
+                <h3>${issue.title}</h3>
+                <div class="muted-copy"><strong>المرحلة:</strong> ${stepMap[issue.affectedStep] || issue.affectedStep}</div>
+                <div class="copy">${issue.explanation}</div>
+                <div class="muted-copy"><strong>لماذا يهم:</strong> ${issue.whyItMatters}</div>
+              </article>
+            `).join("") : '<div class="empty">لا توجد مشكلات مسجلة بعد.</div>'}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderPositives() {
+      const positives = safeList(data.positives);
+      return `
+        <section class="section" id="positives">
+          ${sectionHead("positives-title", "الإيجابيات", "العناصر الناجحة", "هذا القسم مفصول عن المشكلات حتى يكون من السهل موازنة المخاطر مع ما يعمل جيدًا داخل الرحلة.")}
+          <div class="insight-grid">
+            ${positives.length ? positives.map((item) => `
+              <article class="insight-card">
+                <div class="insight-top">
+                  <span class="tag">${item.category}</span>
+                  <span class="tag">${stepMap[item.affectedStep] || item.affectedStep}</span>
+                </div>
+                <h3>${item.title}</h3>
+                <div class="copy">${item.explanation}</div>
+                <div class="muted-copy"><strong>الأثر:</strong> ${item.impact}</div>
+              </article>
+            `).join("") : '<div class="empty">لا توجد عناصر إيجابية مسجلة بعد.</div>'}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderRecommendations() {
+      const rec = data.recommendations || {};
+      const groups = [
+        ["تحسينات سريعة", rec.quickWins || []],
+        ["تحسينات متوسطة الجهد", rec.mediumEffort || []],
+        ["تحسينات استراتيجية", rec.strategic || []]
+      ];
+      return `
+        <section class="section" id="recommendations">
+          ${sectionHead("recommendations-title", "التحسين", "التوصيات", "تم تجميع التوصيات حسب مستوى الجهد حتى يكون التنفيذ أسهل على الفريق من التعديلات السريعة حتى المبادرات الاستراتيجية.")}
+          <div class="recommend-grid">
+            ${groups.map(([title, items]) => `
+              <article class="list-card">
+                <div class="section-kicker">مسار عمل</div>
+                <h3>${title}</h3>
+                <ul class="recommendation-list">
+                  ${safeList(items, ["لا توجد توصيات متاحة بعد."]).map((item) => `<li class="rec-item">${item}</li>`).join("")}
+                </ul>
+              </article>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderTimeline() {
+      const shots = safeList(data.screenshots);
+      return `
+        <section class="section" id="screenshots">
+          ${sectionHead("screenshots-title", "اللقطات", "الخط الزمني المرئي", "اللقطات أصبحت في بطاقات أوضح مع هيدر مختصر لكل حالة، حتى يمكن ربط كل صورة بالسلوك والمشكلة أو الإشارة الإيجابية المرتبطة بها.")}
+          <div class="timeline-grid">
+            ${shots.length ? shots.map((shot, index) => `
+              <article class="shot-card">
+                <div class="shot-cover">
+                  <img src="${shot.image}" alt="${shot.title}">
+                  <button class="shot-open" type="button" data-index="${index}" aria-label="تكبير ${shot.title}">⌕</button>
+                </div>
+                <div class="shot-body">
+                  <div class="shot-head">
+                    <div>
+                      <div class="section-kicker">${shot.caption}</div>
+                      <h3>${shot.title}</h3>
+                    </div>
+                    <span class="status-pill ${statusClass(shot.status)}">${statusMap[shot.status] || shot.status}</span>
+                  </div>
+                  <div class="copy compact-copy-3"><strong>ما الذي حدث:</strong> ${shot.whatHappened}</div>
+                  <div class="muted-copy compact-copy"><strong>رد فعل سارة:</strong> ${shot.userReaction}</div>
+                  <div class="muted-copy compact-copy"><strong>التفسير UX:</strong> ${shot.uxInterpretation}</div>
+                  <span class="tag severity-${shot.severity}">الشدة: ${severityMap[shot.severity] || shot.severity}</span>
+                </div>
+              </article>
+            `).join("") : '<div class="empty">لا توجد لقطات متاحة بعد.</div>'}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderLogs() {
+      const logs = safeList(data.sessionLog);
+      return `
+        <section class="section" id="logs">
+          ${sectionHead("logs-title", "السجل", "سجل الجلسة", "السجل الآن منظم كبطاقات متوازنة لكل خطوة، ما يجعل قراءة التفكير والفعل والملاحظة والتفسير أكثر وضوحًا من العرض السابق.")}
+          <div class="log-grid">
+            ${logs.length ? logs.map((log) => `
+              <article class="log-card">
+                <div class="section-kicker">${stepMap[log.step] || log.step}</div>
+                <h3>${stepMap[log.step] || log.step}</h3>
+                <div class="log-item"><strong>الفكرة</strong><div class="muted-copy">${log.thought}</div></div>
+                <div class="log-item"><strong>الإجراء</strong><div class="muted-copy">${log.action}</div></div>
+                <div class="log-item"><strong>الملاحظة</strong><div class="muted-copy">${log.observation}</div></div>
+                <div class="log-item"><strong>التفسير</strong><div class="muted-copy">${log.uxInterpretation}</div></div>
+              </article>
+            `).join("") : '<div class="empty">لا توجد سجلات متاحة بعد.</div>'}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderVerdict() {
+      const verdict = data.finalVerdict || {};
+      return `
+        <section class="section" id="verdict">
+          ${sectionHead("verdict-title", "الخلاصة", "الحكم النهائي", "الخاتمة مجمعة في بطاقة مزدوجة: حكم واضح في جهة، وقائمة نقاط حاسمة في الجهة الأخرى، بدل تشتت التفاصيل داخل أقسام متعددة.")}
+          <article class="verdict-card dual-grid">
+            <div>
+              <div class="section-kicker">النتيجة العامة</div>
+              <h3>${verdict.uxJudgment || "سيظهر الحكم النهائي بعد توفر البيانات."}</h3>
+              <p class="copy">${verdict.conciseConclusion || "لا توجد خلاصة متاحة بعد."}</p>
+              <div class="detail-box">
+                <strong>النتيجة:</strong>
+                <div class="muted-copy">${verdict.outcome || "غير متاحة بعد."}</div>
+              </div>
+            </div>
+            <div>
+              <ul class="verdict-list">
+                <li><strong>أكبر العوائق:</strong> ${safeList(verdict.biggestBlockers, ["لا توجد بيانات بعد."]).join("، ")}</li>
+                <li><strong>أقوى الإشارات الإيجابية:</strong> ${safeList(verdict.strongestPositives, ["لا توجد بيانات بعد."]).join("، ")}</li>
+                <li><strong>الحكم العام:</strong> ${verdict.uxJudgment || "غير متاح بعد."}</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+      `;
+    }
+
+    function renderSidebar() {
+      const meta = data.meta || {};
+      const metrics = data.metrics || {};
+      const persona = meta.persona || {};
+      document.getElementById("sidebarProfile").innerHTML = `
+        <div class="profile-top">
+          <div class="avatar">${(persona.name || "س").slice(0, 1)}</div>
+          <div>
+            <div class="mini-label">المستخدمة</div>
+            <strong>${persona.name || "سارة"}</strong>
+          </div>
+        </div>
+        <div class="muted-copy">رحلة شراء عالية الحساسية لمنتج مرتفع السعر مع تركيز على الوضوح والثقة قبل الدفع.</div>
+      `;
+
+      const items = [
+        ["overview", "نظرة عامة"],
+        ["metrics", "المؤشرات"],
+        ["journey", "الرحلة"],
+        ["issues", "المشكلات"],
+        ["positives", "الإيجابيات"],
+        ["recommendations", "التوصيات"],
+        ["screenshots", "اللقطات"],
+        ["logs", "السجل"],
+        ["verdict", "الخلاصة"]
+      ];
+
+      document.getElementById("sidebarNav").innerHTML = items.map(([id, label], index) => `
+        <a href="#${id}" class="${index === 0 ? "active" : ""}">
+          <span>${label}</span>
+          <span class="nav-bullet" aria-hidden="true"></span>
+        </a>
+      `).join("");
+
+      document.getElementById("sidebarCompletion").innerHTML = `
+        <div class="mini-label">معدل الإنجاز</div>
+        <strong>${percent(metrics.completionRate)}</strong>
+        <div class="muted-copy">الصورة السريعة لنجاح الرحلة.</div>
+      `;
+
+      document.getElementById("sidebarBlockers").innerHTML = `
+        <div class="mini-label">العوائق الحالية</div>
+        <strong>${metrics.totalBlockers ?? 0}</strong>
+        <div class="muted-copy">عدد اللحظات التي منعت الانتقال السلس.</div>
+      `;
+    }
+
+    function renderTopbar() {
+      const meta = data.meta || {};
+      const verdict = data.finalVerdict || {};
+      document.getElementById("topTitle").textContent = meta.testTitle || "تحليل تجربة نون";
+      document.getElementById("topResult").textContent = verdict.outcome || "بانتظار البيانات";
+      document.getElementById("topDevice").textContent = meta.device || "سطح مكتب";
+      document.getElementById("topProduct").textContent = meta.productSearched || "منتج غير محدد";
+    }
+
+    function renderApp() {
+      document.getElementById("app").innerHTML = [
+        renderHero(),
+        renderMetrics(),
+        renderJourney(),
+        renderIssues(),
+        renderPositives(),
+        renderRecommendations(),
+        renderTimeline(),
+        renderLogs(),
+        renderVerdict()
+      ].join("");
+    }
+
+    let activeShotIndex = 0;
+    const shots = safeList(data.screenshots);
+
+    function updateLightbox() {
+      const shot = shots[activeShotIndex];
+      if (!shot) return;
+      document.getElementById("lightboxImage").src = shot.image;
+      document.getElementById("lightboxImage").alt = shot.title;
+      document.getElementById("lightbox-caption").textContent = shot.caption;
+      document.getElementById("lightbox-title").textContent = shot.title;
+      document.getElementById("lightboxPanel").innerHTML = `
+        <span class="status-pill ${statusClass(shot.status)}">${statusMap[shot.status] || shot.status}</span>
+        <h3>${shot.title}</h3>
+        <div class="muted-copy"><strong>ما الذي حدث:</strong> ${shot.whatHappened}</div>
+        <div class="muted-copy"><strong>رد فعل سارة:</strong> ${shot.userReaction}</div>
+        <div class="muted-copy"><strong>الملاحظة:</strong> ${shot.observation}</div>
+        <div class="muted-copy"><strong>التفسير UX:</strong> ${shot.uxInterpretation}</div>
+        <div class="muted-copy"><strong>أثر التحويل:</strong> ${shot.conversionImpact}</div>
+        <div class="muted-copy"><strong>التوصية:</strong> ${shot.recommendation}</div>
+        <span class="tag severity-${shot.severity}">الشدة: ${severityMap[shot.severity] || shot.severity}</span>
+      `;
+    }
+
+    function openLightbox(index) {
+      activeShotIndex = index;
+      updateLightbox();
+      const modal = document.getElementById("lightbox");
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.getElementById("closeLightbox").focus();
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById("lightbox");
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    function showNext() {
+      if (!shots.length) return;
+      activeShotIndex = (activeShotIndex + 1) % shots.length;
+      updateLightbox();
+    }
+
+    function showPrev() {
+      if (!shots.length) return;
+      activeShotIndex = (activeShotIndex - 1 + shots.length) % shots.length;
+      updateLightbox();
+    }
+
+    function syncActiveNav() {
+      const links = Array.from(document.querySelectorAll(".nav a"));
+      const sections = links.map((link) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        return { link, target };
+      }).filter((item) => item.target);
+
+      function onScroll() {
+        let current = sections[0];
+        for (const item of sections) {
+          if (item.target.getBoundingClientRect().top <= 140) current = item;
+        }
+        links.forEach((link) => link.classList.remove("active"));
+        if (current) current.link.classList.add("active");
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    renderSidebar();
+    renderTopbar();
+    renderApp();
+    syncActiveNav();
+
+    document.addEventListener("click", (event) => {
+      const trigger = event.target.closest(".shot-open");
+      if (trigger) {
+        openLightbox(Number(trigger.dataset.index));
+        return;
+      }
+      if (event.target.id === "closeLightbox" || event.target.id === "lightbox") closeLightbox();
+      if (event.target.id === "nextShot") showNext();
+      if (event.target.id === "prevShot") showPrev();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      const modalOpen = document.getElementById("lightbox").classList.contains("open");
+      if (!modalOpen) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowRight") showPrev();
+      if (event.key === "ArrowLeft") showNext();
+    });
+  </script>
+</body>
+</html>
