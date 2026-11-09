@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بروشور ركن الكيان</title>
+<style>/* هوية ركن الكيان — مستمدة من roukn-alkayan.com (ألوان، خطوط، نقش الروشان والشرفات الحجازية) */
+@font-face { font-family: Tajawal; font-weight: 400; src: url(assets/fonts/tajawal-arabic-400.woff2) format('woff2'); }
+@font-face { font-family: Tajawal; font-weight: 500; src: url(assets/fonts/tajawal-arabic-500.woff2) format('woff2'); }
+@font-face { font-family: Tajawal; font-weight: 700; src: url(assets/fonts/tajawal-arabic-700.woff2) format('woff2'); }
+@font-face { font-family: TajawalLatin; font-weight: 400; src: url(assets/fonts/tajawal-latin-400.woff2) format('woff2'); }
+@font-face { font-family: TajawalLatin; font-weight: 700; src: url(assets/fonts/tajawal-latin-700.woff2) format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans Arabic'; font-weight: 500; src: url(assets/fonts/ibm-plex-sans-arabic-arabic-500.woff2) format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans Arabic'; font-weight: 600; src: url(assets/fonts/ibm-plex-sans-arabic-arabic-600.woff2) format('woff2'); }
+
+:root {
+  --red: #702820;
+  --red-deep: #4a1813;
+  --red-ink: #5c1f19;
+  --paper: #f6f0e6;
+  --sand: #efe6d7;
+  --cream: #ead9bd;
+  --card: #fcf8f2;
+  --ink: #2b2521;
+  --muted: #776c62;
+  --line: #2b25211a;
+  --body: Tajawal, TajawalLatin, Arial, sans-serif;
+  --head: 'IBM Plex Sans Arabic', Tajawal, TajawalLatin, Arial, sans-serif;
+  --roshan: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23702820' stroke-opacity='.07' stroke-width='1.2'%3E%3Crect x='1' y='1' width='42' height='42'/%3E%3Cpath d='M22 1 43 22 22 43 1 22z'/%3E%3Ccircle cx='22' cy='22' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  --roshan-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.09' stroke-width='1.2'%3E%3Crect x='1' y='1' width='42' height='42'/%3E%3Cpath d='M22 1 43 22 22 43 1 22z'/%3E%3Ccircle cx='22' cy='22' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.06' stroke-width='1.2'%3E%3Cpath d='M32 8l7 17 17 7-17 7-7 17-7-17-17-7 17-7z'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3C/g%3E%3C/svg%3E");
+  --shurfat-deep: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='20'%3E%3Cpath fill='%234a1813' d='M0 20V12h4V7h4V2h4v5h4v5h4v8z'/%3E%3C/svg%3E");
+  --shurfat-paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='20'%3E%3Cpath fill='%23f6f0e6' d='M0 20V12h4V7h4V2h4v5h4v5h4v8z'/%3E%3C/svg%3E");
+  --shurfat-red: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='20'%3E%3Cpath fill='%23702820' d='M0 20V12h4V7h4V2h4v5h4v5h4v8z'/%3E%3C/svg%3E");
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #d9d2c7; }
+body { font-family: var(--body); color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+bdi { direction: ltr; unicode-bidi: isolate; font-family: TajawalLatin, Tajawal, sans-serif; font-weight: 700; letter-spacing: .02em; }
+img { display: block; }
+
+.page {
+  width: 210mm; height: 297mm; position: relative; overflow: hidden;
+  background: var(--paper) var(--roshan); page-break-after: always; break-after: page;
+  display: flex; flex-direction: column;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+@media screen { .page { margin: 8mm auto; box-shadow: 0 6px 30px #0003; } }
+
+.ic { width: 1em; height: 1em; flex: none; }
+
+/* ---------- الشريط العلوي ---------- */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9mm 14mm 0; position: relative; z-index: 2;
+}
+.brand { display: flex; align-items: center; gap: 3mm; }
+.brand-mark { width: 11mm; height: 11mm; border-radius: 3mm; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; }
+.brand-mark img { width: 8mm; }
+.brand b { display: block; font-family: var(--head); font-weight: 600; font-size: 11pt; color: var(--red-deep); line-height: 1.2; }
+.brand small { display: block; font-size: 8pt; color: var(--muted); }
+.section-tag { display: flex; align-items: center; gap: 2mm; font-size: 8.5pt; color: var(--red); font-weight: 700; border: 1px solid #70282033; border-radius: 99px; padding: 1.6mm 4mm; background: var(--card); }
+.section-tag i { width: 2mm; height: 2mm; background: var(--red); transform: rotate(45deg); }
+
+.body { flex: 1; padding: 7mm 14mm 6mm; display: flex; flex-direction: column; gap: 5mm; position: relative; z-index: 1; min-height: 0; }
+
+/* ---------- التذييل ---------- */
+.foot { position: relative; }
+.shurfat { height: 3.4mm; background-repeat: repeat-x; background-size: auto 100%; background-position: center bottom; }
+.shurfat-deep { background-image: var(--shurfat-deep); }
+.shurfat-paper { background-image: var(--shurfat-paper); }
+.shurfat-red { background-image: var(--shurfat-red); }
+.foot-in {
+  background: var(--red-deep) var(--roshan-light); color: var(--cream);
+  display: flex; align-items: center; gap: 7mm; padding: 3.6mm 14mm; font-size: 9pt;
+}
+.foot-in span { display: flex; align-items: center; gap: 1.8mm; }
+.foot-in .ic { color: #c4a69d; font-size: 10pt; }
+.pno { margin-inline-start: auto; font-family: var(--head); font-weight: 600; font-size: 11pt; color: #fff; border: 1px solid #ead9bd55; border-radius: 99px; padding: .6mm 3.4mm; }
+
+/* ---------- عناصر عامة ---------- */
+.kicker { display: inline-flex; align-items: center; gap: 2mm; color: var(--red); font-weight: 700; font-size: 9.5pt; }
+.lantern { width: 3.2mm; height: 4.2mm; background: var(--red); border-radius: 1.6mm 1.6mm .4mm .4mm; position: relative; }
+.lantern::after { content: ''; position: absolute; inset: 1mm .8mm .8mm; background: var(--paper); border-radius: 1mm 1mm 0 0; }
+.h { font-family: var(--head); font-weight: 600; font-size: 27pt; line-height: 1.25; color: var(--ink); margin-top: 1.5mm; }
+.h span { display: block; color: #8f857b; font-weight: 500; font-size: 15pt; line-height: 1.5; margin-top: 1mm; }
+.lead { font-size: 11pt; line-height: 1.9; color: #4d443d; }
+.lead.muted { color: var(--muted); font-size: 10pt; }
+.sub { font-family: var(--head); font-weight: 600; font-size: 13pt; color: var(--red-deep); display: flex; align-items: center; gap: 2.4mm; }
+.sub::before { content: ''; width: 2.4mm; height: 2.4mm; background: var(--red); transform: rotate(45deg); }
+.sub::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to left, #70282040, transparent); }
+
+/* إطار القوس الحجازي للصور */
+.arch { position: relative; border-radius: 40mm 40mm 3mm 3mm / 22mm 22mm 3mm 3mm; overflow: hidden; background: var(--sand); border: 1.2mm solid #fff; box-shadow: 0 0 0 .3mm #70282033, 0 4mm 10mm -6mm #4a181366; }
+.arch img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.arch.wide { border-radius: 30mm 30mm 3mm 3mm / 12mm 12mm 3mm 3mm; }
+.arch figcaption { position: absolute; bottom: 3mm; inset-inline-start: 3mm; background: #fffffff0; border-radius: 99px; padding: 1.2mm 3.4mm; font-size: 8pt; color: var(--ink); }
+
+.bul { list-style: none; display: grid; gap: 1.8mm; }
+.bul li { display: flex; gap: 2.2mm; align-items: baseline; font-size: 9.6pt; line-height: 1.55; }
+.bul li i { width: 1.8mm; height: 1.8mm; background: var(--red); transform: rotate(45deg) translateY(-.4mm); flex: none; }
+
+.num { list-style: none; display: grid; gap: 2.4mm; }
+.num li { display: flex; align-items: center; gap: 3mm; background: var(--card); border: 1px solid var(--line); border-radius: 3mm; padding: 2.6mm 3.4mm; font-size: 10.2pt; line-height: 1.5; }
+.num li b { font-family: var(--head); color: var(--red); font-size: 10pt; min-width: 7mm; height: 7mm; border-radius: 2mm; background: #70282012; display: grid; place-items: center; }
+
+.start { margin-top: auto; display: flex; align-items: center; gap: 6mm; background: var(--red-deep) var(--star); color: var(--cream); border-radius: 4mm; padding: 4mm 6mm; }
+.start b { font-family: var(--head); font-size: 12pt; color: #fff; }
+.start p { font-size: 9pt; line-height: 1.7; margin-top: .6mm; opacity: .9; }
+.start-cta { flex: none; display: flex; align-items: center; gap: 2mm; background: var(--paper); color: var(--red-deep); border-radius: 99px; padding: 2.4mm 4.6mm; font-size: 10pt; }
+
+.note { display: flex; align-items: center; gap: 3mm; font-size: 9.6pt; color: var(--red-deep); font-weight: 700; background: #70282010; border: 1px dashed #70282055; border-radius: 3mm; padding: 3mm 4mm; }
+.note .ic { font-size: 13pt; color: var(--red); }
+
+.pill { display: inline-block; font-size: 9pt; font-weight: 700; padding: 1.6mm 4mm; border-radius: 99px; border: 1px solid #ead9bd66; color: var(--cream); background: #ffffff10; }
+
+/* روشان زخرفي */
+.roshan { position: absolute; }
+
+/* ---------- الغلاف ---------- */
+.cover, .divider, .back { background: var(--red-deep); color: var(--paper); }
+.cover-pattern { position: absolute; inset: 0; background: var(--roshan-light), var(--star); background-size: 44px 44px, 64px 64px; }
+.cover-pattern::after { content: ''; position: absolute; inset: 0; background: radial-gradient(120% 70% at 85% 10%, #70282099, transparent 60%), linear-gradient(to bottom, transparent 60%, #2c0d0a88); }
+.cover-top { position: relative; z-index: 2; display: flex; align-items: center; gap: 6mm; padding: 16mm 16mm 0; }
+.cover-logo { width: 30mm; height: 30mm; border-radius: 6mm; background: var(--paper); display: grid; place-items: center; box-shadow: 0 0 0 1.4mm #ead9bd33; }
+.cover-logo img { width: 22mm; }
+.cover-name h1 { font-family: var(--head); font-weight: 600; font-size: 30pt; line-height: 1.15; color: #fff; }
+.cover-name p { font-size: 15pt; color: var(--cream); margin-top: 1mm; }
+.cover-name em { display: block; font-style: normal; font-family: TajawalLatin, sans-serif; font-size: 8.6pt; letter-spacing: .06em; color: #c4a69d; margin-top: 1.6mm; direction: ltr; text-align: right; }
+.cover-mid { position: relative; z-index: 2; flex: 1; display: grid; grid-template-columns: 1fr 78mm; gap: 8mm; padding: 14mm 16mm 10mm; align-items: end; }
+.cover-copy h2 { font-family: var(--head); font-weight: 600; font-size: 38pt; line-height: 1.2; color: #fff; margin: 5mm 0 4mm; }
+.cover-copy h2 span { color: var(--cream); }
+.cover-copy p { font-size: 11pt; line-height: 1.9; color: #ead9bdd9; }
+.cover-trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 8mm; }
+.cover-trust div { border: 1px solid #ead9bd40; background: #ffffff0d; border-radius: 3mm; padding: 3mm; }
+.cover-trust b { display: block; font-family: var(--head); font-size: 14pt; color: #fff; }
+.cover-trust small { font-size: 8.4pt; color: #ead9bdcc; }
+.cover-arch { height: 150mm; border-radius: 50mm 50mm 4mm 4mm / 34mm 34mm 4mm 4mm; overflow: hidden; border: 1.6mm solid var(--cream); box-shadow: 0 0 0 4mm #ead9bd22; }
+.cover-arch img { width: 100%; height: 100%; object-fit: cover; }
+.roshan.cv { width: 34mm; left: 4mm; bottom: 6mm; opacity: .35; }
+.cover-bottom { position: relative; z-index: 2; }
+.cover-bottom-in { background: var(--paper); color: var(--red-deep); display: flex; align-items: center; gap: 7mm; padding: 5mm 16mm 7mm; font-size: 10pt; font-weight: 700; }
+.cover-bottom-in span { display: flex; align-items: center; gap: 2mm; }
+.cover-bottom-in .ic { color: var(--red); font-size: 11pt; }
+.cover-bottom-in .pno { color: var(--red-deep); border-color: #70282040; }
+
+/* ---------- المقدمة ---------- */
+.intro-grid { display: grid; grid-template-columns: 1fr 70mm; gap: 8mm; align-items: stretch; }
+.intro-grid > div { display: flex; flex-direction: column; gap: 4mm; justify-content: center; }
+.intro-grid .h { font-size: 30pt; }
+.arch.tall { min-height: 92mm; }
+.trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+.trust div { background: #fff; border: 1px solid var(--line); border-radius: 3.4mm; padding: 3.6mm; display: grid; grid-template-columns: auto 1fr; column-gap: 2.6mm; align-items: center; }
+.trust .ic { grid-row: span 2; font-size: 15pt; color: var(--red); background: #70282010; border-radius: 2.4mm; padding: 1.6mm; width: 9mm; height: 9mm; }
+.trust b { font-family: var(--head); font-size: 14pt; color: var(--ink); line-height: 1.1; }
+.trust small { font-size: 8.4pt; color: var(--muted); }
+.process { flex: 1; background: var(--red-deep) var(--star); color: var(--cream); border-radius: 5mm; padding: 6mm; display: flex; flex-direction: column; gap: 5mm; position: relative; overflow: hidden; }
+.process::before { content: ''; position: absolute; inset: 0 0 auto; height: 3.4mm; background: var(--shurfat-paper) repeat-x; background-size: auto 100%; transform: scaleY(-1); }
+.process .kicker { color: var(--cream); }
+.process .lantern { background: var(--cream); }
+.process .lantern::after { background: var(--red-deep); }
+.process h3 { font-family: var(--head); font-weight: 600; font-size: 19pt; color: #fff; margin: 1mm 0; }
+.process-head p { font-size: 9.6pt; opacity: .85; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; flex: 1; }
+.step { background: #ffffff0f; border: 1px solid #ead9bd33; border-radius: 3.4mm; padding: 4mm 3.6mm; display: flex; flex-direction: column; gap: 1.6mm; }
+.sn { font-family: var(--head); font-size: 20pt; color: #c4a69d; line-height: 1; }
+.step b { font-family: var(--head); font-size: 14pt; color: #fff; }
+.step p { font-size: 8.8pt; line-height: 1.7; opacity: .9; }
+.step small { margin-top: auto; font-size: 8pt; font-weight: 700; color: var(--red-deep); background: var(--cream); border-radius: 99px; padding: 1mm 2.6mm; align-self: flex-start; }
+
+/* ---------- من نحن ---------- */
+.about .h span { font-size: 13pt; }
+.about-card { background: #fff; border-inline-start: 1.4mm solid var(--red); border-radius: 3mm; padding: 5mm 6mm; box-shadow: 0 3mm 8mm -6mm #4a181355; }
+.about-card p { font-size: 11pt; line-height: 2; font-weight: 500; }
+.about-card b { color: var(--red); }
+.vm { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; flex: 1; }
+.vm article { background: var(--card); border: 1px solid var(--line); border-radius: 4mm; padding: 5mm; position: relative; overflow: hidden; }
+.vm article::after { content: ''; position: absolute; inset: auto 0 0; height: 3mm; background: var(--shurfat-red) repeat-x; background-size: auto 100%; opacity: .9; }
+.vm-h { display: flex; align-items: center; gap: 2.6mm; margin-bottom: 3mm; }
+.vm-h .ic { font-size: 14pt; color: #fff; background: var(--red); border-radius: 2.6mm; width: 10mm; height: 10mm; padding: 2.2mm; }
+.vm-h h3 { font-family: var(--head); font-weight: 600; font-size: 17pt; color: var(--red-deep); }
+.vm p { font-size: 10pt; line-height: 1.95; color: #4d443d; text-align: justify; }
+.vm b { color: var(--red); }
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.values div { background: #fff; border: 1px solid var(--line); border-radius: 3mm; padding: 3.4mm 4mm; }
+.values span { font-family: var(--head); color: var(--red); font-size: 9pt; font-weight: 600; }
+.values b { display: block; font-family: var(--head); font-size: 12pt; margin: .6mm 0; }
+.values small { font-size: 8.6pt; color: var(--muted); line-height: 1.6; }
+
+/* ---------- فاصل الخدمات ---------- */
+.div-in { position: relative; z-index: 2; flex: 1; display: grid; grid-template-columns: 1fr 70mm; gap: 10mm; align-items: center; padding: 20mm 18mm; }
+.div-in > div { grid-column: 1; grid-row: 1; }
+.roshan.dv { position: relative; grid-column: 2; grid-row: 1; width: 100%; opacity: .55; }
+.div-in h2 { font-family: var(--head); font-weight: 600; font-size: 40pt; line-height: 1.2; color: #fff; margin: 6mm 0 4mm; }
+.div-in h2 span { color: var(--cream); }
+.div-in p { font-size: 12pt; line-height: 1.9; color: #ead9bdd9; }
+.div-list { list-style: none; margin-top: 10mm; display: grid; gap: 2.4mm; }
+.div-list li { display: flex; align-items: center; gap: 4mm; font-family: var(--head); font-size: 15pt; color: #fff; border-bottom: 1px solid #ead9bd2a; padding-bottom: 2.4mm; }
+.div-list b { font-size: 11pt; color: var(--red-deep); background: var(--cream); border-radius: 2mm; width: 9mm; height: 9mm; display: grid; place-items: center; }
+
+/* ---------- صفحات الخدمات ---------- */
+.svc-head { display: grid; grid-template-columns: auto 1fr auto; gap: 5mm; align-items: center; }
+.svc-no { width: 24mm; height: 30mm; background: var(--red-deep) var(--roshan-light); color: var(--cream); border-radius: 12mm 12mm 2.4mm 2.4mm / 8mm 8mm 2.4mm 2.4mm; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.svc-no span { font-family: var(--head); font-weight: 600; font-size: 24pt; color: #fff; line-height: 1; }
+.svc-no small { font-size: 8pt; margin-top: 1.4mm; }
+.svc-icon { width: 17mm; height: 17mm; border-radius: 4mm; border: 1px solid #70282033; background: #fff; display: grid; place-items: center; color: var(--red); }
+.svc-icon .ic { font-size: 22pt; }
+.svc .h { font-size: 26pt; margin-top: 1mm; }
+.svc .h span { font-size: 13pt; }
+.svc-media { display: grid; grid-template-columns: 1.25fr 1fr; gap: 4mm; height: 78mm; }
+.svc-media.one { grid-template-columns: 1fr; height: 84mm; }
+.svc-media.short { height: 50mm; grid-template-columns: 1fr 1fr; }
+.groups { display: grid; gap: 3.4mm; }
+.groups.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.group { background: #fff; border: 1px solid var(--line); border-radius: 3.4mm; padding: 4mm; position: relative; }
+.group h5 { font-family: var(--head); font-weight: 600; font-size: 11.4pt; color: #fff; background: var(--red); border-radius: 2mm; padding: 1.4mm 3mm; margin-bottom: 3mm; display: inline-block; }
+.split { display: grid; grid-template-columns: 1fr 66mm; gap: 6mm; align-items: stretch; }
+.split > div { display: flex; flex-direction: column; gap: 3.4mm; }
+.split.even { grid-template-columns: 1fr 1fr; }
+.svc-safety .arch.tall { min-height: 0; height: 100%; }
+.balady-hero { position: relative; height: 70mm; display: grid; }
+.balady-logo { position: absolute; bottom: 4mm; inset-inline-end: 4mm; background: #fff; border-radius: 3mm; padding: 2.6mm 4mm; box-shadow: 0 2mm 6mm #0002; }
+.balady-logo img { height: 11mm; }
+.mini-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6mm; }
+.mini-steps div { background: #fff; border: 1px solid var(--line); border-radius: 3mm; padding: 3mm; }
+.mini-steps span { font-family: var(--head); color: var(--red); font-size: 9pt; }
+.mini-steps b { display: block; font-family: var(--head); font-size: 12pt; margin: .4mm 0; }
+.mini-steps small { font-size: 8.6pt; color: var(--muted); line-height: 1.6; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.tiles div { background: #fff; border: 1px solid var(--line); border-radius: 3mm; padding: 3.4mm; font-size: 10.4pt; font-weight: 500; line-height: 1.5; display: flex; gap: 2.6mm; align-items: center; }
+.tiles div.wide { grid-column: span 2; background: var(--red); color: #fff; border-color: var(--red); font-family: var(--head); font-size: 12pt; }
+.tiles span { font-family: var(--head); color: var(--red); font-size: 9pt; flex: none; }
+.tiles div.wide span { color: var(--cream); }
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; height: 92mm; }
+.mosaic .arch.tall { min-height: 0; }
+.mosaic > div { display: grid; grid-template-rows: 1fr 1fr; gap: 4mm; }
+.cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.4mm; }
+.cards3 div { background: #fff; border: 1px solid var(--line); border-radius: 3.4mm; padding: 4.4mm; border-top: 1.2mm solid var(--red); }
+.cards3 span { font-family: var(--head); color: var(--red); font-size: 16pt; }
+.cards3 b { display: block; font-family: var(--head); font-size: 12pt; line-height: 1.5; margin-top: 1mm; font-weight: 500; }
+
+/* ---------- الشهادات ---------- */
+.cert-intro .body { overflow: hidden; }
+.creds { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.cred { background: #fff; border: 1px solid var(--line); border-radius: 4mm; padding: 5mm; display: flex; flex-direction: column; gap: 1.4mm; position: relative; overflow: hidden; }
+.cred::after { content: ''; position: absolute; inset: auto 0 0; height: 2.6mm; background: var(--shurfat-red) repeat-x; background-size: auto 100%; }
+.cn { font-family: var(--head); color: var(--red); font-size: 10pt; }
+.cred b { font-family: var(--head); font-size: 12.6pt; font-weight: 600; line-height: 1.5; }
+.cred small { font-size: 8.6pt; color: var(--muted); margin-top: 2mm; }
+.cred bdi { font-size: 17pt; color: var(--red-deep); }
+.cert-index { background: var(--card); border: 1px solid var(--line); border-radius: 4mm; padding: 5mm; display: flex; flex-direction: column; gap: 3mm; width: 62%; }
+.cert-index ol { padding-inline-start: 6mm; display: grid; gap: 1.6mm; font-size: 10.4pt; }
+.cert-index li::marker { color: var(--red); font-family: var(--head); }
+.roshan.ci { width: 46mm; left: 14mm; bottom: 4mm; opacity: .3; }
+.cert-slots { flex: 1; display: grid; gap: 6mm; }
+.cert-double .cert-slots { grid-template-rows: 1fr 1fr; }
+.slot { display: flex; flex-direction: column; gap: 2.4mm; min-height: 0; }
+.slot figcaption { font-family: var(--head); font-weight: 600; font-size: 11pt; color: var(--red-deep); display: flex; align-items: center; gap: 2.4mm; }
+.slot figcaption::before { content: ''; width: 2.2mm; height: 2.2mm; background: var(--red); transform: rotate(45deg); }
+.slot-empty, .slot img { flex: 1; min-height: 0; border-radius: 3mm; }
+.slot-empty { border: .5mm dashed #70282066; background: #ffffffb0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2mm; color: #70282088; }
+.slot-empty .ic { font-size: 22pt; }
+.slot-empty b { font-size: 11pt; }
+.slot-empty small { font-family: TajawalLatin, sans-serif; font-size: 8pt; }
+.slot img { width: 100%; object-fit: contain; background: #fff; border: 1px solid var(--line); padding: 2mm; }
+.slot { order: 0; }
+.cert .slot figcaption { order: -1; }
+
+/* ---------- الغلاف الخلفي ---------- */
+.back-in { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 18mm 18mm 8mm; gap: 3mm; }
+.cover-logo.big { width: 36mm; height: 36mm; }
+.cover-logo.big img { width: 27mm; }
+.back-in h1 { font-family: var(--head); font-weight: 600; font-size: 28pt; color: #fff; margin-top: 4mm; }
+.sub-name { font-size: 14pt; color: var(--cream); margin-top: -2mm; }
+.tag { font-size: 10.6pt; color: #c4a69d; line-height: 1.8; }
+.tag span { color: var(--cream); }
+.back-in h2 { font-family: var(--head); font-weight: 600; font-size: 22pt; color: #fff; margin-top: 6mm; }
+.muted-l { font-size: 10.4pt; color: #ead9bdcc; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; width: 100%; margin-top: 4mm; }
+.contact-grid div { background: #ffffff0f; border: 1px solid #ead9bd33; border-radius: 3.4mm; padding: 3.6mm 4mm; display: grid; grid-template-columns: auto 1fr; column-gap: 3mm; text-align: start; align-items: center; }
+.contact-grid .ic { grid-row: span 2; font-size: 13pt; color: var(--red-deep); background: var(--cream); border-radius: 2.4mm; width: 9mm; height: 9mm; padding: 2mm; }
+.contact-grid small { font-size: 8.4pt; color: #ead9bdbb; }
+.contact-grid bdi { font-size: 12.4pt; color: #fff; text-align: right; }
+.addr { display: flex; align-items: center; gap: 2.4mm; font-size: 9.6pt; color: var(--cream); margin-top: 2mm; }
+.addr .ic { color: #c4a69d; font-size: 12pt; }
+.qrs { display: flex; gap: 8mm; margin-top: 4mm; }
+.qrs div { background: var(--paper); border-radius: 3.4mm; padding: 3mm; display: flex; flex-direction: column; align-items: center; gap: 1.6mm; }
+.qrs img { width: 22mm; height: 22mm; }
+.qrs small { font-size: 8pt; color: var(--red-deep); font-weight: 700; }
+.back-creds { background: var(--paper); color: var(--red-deep); display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; padding: 4mm 12mm 7mm; }
+.back-creds div { border-inline-start: .6mm solid var(--red); padding-inline-start: 2.4mm; }
+.back-creds b { display: block; font-size: 8pt; line-height: 1.5; }
+.back-creds small { font-size: 7.6pt; color: var(--muted); }
+.back-creds bdi { color: var(--red-deep); font-size: 8.4pt; }
+</style></head>
+<body><section class="page cover">
+  <div class="cover-pattern"></div>
+  <div class="cover-top">
+    <div class="cover-logo"><img src="assets/img/company-logo.png" alt=""></div>
+    <div class="cover-name"><h1>شركة ركن الكيان</h1><p>للاستشارات الهندسية</p><em>Roukn Al-Kayan Engineering Consultancy Company</em></div>
+  </div>
+  <div class="cover-mid">
+    <div class="cover-copy">
+      <span class="pill">مكتب هندسي معتمد في جدة</span>
+      <h2>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h2>
+      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
+      <div class="cover-trust">
+        <div><b>معتمد</b><small>لدى أمانة جدة</small></div>
+        <div><b>معتمد</b><small>لدى الدفاع المدني</small></div>
+        <div><b>+120</b><small>مشروع منجز</small></div>
+      </div>
+    </div>
+    <div class="cover-arch"><img src="assets/img/hero-interior.jpg" alt=""></div>
+    
+<svg class="roshan cv" viewBox="0 0 120 300" fill="none" stroke="#ead9bd" stroke-width="1.4">
+  <defs>
+    <pattern id="lat-cv" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M6 0L12 6 6 12 0 6z"/><circle cx="6" cy="6" r="1.4"/>
+    </pattern>
+    <clipPath id="clip-cv"><path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/></clipPath>
+  </defs>
+  <path d="M6 298V68Q6 14 60 4q54 10 54 64v230z" stroke-width="2"/>
+  <path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/>
+  <rect x="0" y="0" width="120" height="300" fill="url(#lat-cv)" clip-path="url(#clip-cv)" stroke="none" style="fill-opacity:1"/>
+  <g clip-path="url(#clip-cv)" stroke-width="2.2">
+    <path d="M14 112h92M14 186h92M14 252h92M60 12v284"/>
+  </g>
+  <path d="M0 298h120"/>
+</svg>
+  </div>
+  <div class="cover-bottom">
+    <div class="shurfat shurfat-paper"></div>
+    <div class="cover-bottom-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>جدة — حي العزيزية</span>
+    </div>
+  </div>
+</section>
+<section class="page intro">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>المقدمة</div>
+  </header><div class="body">
+  <div class="intro-grid">
+    <div>
+      <div class="kicker"><span class="lantern"></span>المقدمة</div>
+      <h2 class="h">كل مشروع يبدأ بفكرة.<span>ودورنا أن نمنحها شكلًا يستحق.</span></h2>
+      <p class="lead">نربط الجمال بالوظيفة، والتخطيط بالسلامة. نعمل معك لفهم احتياجك وتطوير حلول هندسية واضحة، من التصور الأول وحتى متابعة التنفيذ.</p>
+      <p class="lead muted">من الفكرة وحتى التسليم، خدمات مترابطة تقلل التعقيد وتمنح المشروع مسارًا أوضح.</p>
+    </div>
+    <figure class="arch tall"><img src="assets/img/about.jpg" alt=""><figcaption>التفاصيل الصغيرة تصنع تجربة متكاملة.</figcaption></figure>
+  </div>
+  <div class="trust">
+    <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><b>معتمد</b><small>لدى أمانة جدة</small></div>
+    <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><b>معتمد</b><small>لدى الدفاع المدني</small></div>
+    <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5M8 10h2M14 10h2M8 13.5h2M14 13.5h2"/></svg><b>+120</b><small>مشروع منجز</small></div>
+    <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>+16</b><small>خدمة هندسية متكاملة</small></div>
+  </div>
+  <div class="process">
+    <div class="process-head"><div class="kicker"><span class="lantern"></span>كيف نعمل</div><h3>مسار واضح من البداية.</h3><p>أربع مراحل، ولكل مرحلة مخرج تستلمه وتراجعه قبل أن ننتقل للتي بعدها.</p></div>
+    <div class="steps">
+      <div class="step"><span class="sn">01</span><b>نفهم</b><p>نزور الموقع ونسمع منك، ونحدد الاحتياج والنطاق والقيود قبل أي اقتراح.</p><small>اجتماع ونطاق عمل مكتوب</small></div><div class="step"><span class="sn">02</span><b>نصمم</b><p>نحوّل المتطلبات إلى مخططات وحل هندسي مدروس وقابل للتنفيذ.</p><small>مخططات وتصورات للمراجعة</small></div><div class="step"><span class="sn">03</span><b>نراجع</b><p>نتحقق من التفاصيل ومتطلبات السلامة والأنظمة قبل الاعتماد.</p><small>ملف جاهز للاعتماد</small></div><div class="step"><span class="sn">04</span><b>نشرف</b><p>نتابع التنفيذ في الموقع حتى تتطابق النتيجة مع المعتمد.</p><small>متابعة حتى التسليم</small></div>
+    </div>
+  </div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">02</span>
+    </div>
+  </footer></section>
+<section class="page about">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>من نحن</div>
+  </header><div class="body">
+  <div class="kicker"><span class="lantern"></span>ركن الكيان</div>
+  <h2 class="h">من نحن<span>مكتب استشارات هندسية في جدة يجمع التصميم المعماري والداخلي والأمن والسلامة في مسار واحد واضح.</span></h2>
+  <div class="about-card">
+    <p>شركة ركن الكيان للاستشارات الهندسية، شركة هندسية استشارية سعودية معتمدة لدى <b>الهيئة السعودية للمهندسين</b> و<b>أمانة جدة</b> و<b>الدفاع المدني</b> و<b>منصة بلدي</b>، تقدم خدماتها الاستشارية في عدة مجالات هندسية، منها استخراج التراخيص الهندسية الكاملة، وأعمال الأمن والسلامة، والتصاميم المعمارية والإنشائية، وتخطيط وتنسيق الموقع، والتصميم الداخلي، والأعمال المساحية ونظم المعلومات الجغرافية، وإدارة المشاريع والتصميم والإشراف على المباني.</p>
+  </div>
+  <div class="vm">
+    <article>
+      <div class="vm-h"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><h3>رؤيتنا</h3></div>
+      <p>تحرص شركة ركن الكيان على تحقيق تصاميم معمارية اقتصادية تتلاقى مع أهداف <b>رؤية المملكة العربية السعودية 2030</b>، وتؤازر التقنيات والأساليب الحديثة لتحقيق التوازن المدروس الدقيق الإبداعي الذي يتماشى مع متطلبات العملاء واهتماماتهم، وهو ما يؤثر إيجابًا على الدقة والإبداع في التصميم. ونسعى دائمًا لأن تصبح شركة ركن الكيان رائدة في مجال الهندسة المدنية والعمرانية والأمن والسلامة على مستوى المملكة العربية السعودية.</p>
+    </article>
+    <article>
+      <div class="vm-h"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><h3>رسالتنا</h3></div>
+      <p>تجتهد شركة ركن الكيان في تقديم خدمات الدفاع المدني والهندسة المعمارية عالية الجودة، من خلال تطبيق <b>كود البناء السعودي</b> والمعايير العالمية بما يحقق قيمة اقتصادية تنافسية للعملاء، والإسهام الفعّال في بناء غدٍ مشرق لمستقبل الأعمال الهندسية والاستشارية، وتقديم معطيات الإتقان والجودة والدقة للوصول إلى الريادة بمفهوم التميز في الخدمات الهندسية والفنية والاستشارية على مستوى المملكة العربية السعودية.</p>
+    </article>
+  </div>
+  <div class="values">
+    <div><span>01</span><b>تصاميم معمارية</b><small>فراغات متوازنة وهوية تنتمي للمكان.</small></div>
+    <div><span>02</span><b>تصاميم داخلية</b><small>خامات وإضاءة وتفاصيل تخدم أسلوب الحياة.</small></div>
+    <div><span>03</span><b>أمن وسلامة</b><small>حلول مدروسة تجعل السلامة جزءًا من التصميم.</small></div>
+  </div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">03</span>
+    </div>
+  </footer></section>
+<section class="page divider">
+  <div class="cover-pattern"></div>
+  <div class="div-in">
+    
+<svg class="roshan dv" viewBox="0 0 120 300" fill="none" stroke="#ead9bd" stroke-width="1.4">
+  <defs>
+    <pattern id="lat-dv" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M6 0L12 6 6 12 0 6z"/><circle cx="6" cy="6" r="1.4"/>
+    </pattern>
+    <clipPath id="clip-dv"><path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/></clipPath>
+  </defs>
+  <path d="M6 298V68Q6 14 60 4q54 10 54 64v230z" stroke-width="2"/>
+  <path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/>
+  <rect x="0" y="0" width="120" height="300" fill="url(#lat-dv)" clip-path="url(#clip-dv)" stroke="none" style="fill-opacity:1"/>
+  <g clip-path="url(#clip-dv)" stroke-width="2.2">
+    <path d="M14 112h92M14 186h92M14 252h92M60 12v284"/>
+  </g>
+  <path d="M0 298h120"/>
+</svg>
+    <div>
+      <span class="pill">خدماتنا</span>
+      <h2>خبرات متكاملة<br><span>لمشروعك القادم.</span></h2>
+      <p>من الفكرة وحتى التسليم، خدمات مترابطة تقلل التعقيد وتمنح المشروع مسارًا أوضح.</p>
+      <ol class="div-list"><li><b>01</b>استشارات هندسية</li><li><b>02</b>أمن وسلامة</li><li><b>03</b>اعتمادات منصة بلدي</li><li><b>04</b>خدمات فندقية متكاملة</li><li><b>05</b>تصاميم معمارية</li><li><b>06</b>تصاميم داخلية</li></ol>
+    </div>
+  </div>
+  <div class="cover-bottom"><div class="shurfat shurfat-paper"></div><div class="cover-bottom-in"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span><span class="pno">04</span></div></div>
+</section>
+<section class="page svc svc-consulting">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>خدماتنا · استشارات هندسية</div>
+  </header><div class="body">
+    <div class="svc-head">
+      <div class="svc-no"><span>01</span><small>خدماتنا</small></div>
+      <div class="svc-title"><div class="kicker"><span class="lantern"></span>ماذا نقدم</div>
+        <h2 class="h">استشارات هندسية<span>حلول واضحة لكل مشروع.</span></h2>
+      </div>
+      <div class="svc-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 6l-6 15M12 6l6 15M7.5 16h9"/><circle cx="12" cy="6" r="1.6"/></svg></div>
+    </div>
+    <p class="lead">دراسة احتياج المشروع وتقديم توصيات تساعد على اختيار الحل الهندسي المناسب، مع خدمات هندسية متكاملة لإنجاز معاملات أمانة جدة وإصدار التراخيص والاعتمادات اللازمة وفق الأنظمة والاشتراطات البلدية، بدقة وكفاءة وسرعة في الإنجاز.</p>
+      <div class="svc-media short"><figure class="arch wide"><img src="assets/img/svc-consulting.jpg" alt=""></figure>
+        <figure class="arch wide"><img src="assets/img/svc-jeddah.jpg" alt=""></figure></div>
+      <h4 class="sub">أنواع الخدمات</h4>
+      <div class="groups g3"><div class="group"><h5>الاستشارات الهندسية</h5><ul class="bul "><li><i></i><span>مراجعة المخططات والمعلومات المتاحة</span></li><li><i></i><span>تحديد التحديات والخيارات الفنية</span></li><li><i></i><span>توصيات واضحة وخطوات مقترحة</span></li><li><i></i><span>تخطيط مراحل المشروع والإشراف على التنفيذ</span></li></ul></div><div class="group"><h5>خدمات أمانة جدة</h5><ul class="bul "><li><i></i><span>رخص بناء (سكني – تجاري)</span></li><li><i></i><span>رخص هدم وترميم وإضافة وتعديل</span></li><li><i></i><span>تحويل من سكني إلى تجاري إداري</span></li><li><i></i><span>شهادة إشغال</span></li><li><i></i><span>شهادة امتثال</span></li></ul></div><div class="group"><h5>الأعمال المساحية</h5><ul class="bul "><li><i></i><span>رفع مساحي</span></li><li><i></i><span>قرارات مساحية وقرارات ذرعة</span></li><li><i></i><span>تحديث وتعديل صكوك</span></li><li><i></i><span>فرز ودمج صكوك</span></li><li><i></i><span>فرز وحدات وتقسيم أراضٍ</span></li><li><i></i><span>حساب كميات القطع الصخري والردم</span></li><li><i></i><span>تصحيح وضع وتحديث قطع أراضٍ</span></li><li><i></i><span>تحديد نقاط الإحداثيات للموقع</span></li><li><i></i><span>كروكيات وأراضٍ فضاء</span></li></ul></div></div><div class="start"><div><b>كيف نبدأ؟</b><p>شاركنا موقع المشروع والوثائق أو المخططات المتاحة ووصف المطلوب، لنحدد نطاق العمل والمخرجات والمدة والتكلفة قبل البدء.</p></div><div class="start-cta"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></div></div></div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">05</span>
+    </div>
+  </footer></section>
+<section class="page svc svc-safety">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>خدماتنا · أمن وسلامة</div>
+  </header><div class="body">
+    <div class="svc-head">
+      <div class="svc-no"><span>02</span><small>خدماتنا</small></div>
+      <div class="svc-title"><div class="kicker"><span class="lantern"></span>ماذا نقدم</div>
+        <h2 class="h">أمن وسلامة<span>نحمي قيمة المشروع وسلامة مستخدميه.</span></h2>
+      </div>
+      <div class="svc-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+    </div>
+    <p class="lead">دراسة متطلبات الأمن والسلامة في المشروع وتجهيز الأعمال الفنية ذات الصلة بالدفاع المدني واستخراج التصاريح والشهادات.</p>
+      <div class="split">
+        <div><h4 class="sub">ماذا تشمل الخدمة؟</h4><ol class="num"><li><b>01</b><span>شهادة إنهاء ومطابقة أعمال</span></li><li><b>02</b><span>إعداد تقرير فني واعتماده</span></li><li><b>03</b><span>إعداد مخططات الإطفاء والحريق والإنذار</span></li><li><b>04</b><span>إعداد جداول الكميات والمواصفات لأعمال التنفيذ</span></li><li><b>05</b><span>الإشراف على التنفيذ والتوريد والتركيب لأدوات السلامة</span></li><li><b>06</b><span>اعتماد التقارير ومخططات السلامة من الدفاع المدني</span></li><li><b>07</b><span>إعداد الحسابات الهيدروليكية للموقع</span></li><li><b>08</b><span>إعداد تقرير دراسة للموقع</span></li></ol></div>
+        <figure class="arch tall"><img src="assets/img/civil-defense.jpg" alt=""></figure>
+      </div>
+      <div class="note"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>معتمدون لدى المديرية العامة للدفاع المدني — ترخيص رقم 100000259</div><div class="start"><div><b>كيف نبدأ؟</b><p>شاركنا موقع المشروع والوثائق أو المخططات المتاحة ووصف المطلوب، لنحدد نطاق العمل والمخرجات والمدة والتكلفة قبل البدء.</p></div><div class="start-cta"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></div></div></div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">06</span>
+    </div>
+  </footer></section>
+<section class="page svc svc-balady">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>خدماتنا · اعتمادات منصة بلدي</div>
+  </header><div class="body">
+    <div class="svc-head">
+      <div class="svc-no"><span>03</span><small>خدماتنا</small></div>
+      <div class="svc-title"><div class="kicker"><span class="lantern"></span>ماذا نقدم</div>
+        <h2 class="h">اعتمادات منصة بلدي<span>ملف هندسي جاهز للاعتماد.</span></h2>
+      </div>
+      <div class="svc-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l-1.5 3h-3L9 8z"/><path d="M4 15h16v3H4zM6 21h12"/></svg></div>
+    </div>
+    <p class="lead">مراجعة وتجهيز الملفات الهندسية المطلوبة لإجراءات الاعتماد عبر منصة بلدي، ومتابعتها حتى الإنجاز.</p>
+      <div class="balady-hero"><figure class="arch wide"><img src="assets/img/balady-building.jpg" alt=""></figure>
+        <div class="balady-logo"><img src="assets/img/balady-logo.webp" alt="بلدي"></div></div>
+      <div class="split even">
+        <div><h4 class="sub">ماذا تشمل الخدمة؟</h4><ol class="num"><li><b>01</b><span>تدقيق المخططات والمرفقات المتاحة</span></li><li><b>02</b><span>تحديد النواقص الفنية في الملف</span></li><li><b>03</b><span>متابعة الملاحظات ضمن نطاق الخدمة</span></li></ol></div>
+        <div><h4 class="sub">مراحل العمل</h4><div class="mini-steps"><div><span>01</span><b>نفهم</b><small>نحدد نوع المعاملة والمتطلبات والوثائق اللازمة.</small></div><div><span>02</span><b>نجهّز</b><small>نُعدّ المخططات والمرفقات الهندسية المطلوبة.</small></div><div><span>03</span><b>نراجع</b><small>نتحقق من اكتمال الملف ومطابقته للاشتراطات.</small></div><div><span>04</span><b>نتابع</b><small>نتابع الملاحظات حتى صدور الاعتماد.</small></div></div></div>
+      </div>
+      <div class="note"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l-1.5 3h-3L9 8z"/><path d="M4 15h16v3H4zM6 21h12"/></svg>معتمدون لدى أمانة محافظة جدة (بلدي) — ترخيص رقم 4400377930</div><div class="start"><div><b>كيف نبدأ؟</b><p>شاركنا موقع المشروع والوثائق أو المخططات المتاحة ووصف المطلوب، لنحدد نطاق العمل والمخرجات والمدة والتكلفة قبل البدء.</p></div><div class="start-cta"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></div></div></div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">07</span>
+    </div>
+  </footer></section>
+<section class="page svc svc-hotel">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>خدماتنا · خدمات فندقية متكاملة</div>
+  </header><div class="body">
+    <div class="svc-head">
+      <div class="svc-no"><span>04</span><small>خدماتنا</small></div>
+      <div class="svc-title"><div class="kicker"><span class="lantern"></span>ماذا نقدم</div>
+        <h2 class="h">خدمات فندقية متكاملة<span>من التأسيس حتى آخر التفاصيل.</span></h2>
+      </div>
+      <div class="svc-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l2.5 2.5M18.5 4.5L21 7"/></svg></div>
+    </div>
+    <p class="lead">تأسيس الفنادق بالكامل وتأثيثها وتجهيزها بكل ما تحتاجه للتشغيل، بخيارات مدروسة تجمع الجودة وراحة النزيل.</p>
+      <div class="svc-media one"><figure class="arch wide"><img src="assets/img/svc-hotel.jpg" alt=""></figure></div>
+      <h4 class="sub">ماذا تشمل الخدمة؟</h4>
+      <div class="tiles"><div class="wide"><span>01</span>تأسيس فنادق بالكامل وتأثيث</div><div class=""><span>02</span>غرف نوم</div><div class=""><span>03</span>كنب</div><div class=""><span>04</span>ستائر</div><div class=""><span>05</span>أدوات نظافة – صابون – مناشف</div><div class=""><span>06</span>إكسسوارات – مفارش – مخدات</div><div class=""><span>07</span>أدوات كهربائية – سخان – تلفزيون – ثلاجة – غسالة</div></div><div class="start"><div><b>كيف نبدأ؟</b><p>شاركنا موقع المشروع والوثائق أو المخططات المتاحة ووصف المطلوب، لنحدد نطاق العمل والمخرجات والمدة والتكلفة قبل البدء.</p></div><div class="start-cta"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></div></div></div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">08</span>
+    </div>
+  </footer></section>
+<section class="page svc svc-arch">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>خدماتنا · تصاميم معمارية</div>
+  </header><div class="body">
+    <div class="svc-head">
+      <div class="svc-no"><span>05</span><small>خدماتنا</small></div>
+      <div class="svc-title"><div class="kicker"><span class="lantern"></span>ماذا نقدم</div>
+        <h2 class="h">تصاميم معمارية<span>من ملامح الفكرة إلى هوية المبنى.</span></h2>
+      </div>
+      <div class="svc-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5M8 10h2M14 10h2M8 13.5h2M14 13.5h2"/></svg></div>
+    </div>
+    <p class="lead">تحويل فكرة المشروع إلى تصميم معماري يجمع بين الوظيفة والهوية وحسن استغلال المساحات.</p>
+      <div class="svc-media"><figure class="arch wide"><img src="assets/img/svc-arch.jpg" alt=""></figure><figure class="arch wide"><img src="assets/img/arch-contemporary.jpg" alt=""></figure></div>
+      <h4 class="sub">ماذا تشمل الخدمة؟</h4>
+      <div class="groups g3"><div class="group"><h5>أنواع المشاريع</h5><ul class="bul "><li><i></i><span>مركز إداري تجاري</span></li><li><i></i><span>عمارة سكنية</span></li><li><i></i><span>مركز تجاري</span></li><li><i></i><span>فيلا دوبلكس</span></li><li><i></i><span>فيلا سكنية</span></li><li><i></i><span>محطة وقود</span></li></ul></div><div class="group"><h5>التقارير</h5><ul class="bul "><li><i></i><span>تقرير تربة</span></li><li><i></i><span>تقرير خرسانة</span></li><li><i></i><span>تقرير فني</span></li><li><i></i><span>تقرير معاينة</span></li></ul></div><div class="group"><h5>المخططات</h5><ul class="bul "><li><i></i><span>تصميم مخططات معمارية</span></li><li><i></i><span>تصميم مخططات إنشائية</span></li><li><i></i><span>مخططات ميكانيكية وكهربائية وكفاءة طاقة</span></li><li><i></i><span>إضافة أدوار وعدادات كهربائية</span></li></ul></div></div><div class="start"><div><b>كيف نبدأ؟</b><p>شاركنا موقع المشروع والوثائق أو المخططات المتاحة ووصف المطلوب، لنحدد نطاق العمل والمخرجات والمدة والتكلفة قبل البدء.</p></div><div class="start-cta"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></div></div></div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">09</span>
+    </div>
+  </footer></section>
+<section class="page svc svc-interior">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>خدماتنا · تصاميم داخلية</div>
+  </header><div class="body">
+    <div class="svc-head">
+      <div class="svc-no"><span>06</span><small>خدماتنا</small></div>
+      <div class="svc-title"><div class="kicker"><span class="lantern"></span>ماذا نقدم</div>
+        <h2 class="h">تصاميم داخلية<span>تفاصيل تعكسك، ومساحات تحتضن يومك.</span></h2>
+      </div>
+      <div class="svc-icon"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 12a2 2 0 014 0v2h10v-2a2 2 0 014 0v5H3zM5 17v2M19 17v2"/></svg></div>
+    </div>
+    <p class="lead">تصميم مساحات داخلية متناسقة تعكس هوية المكان وتخدم الاستخدام اليومي، بخامات وإضاءة وتفاصيل تخدم أسلوب الحياة.</p>
+      <div class="mosaic"><figure class="arch tall"><img src="assets/img/proj-interior.jpg" alt=""></figure>
+        <div><figure class="arch wide"><img src="assets/img/svc-interior.jpg" alt=""></figure><figure class="arch wide"><img src="assets/img/living.jpg" alt=""></figure></div></div>
+      <h4 class="sub">ماذا تشمل الخدمة؟</h4>
+      <div class="cards3"><div><span>01</span><b>توزيع الأثاث والحركة</b></div><div><span>02</span><b>اختيار الخامات والألوان والإضاءة</b></div><div><span>03</span><b>إعداد التصورات والتفاصيل حسب الاتفاق</b></div></div><div class="start"><div><b>كيف نبدأ؟</b><p>شاركنا موقع المشروع والوثائق أو المخططات المتاحة ووصف المطلوب، لنحدد نطاق العمل والمخرجات والمدة والتكلفة قبل البدء.</p></div><div class="start-cta"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></div></div></div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">10</span>
+    </div>
+  </footer></section>
+<section class="page cert-intro">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="kicker"><span class="lantern"></span>تراخيص وشهادات الشركة</div>
+  <h2 class="h">اعتمادات نعتز بها.<span>شركة ذات مسؤولية محدودة — معتمدة لدى الجهات الرسمية في المملكة.</span></h2>
+  <div class="creds">
+    <div class="cred"><span class="cn">01</span><b>معتمد لدى الهيئة السعودية للمهندسين</b><small>رقم الترخيص</small><bdi>5100002715</bdi></div>
+    <div class="cred"><span class="cn">02</span><b>معتمد لدى أمانة جدة (بلدي)</b><small>رقم الترخيص</small><bdi>4400377930</bdi></div>
+    <div class="cred"><span class="cn">03</span><b>معتمد لدى الدفاع المدني (الأمن والسلامة)</b><small>رقم الترخيص</small><bdi>100000259</bdi></div>
+    <div class="cred"><span class="cn">04</span><b>السجل التجاري</b><small>الرقم الوطني الموحد</small><bdi>7032491412</bdi></div>
+  </div>
+  <div class="cert-index">
+    <h4 class="sub">محتوى قسم الشهادات</h4>
+    <ol><li>السجل التجاري</li><li>ترخيص الهيئة السعودية للمهندسين</li><li>شهادة تسجيل مكتب هندسي — أمانة جدة</li><li>رخصة نشاط تجاري — بلدي</li><li>ترخيص الدفاع المدني</li><li>ترخيص مزاولة نشاط — سلامة</li><li>شهادة ضريبة القيمة المضافة</li></ol>
+  </div>
+  
+<svg class="roshan ci" viewBox="0 0 120 300" fill="none" stroke="#702820" stroke-width="1.4">
+  <defs>
+    <pattern id="lat-ci" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M6 0L12 6 6 12 0 6z"/><circle cx="6" cy="6" r="1.4"/>
+    </pattern>
+    <clipPath id="clip-ci"><path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/></clipPath>
+  </defs>
+  <path d="M6 298V68Q6 14 60 4q54 10 54 64v230z" stroke-width="2"/>
+  <path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/>
+  <rect x="0" y="0" width="120" height="300" fill="url(#lat-ci)" clip-path="url(#clip-ci)" stroke="none" style="fill-opacity:1"/>
+  <g clip-path="url(#clip-ci)" stroke-width="2.2">
+    <path d="M14 112h92M14 186h92M14 252h92M60 12v284"/>
+  </g>
+  <path d="M0 298h120"/>
+</svg>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">11</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-single">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-01</small></div>
+      <figcaption>السجل التجاري</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">12</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-single">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-02</small></div>
+      <figcaption>ترخيص الهيئة السعودية للمهندسين</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">13</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-single">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-03</small></div>
+      <figcaption>شهادة تسجيل مكتب هندسي — أمانة جدة</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">14</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-single">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-04</small></div>
+      <figcaption>رخصة نشاط تجاري — بلدي</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">15</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-double">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-05</small></div>
+      <figcaption>ترخيص الدفاع المدني</figcaption></figure><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-06</small></div>
+      <figcaption>ترخيص مزاولة نشاط — سلامة</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">16</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-double">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-07</small></div>
+      <figcaption>شهادة ضريبة القيمة المضافة</figcaption></figure><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-08</small></div>
+      <figcaption>شهادة / اعتماد</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">17</span>
+    </div>
+  </footer></section>
+<section class="page cert cert-double">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/company-logo.png" alt=""></span>
+      <span><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></span></div>
+    <div class="section-tag"><i></i>التراخيص والشهادات</div>
+  </header><div class="body">
+  <div class="cert-slots"><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-09</small></div>
+      <figcaption>شهادة / اعتماد</figcaption></figure><figure class="slot ">
+      <div class="slot-empty"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><b>مساحة مخصصة للشهادة</b><small>cert-10</small></div>
+      <figcaption>شهادة / اعتماد</figcaption></figure></div>
+</div>
+  <footer class="foot">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in">
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
+      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+      <span class="pno">18</span>
+    </div>
+  </footer></section>
+<section class="page back">
+  <div class="cover-pattern"></div>
+  <div class="back-in">
+    <div class="cover-logo big"><img src="assets/img/company-logo.png" alt=""></div>
+    <h1>شركة ركن الكيان</h1><p class="sub-name">للاستشارات الهندسية</p>
+    <p class="tag">استشارات هندسية • أمن وسلامة<br><span>حلول مبنية على الدقة والثقة.</span></p>
+    <h2>جاهز تبدأ مشروعك؟</h2>
+    <p class="muted-l">كلّمنا على واتساب أو اتصل بنا، ونرتّب معك الخطوة الجاية بوضوح.</p>
+    <div class="contact-grid">
+      <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><small>اتصال</small><bdi>053 422 4100</bdi></div>
+      <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><small>الرقم الثابت / واتساب</small><bdi>012 614 1093</bdi></div>
+      <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><small>الموقع الإلكتروني</small><bdi>roukn-alkayan.com</bdi></div>
+      <div><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 005 0V12a9 9 0 10-3.5 7.1"/></svg><small>تابعنا</small><bdi>@ruoknalkayan</bdi></div>
+    </div>
+    <div class="addr"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>جدة، حي العزيزية، تقاطع غرناطة مع المكرونة، مركز سولدير، الدور الثاني، مكتب رقم 234</span></div>
+    <div class="qrs">
+      <div><img src="assets/img/qr-site.svg" alt=""><small>الموقع الإلكتروني</small></div>
+      <div><img src="assets/img/qr-whatsapp.svg" alt=""><small>واتساب</small></div>
+    </div>
+  </div>
+  <div class="cover-bottom"><div class="shurfat shurfat-paper"></div>
+    <div class="back-creds"><div><b>معتمد لدى الهيئة السعودية للمهندسين</b><small>رقم الترخيص: <bdi>5100002715</bdi></small></div><div><b>معتمد لدى أمانة جدة (بلدي)</b><small>رقم الترخيص: <bdi>4400377930</bdi></small></div><div><b>معتمد لدى الدفاع المدني (الأمن والسلامة)</b><small>رقم الترخيص: <bdi>100000259</bdi></small></div><div><b>السجل التجاري</b><small>الرقم الوطني الموحد: <bdi>7032491412</bdi></small></div></div>
+  </div>
+</section></body></html>

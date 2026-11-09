@@ -4,3 +4,4 @@ dist/
 *.log
 Thumbs.db
 Desktop.ini
+brochure/output/preview/
