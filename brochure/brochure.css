@@ -288,34 +288,3 @@ img { display: block; }
 .back-creds b { display: block; font-size: 8pt; line-height: 1.5; }
 .back-creds small { font-size: 7.6pt; color: var(--muted); }
 .back-creds bdi { color: var(--red-deep); font-size: 8.4pt; }
-
-/* ---------- الغلاف (مستوحى من أول شاشة في الموقع) ---------- */
-.kcover { background: var(--paper) var(--roshan); }
-.kc-hero { position: relative; height: 196mm; flex: none; }
-.kc-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
-.kc-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, #1d0f0bd9 0%, #1d0f0b88 55%, #1d0f0b33 100%); z-index: 1; }
-.kc-pat { position: absolute; inset: 0; background: var(--roshan-light); background-size: 44px 44px; z-index: 1; opacity: .7; -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 60%); }
-.kc-edge { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; }
-.kc-nav { position: absolute; z-index: 2; top: 10mm; left: 10mm; right: 10mm; background: var(--card); border-radius: 99px; padding: 2.4mm 3mm 2.4mm 5mm; display: flex; align-items: center; justify-content: space-between; }
-.kc-lg { display: flex; align-items: center; gap: 2.4mm; }
-.kc-lg span { width: 10mm; height: 10mm; border-radius: 2.6mm; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; }
-.kc-lg img { width: 7.4mm; }
-.kc-lg b { display: block; font-family: var(--head); font-weight: 600; font-size: 10.4pt; color: var(--ink); }
-.kc-lg small { font-size: 7.4pt; color: var(--muted); }
-.kc-btn { background: var(--red); color: #fff; border-radius: 99px; padding: 2mm 4.4mm; font-size: 8.6pt; font-weight: 700; }
-.kc-copy { position: absolute; z-index: 2; right: 14mm; left: 40mm; bottom: 24mm; color: #fff; }
-.kc-k { display: inline-flex; align-items: center; gap: 2mm; font-size: 10pt; font-weight: 700; }
-.kc-k .kw { width: 4.6mm; height: 5.4mm; }
-.kc-copy h1 { font-family: var(--head); font-weight: 600; font-size: 46pt; line-height: 1.15; margin-top: 4mm; }
-.kc-copy h1 span { color: var(--cream); font-weight: 500; }
-.kc-copy p { font-size: 11pt; line-height: 1.85; color: #f3e9dd; margin-top: 4mm; }
-.kc-low { flex: 1; padding: 9mm 12mm; display: flex; flex-direction: column; justify-content: center; gap: 7mm; }
-.kc-id b { display: block; font-family: var(--head); font-weight: 600; font-size: 18pt; color: var(--red-deep); }
-.kc-id small { font-size: 9.4pt; color: var(--muted); font-family: TajawalLatin, sans-serif; }
-.kc-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; }
-.kc-trust > div { background: var(--card); border: 1px solid var(--line); border-radius: 5mm; display: flex; align-items: center; gap: 3.4mm; padding: 5mm; }
-.kc-ic { width: 11mm; height: 11mm; border-radius: 3mm; background: #efe4dc; display: grid; place-items: center; color: var(--red-deep); flex: none; }
-.kc-ic .ic { font-size: 15pt; }
-.kc-trust b { display: block; font-family: var(--head); font-weight: 600; font-size: 14pt; color: var(--ink); line-height: 1.1; }
-.kc-trust small { font-size: 8.8pt; color: var(--muted); }
-.kc-foot { justify-content: center; }

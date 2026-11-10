@@ -188,36 +188,29 @@ const numbered = (items) => `<ol class="num">${items.map((t, i) => `<li><b>${Str
 const startBand = () => `<div class="start"><div><b>كيف نبدأ؟</b><p>${START_TEXT}</p></div><div class="start-cta">${icon('phone')}<bdi>${site.phone}</bdi></div></div>`;
 
 /* ---------------- الغلاف ---------------- */
-// الغلاف مبني من أول شاشة في الموقع: صورة + شريط علوي + عنوان + شرفات + بطاقات الثقة
-const winIcon = '<svg class="kw" viewBox="0 0 20 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 23V9a7 7 0 0114 0v14z"/><path d="M3 15h14M10 3v20M3 19h14M6.5 11h7"/><path d="M1 23h18"/></svg>';
-const flameIc = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-3.5 0-6-2.5-6-5.6 0-3.6 3-5.4 3.6-9.4 2.4 1.6 3.6 3.6 3.4 6 1-.6 1.8-1.6 2-3 1.8 1.6 3 3.8 3 6.4 0 3.1-2.5 5.6-6 5.6z"/></svg>';
-const layersIc = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>';
-const cover = () => page('kcover', `
-  <div class="kc-hero">
-    <img class="kc-bg" src="${img('svc-arch.jpg')}" alt=""><div class="kc-pat"></div>
-    <div class="kc-nav">
-      <div class="kc-lg"><span><img src="${img('company-logo.png')}" alt=""></span><div><b>${site.nameAr}</b><small>هندسة · استشارات · أمن وسلامة</small></div></div>
-      <span class="kc-btn">الملف التعريفي 2026</span>
-    </div>
-    <div class="kc-copy">
-      <span class="kc-k">${winIcon}مكتب هندسي معتمد في جدة</span>
-      <h1>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h1>
-      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
-    </div>
-    <div class="${shurfatClass('paper')} kc-edge"></div>
+const cover = () => page('cover', `
+  <div class="cover-pattern"></div>
+  <div class="cover-top">
+    <div class="cover-logo"><img src="${img('company-logo.png')}" alt=""></div>
+    <div class="cover-name"><h1>${site.nameAr}</h1><p>${site.subAr}</p><em>${site.nameEn}</em></div>
   </div>
-  <div class="kc-low">
-    <div class="kc-id"><b>${site.nameAr} ${site.subAr}</b><small>${site.nameEn}</small></div>
-    <div class="kc-trust">
-      <div><span class="kc-ic">${icon('shield')}</span><div><b>معتمد</b><small>لدى أمانة جدة</small></div></div>
-      <div><span class="kc-ic">${flameIc}</span><div><b>معتمد</b><small>لدى الدفاع المدني</small></div></div>
-      <div><span class="kc-ic">${icon('building')}</span><div><b>+120</b><small>مشروع منجز</small></div></div>
-      <div><span class="kc-ic">${layersIc}</span><div><b>+16</b><small>خدمة هندسية متكاملة</small></div></div>
+  <div class="cover-mid">
+    <div class="cover-copy">
+      <span class="pill">مكتب هندسي معتمد في جدة</span>
+      <h2>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h2>
+      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
+      <div class="cover-trust">
+        <div><b>معتمد</b><small>لدى أمانة جدة</small></div>
+        <div><b>معتمد</b><small>لدى الدفاع المدني</small></div>
+        <div><b>+120</b><small>مشروع منجز</small></div>
+      </div>
     </div>
+    <div class="cover-arch"><img src="${img('hero-interior.jpg')}" alt=""></div>
+    ${roshan('cv', '#ead9bd')}
   </div>
   <div class="cover-bottom">
-    <div class="${shurfatClass('deep')}"></div>
-    <div class="foot-in kc-foot">
+    <div class="${shurfatClass('paper')}"></div>
+    <div class="cover-bottom-in">
       <span>${icon('phone')}<bdi>${site.phone}</bdi></span>
       <span>${icon('tel')}<bdi>${site.landline}</bdi></span>
       <span>${icon('globe')}<bdi>${site.web}</bdi></span>
