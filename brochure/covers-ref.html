@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>أغلفة على المراجع</title>
+<link rel="stylesheet" href="brochure.css">
+<style>
+@font-face { font-family: TajX; font-weight: 800; src: url(assets/fonts/tajawal-arabic-800.woff2); }
+@font-face { font-family: TajX; font-weight: 900; src: url(assets/fonts/tajawal-arabic-900.woff2); }
+@font-face { font-family: TajXL; font-weight: 800; src: url(assets/fonts/tajawal-latin-800.woff2); }
+.pg { width: 210mm; height: 297mm; position: relative; overflow: hidden; margin: 8mm auto; }
+.X { font-family: TajX, TajXL, sans-serif; font-weight: 900; }
+
+/* ================= R1: على ستايل "أثر" ================= */
+.r1 { background: #3a120e; color: #fff; }
+.r1 .bgp { position: absolute; inset: 0; background: var(--roshan-light); background-size: 44px 44px; opacity: .55; }
+.r1 .sh1 { position: absolute; left: -40mm; bottom: -30mm; width: 170mm; height: 170mm; background: #ffffff08; transform: rotate(45deg); }
+.r1 .sh2 { position: absolute; right: -60mm; bottom: 20mm; width: 140mm; height: 140mm; background: #ffffff06; transform: rotate(45deg); }
+.r1 .sh3 { position: absolute; left: 0; bottom: 0; width: 60mm; height: 80mm; background: repeating-linear-gradient(-45deg, transparent 0 5mm, #ffffff0d 5mm 5.6mm); }
+.r1 .top { position: absolute; top: 16mm; left: 13mm; right: 13mm; display: flex; align-items: center; gap: 5mm; z-index: 2; }
+.r1 .top .brand { display: flex; align-items: center; gap: 3mm; }
+.r1 .top .brand span { width: 15mm; height: 15mm; background: var(--paper); border-radius: 2.6mm; display: grid; place-items: center; }
+.r1 .top .brand img { width: 11mm; }
+.r1 .top .brand b { display: block; font-family: var(--head); font-weight: 600; font-size: 13pt; color: #fff; }
+.r1 .top .brand small { display: block; font-size: 8pt; color: var(--cream); }
+.r1 .top .brand em { display: block; font-style: normal; font-family: TajawalLatin; font-size: 7pt; color: #c4a69d; direction: ltr; text-align: right; }
+.r1 .top .line { flex: 1; height: .3mm; background: #ead9bd66; }
+.r1 .top .dd { display: flex; gap: .6mm; }
+.r1 .top .dd i { width: 4mm; height: 4mm; border: .5mm solid #fff; transform: rotate(45deg); }
+.r1 .top .dd i + i { background: #fff; }
+.r1 h1 { position: absolute; z-index: 2; top: 50mm; right: 13mm; left: 13mm; font-size: 56pt; line-height: 1.32; letter-spacing: 0; }
+.r1 h1 .c { color: var(--cream); }
+.r1 .stage { position: absolute; z-index: 2; top: 128mm; left: 13mm; right: 13mm; height: 118mm; }
+.r1 .panel { position: absolute; top: 4mm; bottom: 4mm; right: 0; left: 30mm; background: #ffffff0d; border-radius: 3mm; }
+.r1 .tab { position: absolute; left: 0; top: 0; bottom: 0; width: 84mm; background: #111; border-radius: 6mm; padding: 2.6mm; box-shadow: 0 8mm 20mm -6mm #000c, 0 0 0 .5mm #555; }
+.r1 .tab img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 3.6mm; }
+.r1 .grid { position: absolute; right: 8mm; top: 12mm; bottom: 12mm; width: 80mm; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.r1 .it { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2.4mm; position: relative; padding: 0 2mm; }
+.r1 .it svg { width: 11mm; height: 11mm; color: var(--cream); }
+.r1 .it b { font-size: 9.6pt; font-weight: 700; line-height: 1.45; color: #fff; }
+.r1 .it::before { content: ''; position: absolute; left: 0; top: 30%; bottom: 30%; width: .3mm; background: #ead9bd55; }
+.r1 .it:nth-child(even)::before { display: none; }
+.r1 .it::after { content: ''; position: absolute; left: -1.1mm; top: 50%; width: 2mm; height: 2mm; background: var(--cream); transform: translateY(-50%) rotate(45deg); }
+.r1 .it:nth-child(even)::after { display: none; }
+.r1 .foot { position: absolute; z-index: 2; left: 13mm; right: 13mm; bottom: 12mm; display: flex; justify-content: space-between; align-items: center; font-family: TajawalLatin; font-size: 9.6pt; color: #ead9bdcc; }
+.r1 .foot span { display: flex; align-items: center; gap: 2mm; }
+
+/* ================= R2: على ستايل "الماجدية" ================= */
+.r2 { background: #ccc; }
+.r2 .ph { position: absolute; inset: 0; }
+.r2 .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 66% 55%; transform: scale(1.18); transform-origin: 66% 70%; }
+.r2 .ph::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #2b1a14b0 0%, transparent 30%); }
+.r2 .side { position: absolute; z-index: 3; top: 30mm; left: 12mm; color: #fff; text-align: center; text-shadow: 0 1px 6px #0006; }
+.r2 .side b { display: block; font-family: TajX; font-weight: 900; font-size: 17pt; line-height: 1; }
+.r2 .side small { font-size: 7pt; }
+.r2 .card { position: absolute; z-index: 2; top: 14mm; right: 12mm; width: 128mm; height: 102mm; background: #ffffffee; }
+.r2 .card .lg { position: absolute; top: 9mm; right: 8mm; display: flex; align-items: center; gap: 2.4mm; }
+.r2 .card .lg img { width: 12mm; }
+.r2 .card .lg b { display: block; font-family: var(--head); font-weight: 600; font-size: 9.6pt; color: var(--red-deep); }
+.r2 .card .lg small { display: block; font-family: TajawalLatin; font-size: 6.6pt; color: var(--muted); letter-spacing: .08em; }
+.r2 .card .star { position: absolute; top: 9mm; left: 40mm; color: var(--red-deep); font-size: 15pt; }
+.r2 .t1 { position: absolute; z-index: 3; top: 40mm; right: 18mm; font-size: 86pt; color: #2a1a16; line-height: 1; white-space: nowrap; }
+.r2 .t2 { position: absolute; z-index: 3; top: 72mm; right: 18mm; font-size: 27pt; color: #2a1a16; line-height: 1; white-space: nowrap; }
+.r2 .box { position: absolute; z-index: 3; top: 92mm; left: 12mm; background: var(--red-deep); color: #fff; font-size: 21pt; padding: 3.4mm 8mm 4.4mm; }
+.r2 .arrow { position: absolute; z-index: 3; top: 103mm; right: 20mm; width: 78mm; height: .55mm; background: #2a1a16; }
+.r2 .arrow::after { content: ''; position: absolute; left: 0; top: -2.4mm; width: 4.8mm; height: 4.8mm; border-left: .55mm solid #2a1a16; border-bottom: .55mm solid #2a1a16; transform: rotate(45deg); }
+.r2 .feats { position: absolute; z-index: 3; right: 12mm; bottom: 28mm; display: grid; grid-template-columns: auto auto; gap: 4mm 9mm; }
+.r2 .f { display: flex; align-items: center; }
+.r2 .f .i { width: 10mm; height: 10mm; background: #fff; display: grid; place-items: center; color: var(--red-deep); }
+.r2 .f .i svg { width: 6mm; height: 6mm; }
+.r2 .f .l { width: 5mm; height: .4mm; background: #fff; position: relative; }
+.r2 .f .l::before, .r2 .f .l::after { content: ''; position: absolute; top: -.7mm; width: 1.8mm; height: 1.8mm; background: #fff; }
+.r2 .f .l::before { right: -.4mm; } .r2 .f .l::after { left: -.4mm; }
+.r2 .f .t { border: .4mm solid #fff; color: #fff; font-size: 10pt; font-weight: 700; padding: 2mm 3mm; min-width: 35mm; text-align: center; line-height: 1.35; background: #00000026; }
+.r2 .soc { position: absolute; z-index: 3; left: 12mm; bottom: 30mm; border: .4mm solid #fff; color: #fff; font-family: TajawalLatin; font-size: 9.4pt; padding: 1.8mm 3mm; }
+.r2 .cr { position: absolute; z-index: 3; bottom: 10mm; left: 0; right: 0; display: flex; justify-content: center; gap: 4mm; color: #ffffffd9; font-family: TajawalLatin; font-size: 8.6pt; align-items: center; }
+.r2 .cr i { width: 10mm; height: .3mm; background: #ffffffaa; }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="s-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 6l-6 15M12 6l6 15M7.5 16h9"/><circle cx="12" cy="6" r="1.6"/></g></symbol>
+  <symbol id="s-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+  <symbol id="s-stamp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l-1.5 3h-3L9 8z"/><path d="M4 15h16v3H4zM6 21h12"/></g></symbol>
+  <symbol id="s-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9h16v11M2 20h20M7 9V5h10v4M9 13h2M13 13h2M9 16h2M13 16h2"/></g></symbol>
+  <symbol id="s-bld" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5M8 10h2M14 10h2M8 13.5h2M14 13.5h2"/></g></symbol>
+  <symbol id="s-sofa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 12a2 2 0 014 0v2h10v-2a2 2 0 014 0v5H3zM5 17v2M19 17v2"/></g></symbol>
+</defs></svg>
+
+<!-- ================= R1 ================= -->
+<section class="pg r1">
+  <div class="bgp"></div><div class="sh1"></div><div class="sh2"></div><div class="sh3"></div>
+  <div class="top">
+    <div class="brand"><span><img src="assets/img/company-logo.png" alt=""></span><div><b>ركن الكيان</b><small>للاستشارات الهندسية</small><em>Roukn Al-Kayan</em></div></div>
+    <div class="line"></div>
+    <div class="dd"><i></i><i></i></div>
+  </div>
+  <h1 class="X">نصمّـــــــم المساحـــة،<br><span class="c">ونحمـــي قيمتهـــــا</span></h1>
+  <div class="stage">
+    <div class="panel"></div>
+    <div class="tab"><img src="output/preview/page-05.png" alt=""></div>
+    <div class="grid">
+      <div class="it"><svg><use href="#s-compass"/></svg><b>استشارات<br>هندسية</b></div>
+      <div class="it"><svg><use href="#s-shield"/></svg><b>أمن وسلامة<br>(دفاع مدني)</b></div>
+      <div class="it"><svg><use href="#s-stamp"/></svg><b>اعتمادات<br>منصة بلدي</b></div>
+      <div class="it"><svg><use href="#s-key"/></svg><b>خدمات فندقية<br>متكاملة</b></div>
+      <div class="it"><svg><use href="#s-bld"/></svg><b>تصاميم<br>معمارية</b></div>
+      <div class="it"><svg><use href="#s-sofa"/></svg><b>تصاميم<br>داخلية</b></div>
+    </div>
+  </div>
+  <div class="foot"><span>roukn-alkayan.com</span><span><bdi>@ruoknalkayan</bdi> · <bdi>053 422 4100</bdi></span></div>
+</section>
+
+<!-- ================= R2 ================= -->
+<section class="pg r2">
+  <div class="ph"><img src="assets/img/svc-arch.jpg" alt=""></div>
+  <div class="side"><b>جدة</b><small>حي العزيزية</small></div>
+  <div class="card">
+    <div class="lg"><img src="assets/img/company-logo.png" alt=""><div><b>شركة ركن الكيان</b><small>ROUKN AL-KAYAN</small></div></div>
+    <div class="star">✦</div>
+  </div>
+  <div class="t1 X">نصمّـــــم</div>
+  <div class="t2 X">المساحة ونحمي قيمتهــا</div>
+  <div class="arrow"></div>
+  <div class="box X">في جدّة</div>
+  <div class="feats">
+    <div class="f"><span class="i"><svg><use href="#s-bld"/></svg></span><span class="l"></span><span class="t">تصاميم معمارية</span></div>
+    <div class="f"><span class="i"><svg><use href="#s-shield"/></svg></span><span class="l"></span><span class="t">أمن وسلامة</span></div>
+    <div class="f"><span class="i"><svg><use href="#s-sofa"/></svg></span><span class="l"></span><span class="t">تصاميم داخلية</span></div>
+    <div class="f"><span class="i"><svg><use href="#s-stamp"/></svg></span><span class="l"></span><span class="t">اعتمادات بلدي</span></div>
+  </div>
+  <div class="soc"><bdi>@ruoknalkayan</bdi></div>
+  <div class="cr"><bdi>roukn-alkayan.com</bdi><i></i><bdi>053 422 4100</bdi></div>
+</section>
+</body></html>
