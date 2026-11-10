@@ -292,51 +292,61 @@ img { display: block; }
 .back-creds b { display: block; font-size: 8pt; line-height: 1.5; }
 .back-creds small { font-size: 7.6pt; color: var(--muted); }
 .back-creds bdi { color: var(--red-deep); font-size: 8.4pt; }
+
+
+/* ---------- الغلاف (على ستايل المرجع) ---------- */
+@font-face { font-family: TajX; font-weight: 900; src: url(assets/fonts/tajawal-arabic-900.woff2); }
+@font-face { font-family: TajXL; font-weight: 800; src: url(assets/fonts/tajawal-latin-800.woff2); }
+.X { font-family: TajX, TajXL, sans-serif; font-weight: 900; }
+.r2 { background: #ccc; }
+.r2 .ph { position: absolute; inset: 0; }
+.r2 .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 66% 55%; transform: scale(1.18); transform-origin: 66% 70%; }
+.r2 .ph::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #2b1a14b0 0%, transparent 30%); }
+.r2 .side { position: absolute; z-index: 3; top: 30mm; left: 12mm; color: #fff; text-align: center; text-shadow: 0 1px 6px #0006; }
+.r2 .side b { display: block; font-family: TajX; font-weight: 900; font-size: 17pt; line-height: 1; }
+.r2 .side small { font-size: 7pt; }
+.r2 .card { position: absolute; z-index: 2; top: 14mm; right: 12mm; width: 122mm; height: 96mm; background: #ffffffee; }
+.r2 .card .lg { position: absolute; top: 9mm; right: 8mm; display: flex; align-items: center; gap: 2.4mm; }
+.r2 .card .lg img { width: 12mm; }
+.r2 .card .lg b { display: block; font-family: var(--head); font-weight: 600; font-size: 9.6pt; color: var(--red-deep); }
+.r2 .card .lg small { display: block; font-family: TajawalLatin; font-size: 6.6pt; color: var(--muted); letter-spacing: .08em; }
+.r2 .card .star { position: absolute; top: 9mm; left: 40mm; color: var(--red-deep); font-size: 15pt; }
+.r2 .t1 { position: absolute; z-index: 3; top: 43mm; right: 19mm; font-size: 62pt; color: #2a1a16; line-height: 1; white-space: nowrap; }
+.r2 .t2 { position: absolute; z-index: 3; top: 68mm; right: 19mm; font-size: 21pt; color: #2a1a16; line-height: 1; white-space: nowrap; }
+.r2 .box { position: absolute; z-index: 3; top: 86mm; left: 52mm; background: var(--red-deep); color: #fff; font-size: 16pt; padding: 2.6mm 7mm 3.4mm; }
+.r2 .arrow { position: absolute; z-index: 3; top: 93.6mm; right: 21mm; width: 92mm; height: .55mm; background: #2a1a16; }
+.r2 .arrow::after { content: ''; position: absolute; left: 0; top: -2.4mm; width: 4.8mm; height: 4.8mm; border-left: .55mm solid #2a1a16; border-bottom: .55mm solid #2a1a16; transform: rotate(45deg); }
+.r2 .feats { position: absolute; z-index: 3; right: 12mm; bottom: 28mm; display: grid; grid-template-columns: auto auto; gap: 4mm 9mm; }
+.r2 .f { display: flex; align-items: center; }
+.r2 .f .i { width: 10mm; height: 10mm; background: #fff; display: grid; place-items: center; color: var(--red-deep); }
+.r2 .f .i svg { width: 6mm; height: 6mm; }
+.r2 .f .l { width: 5mm; height: .4mm; background: #fff; position: relative; }
+.r2 .f .l::before, .r2 .f .l::after { content: ''; position: absolute; top: -.7mm; width: 1.8mm; height: 1.8mm; background: #fff; }
+.r2 .f .l::before { right: -.4mm; } .r2 .f .l::after { left: -.4mm; }
+.r2 .f .t { border: .4mm solid #fff; color: #fff; font-size: 10pt; font-weight: 700; padding: 2mm 3mm; min-width: 35mm; text-align: center; line-height: 1.35; background: #00000026; }
+.r2 .soc { position: absolute; z-index: 3; left: 12mm; bottom: 30mm; border: .4mm solid #fff; color: #fff; font-family: TajawalLatin; font-size: 9.4pt; padding: 1.8mm 3mm; }
+.r2 .cr { position: absolute; z-index: 3; bottom: 10mm; left: 0; right: 0; display: flex; justify-content: center; gap: 4mm; color: #ffffffd9; font-family: TajawalLatin; font-size: 8.6pt; align-items: center; }
+.r2 .cr i { width: 10mm; height: .3mm; background: #ffffffaa; }
 </style></head>
-<body><section class="page cover">
-  <div class="cover-pattern"></div>
-  <div class="cover-top">
-    <div class="cover-logo"><img src="assets/img/company-logo.png" alt=""></div>
-    <div class="cover-name"><h1>شركة ركن الكيان</h1><p>للاستشارات الهندسية</p><em>Roukn Al-Kayan Engineering Consultancy Company</em></div>
+<body><section class="page r2">
+  <div class="ph"><img src="assets/img/svc-arch.jpg" alt=""></div>
+  <div class="side"><b>جدة</b><small>حي العزيزية</small></div>
+  <div class="card">
+    <div class="lg"><img src="assets/img/company-logo.png" alt=""><div><b>شركة ركن الكيان</b><small>ROUKN AL-KAYAN</small></div></div>
+    <div class="star">✦</div>
   </div>
-  <div class="cover-mid">
-    <div class="cover-copy">
-      <span class="pill">مكتب هندسي معتمد في جدة</span>
-      <h2>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h2>
-      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
-      <div class="cover-trust">
-        <div><b>معتمد</b><small>لدى أمانة جدة</small></div>
-        <div><b>معتمد</b><small>لدى الدفاع المدني</small></div>
-        <div><b>+120</b><small>مشروع منجز</small></div>
-      </div>
-    </div>
-    <div class="cover-arch"><img src="assets/img/hero-interior.jpg" alt=""></div>
-    
-<svg class="roshan cv" viewBox="0 0 120 300" fill="none" stroke="#ead9bd" stroke-width="1.4">
-  <defs>
-    <pattern id="lat-cv" width="12" height="12" patternUnits="userSpaceOnUse">
-      <path d="M6 0L12 6 6 12 0 6z"/><circle cx="6" cy="6" r="1.4"/>
-    </pattern>
-    <clipPath id="clip-cv"><path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/></clipPath>
-  </defs>
-  <path d="M6 298V68Q6 14 60 4q54 10 54 64v230z" stroke-width="2"/>
-  <path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/>
-  <rect x="0" y="0" width="120" height="300" fill="url(#lat-cv)" clip-path="url(#clip-cv)" stroke="none" style="fill-opacity:1"/>
-  <g clip-path="url(#clip-cv)" stroke-width="2.2">
-    <path d="M14 112h92M14 186h92M14 252h92M60 12v284"/>
-  </g>
-  <path d="M0 298h120"/>
-</svg>
+  <div class="t1 X">نصمّـــــم</div>
+  <div class="t2 X">المساحة ونحمي قيمتهــا</div>
+  <div class="arrow"></div>
+  <div class="box X">في جدّة</div>
+  <div class="feats">
+    <div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5M8 10h2M14 10h2M8 13.5h2M14 13.5h2"/></svg></span><span class="l"></span><span class="t">تصاميم معمارية</span></div>
+    <div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><span class="l"></span><span class="t">أمن وسلامة</span></div>
+    <div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 12a2 2 0 014 0v2h10v-2a2 2 0 014 0v5H3zM5 17v2M19 17v2"/></svg></span><span class="l"></span><span class="t">تصاميم داخلية</span></div>
+    <div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l-1.5 3h-3L9 8z"/><path d="M4 15h16v3H4zM6 21h12"/></svg></span><span class="l"></span><span class="t">اعتمادات بلدي</span></div>
   </div>
-  <div class="cover-bottom">
-    <div class="shurfat shurfat-paper"></div>
-    <div class="cover-bottom-in">
-      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
-      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
-      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
-      <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>جدة — حي العزيزية</span>
-    </div>
-  </div>
+  <div class="soc"><bdi>@ruoknalkayan</bdi></div>
+  <div class="cr"><bdi>roukn-alkayan.com</bdi><i></i><bdi>053 422 4100</bdi></div>
 </section>
 <section class="page intro">
   <header class="topbar">

@@ -188,35 +188,25 @@ const numbered = (items) => `<ol class="num">${items.map((t, i) => `<li><b>${Str
 const startBand = () => `<div class="start"><div><b>كيف نبدأ؟</b><p>${START_TEXT}</p></div><div class="start-cta">${icon('phone')}<bdi>${site.phone}</bdi></div></div>`;
 
 /* ---------------- الغلاف ---------------- */
-const cover = () => page('cover', `
-  <div class="cover-pattern"></div>
-  <div class="cover-top">
-    <div class="cover-logo"><img src="${img('company-logo.png')}" alt=""></div>
-    <div class="cover-name"><h1>${site.nameAr}</h1><p>${site.subAr}</p><em>${site.nameEn}</em></div>
+const cover = () => page('r2', `
+  <div class="ph"><img src="${img('svc-arch.jpg')}" alt=""></div>
+  <div class="side"><b>جدة</b><small>حي العزيزية</small></div>
+  <div class="card">
+    <div class="lg"><img src="${img('company-logo.png')}" alt=""><div><b>${site.nameAr}</b><small>ROUKN AL-KAYAN</small></div></div>
+    <div class="star">✦</div>
   </div>
-  <div class="cover-mid">
-    <div class="cover-copy">
-      <span class="pill">مكتب هندسي معتمد في جدة</span>
-      <h2>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h2>
-      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
-      <div class="cover-trust">
-        <div><b>معتمد</b><small>لدى أمانة جدة</small></div>
-        <div><b>معتمد</b><small>لدى الدفاع المدني</small></div>
-        <div><b>+120</b><small>مشروع منجز</small></div>
-      </div>
-    </div>
-    <div class="cover-arch"><img src="${img('hero-interior.jpg')}" alt=""></div>
-    ${roshan('cv', '#ead9bd')}
+  <div class="t1 X">نصمّـــــم</div>
+  <div class="t2 X">المساحة ونحمي قيمتهــا</div>
+  <div class="arrow"></div>
+  <div class="box X">في جدّة</div>
+  <div class="feats">
+    <div class="f"><span class="i">${icon('building')}</span><span class="l"></span><span class="t">تصاميم معمارية</span></div>
+    <div class="f"><span class="i">${icon('shield')}</span><span class="l"></span><span class="t">أمن وسلامة</span></div>
+    <div class="f"><span class="i">${icon('sofa')}</span><span class="l"></span><span class="t">تصاميم داخلية</span></div>
+    <div class="f"><span class="i">${icon('stamp')}</span><span class="l"></span><span class="t">اعتمادات بلدي</span></div>
   </div>
-  <div class="cover-bottom">
-    <div class="${shurfatClass('paper')}"></div>
-    <div class="cover-bottom-in">
-      <span>${icon('phone')}<bdi>${site.phone}</bdi></span>
-      <span>${icon('tel')}<bdi>${site.landline}</bdi></span>
-      <span>${icon('globe')}<bdi>${site.web}</bdi></span>
-      <span>${icon('pin')}جدة — حي العزيزية</span>
-    </div>
-  </div>
+  <div class="soc"><bdi>${site.handle}</bdi></div>
+  <div class="cr"><bdi>${site.web}</bdi><i></i><bdi>${site.phone}</bdi></div>
 `, { bare: true });
 
 /* ---------------- المقدمة ---------------- */
