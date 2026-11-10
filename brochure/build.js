@@ -190,9 +190,12 @@ const startBand = () => `<div class="start"><div><b>كيف نبدأ؟</b><p>${ST
 /* ---------------- الغلاف ---------------- */
 const cover = () => page('r2', `
   <div class="ph"><img src="${img('svc-arch.jpg')}" alt=""></div>
-  <div class="side"><b>جدة</b><small>حي العزيزية</small></div>
   <div class="card">
-    <div class="lg"><img src="${img('company-logo.png')}" alt=""><div><b>${site.nameAr}</b><small>ROUKN AL-KAYAN</small></div></div>
+    <div class="lg">
+      <img src="${img('company-logo.png')}" alt="">
+      <i class="dv"></i>
+      <div class="nm"><b>${site.nameAr}</b><em>ROUKN AL-KAYAN</em><small><i></i>${site.subAr}</small></div>
+    </div>
     <div class="star">✦</div>
   </div>
   <div class="t1 X">نصمّـــــم</div>

@@ -323,3 +323,21 @@ img { display: block; }
 .r2 .soc { position: absolute; z-index: 3; left: 12mm; bottom: 30mm; border: .4mm solid #fff; color: #fff; font-family: TajawalLatin; font-size: 9.4pt; padding: 1.8mm 3mm; }
 .r2 .cr { position: absolute; z-index: 3; bottom: 10mm; left: 0; right: 0; display: flex; justify-content: center; gap: 4mm; color: #ffffffd9; font-family: TajawalLatin; font-size: 8.6pt; align-items: center; }
 .r2 .cr i { width: 10mm; height: .3mm; background: #ffffffaa; }
+
+/* تحسينات الغلاف + إعادة تصميم قسم الشعار */
+.r2 .ph::after { background: linear-gradient(to top, #2b1a14d0 0%, #2b1a1455 22%, transparent 40%); }
+.r2 .card::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3.4mm; background: var(--shurfat-red) repeat-x; background-size: auto 100%; transform: translateY(99%) scaleY(-1); }
+.r2 .t1 { color: var(--red-deep); }
+.r2 .arrow { background: var(--red-deep); }
+.r2 .arrow::after { border-color: var(--red-deep); }
+.r2 .f .t { background: #2b1a1466; }
+.r2 .cr { bottom: 11mm; font-size: 9.4pt; color: #fff; }
+.r2 .card .lg { top: 8mm; right: 8mm; gap: 3.4mm; align-items: center; }
+.r2 .card .lg img { width: 16mm; }
+.r2 .card .lg .dv { width: .3mm; height: 13mm; background: #4a181333; }
+.r2 .card .lg .nm { display: flex; flex-direction: column; gap: .8mm; }
+.r2 .card .lg .nm b { font-family: var(--head); font-weight: 600; font-size: 12.4pt; color: var(--red-deep); line-height: 1.1; }
+.r2 .card .lg .nm em { font-style: normal; font-family: TajawalLatin, sans-serif; font-weight: 700; font-size: 7.4pt; letter-spacing: .26em; color: #2a1a16; direction: ltr; text-align: right; }
+.r2 .card .lg .nm small { display: flex; align-items: center; gap: 1.6mm; font-size: 8.4pt; color: var(--muted); }
+.r2 .card .lg .nm small i { width: 6mm; height: .3mm; background: var(--tan, #a8896b); }
+.r2 .card .star { top: 11mm; left: 9mm; font-size: 14pt; }
