@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>ستايل البروفايل — عمودي</title>
+<style>
+@font-face { font-family: Plex; font-weight: 300; src: url(assets/fonts/plex-arabic-300.woff2); }
+@font-face { font-family: Plex; font-weight: 500; src: url(assets/fonts/ibm-plex-sans-arabic-arabic-500.woff2); }
+@font-face { font-family: Plex; font-weight: 600; src: url(assets/fonts/ibm-plex-sans-arabic-arabic-600.woff2); }
+@font-face { font-family: Taj; font-weight: 400; src: url(assets/fonts/tajawal-arabic-400.woff2); }
+@font-face { font-family: Taj; font-weight: 700; src: url(assets/fonts/tajawal-arabic-700.woff2); }
+@font-face { font-family: TajL; font-weight: 400; src: url(assets/fonts/tajawal-latin-400.woff2); }
+@font-face { font-family: Corm; font-weight: 300; src: url(assets/fonts/cormorant-300.woff2); }
+@font-face { font-family: Corm; font-weight: 500; src: url(assets/fonts/cormorant-500.woff2); }
+:root { --brown: #4a1813; --tan: #a8896b; --mist: #f2f0ed; --ink: #2b2521; --muted: #857a70; }
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #d9d5cf; font-family: Taj, TajL, sans-serif; color: var(--ink); }
+.pg { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #fff; margin: 8mm auto; }
+img { display: block; }
+.dia { display: inline-flex; gap: 1mm; }
+.dia i { width: 3.6mm; height: 3.6mm; background: var(--brown); transform: rotate(45deg); }
+.dia.l i { background: #fff; }
+.lat { font-family: Corm, serif; font-weight: 300; letter-spacing: .32em; direction: ltr; }
+bdi { font-family: TajL, sans-serif; direction: ltr; unicode-bidi: isolate; }
+
+/* غلاف 1 */
+.c1 .photo { position: absolute; inset: 0 0 40mm; }
+.c1 .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+.c1 .photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, #fffffff2 0%, #ffffffb8 24%, #ffffff00 46%); }
+.c1 .title { position: absolute; top: 24mm; left: 0; right: 0; text-align: center; z-index: 2; }
+.c1 .title h1 { font-family: Plex; font-weight: 500; font-size: 54pt; color: var(--brown); line-height: 1; }
+.c1 .title .lat { display: block; font-size: 22pt; color: var(--brown); margin-top: 4mm; }
+.c1 .title small { display: block; font-size: 12pt; color: var(--brown); margin-top: 4mm; }
+.c1 .band { position: absolute; left: 0; right: 0; bottom: 0; height: 40mm; background: var(--brown); color: #f2e8dc; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4mm; }
+.c1 .band::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1.6mm; background: var(--tan); }
+.c1 .band p { font-size: 13pt; }
+.c1 .band .row { display: flex; gap: 10mm; font-size: 9.6pt; opacity: .85; }
+.c1 .band .lg { position: absolute; right: 12mm; top: 50%; transform: translateY(-50%); width: 16mm; height: 16mm; background: #fff; display: grid; place-items: center; }
+.c1 .band .lg img { width: 12mm; }
+.c1 .band .yr { position: absolute; left: 12mm; top: 50%; transform: translateY(-50%); font-family: Corm; font-size: 16pt; letter-spacing: .2em; }
+
+/* غلاف 2 */
+.c2 { background: var(--mist); }
+.c2 .photo { position: absolute; top: 0; left: 0; right: 0; height: 168mm; }
+.c2 .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.c2 .tag { position: absolute; left: 14mm; top: 148mm; background: var(--tan); color: #fff; padding: 4.4mm 7mm; z-index: 2; }
+.c2 .tag b { font-family: Corm; font-weight: 500; font-size: 22pt; display: block; direction: ltr; text-align: left; }
+.c2 .tag small { font-size: 9.4pt; }
+.c2 .panel { position: absolute; top: 168mm; bottom: 0; left: 0; right: 0; padding: 14mm 16mm 13mm; display: flex; flex-direction: column; }
+.c2 .panel .top { display: flex; align-items: flex-start; justify-content: space-between; }
+.c2 .panel .k { font-size: 10pt; color: var(--tan); font-weight: 700; }
+.c2 .panel h1 { font-family: Plex; font-weight: 300; font-size: 38pt; line-height: 1.1; color: var(--brown); margin-top: 3mm; }
+.c2 .panel h1 b { font-weight: 600; }
+.c2 .panel .lat { font-size: 14pt; color: var(--tan); margin-top: 3mm; text-align: right; }
+.c2 .panel .logo { width: 24mm; }
+.c2 .panel .bar { width: 26mm; height: 2.2mm; background: var(--tan); margin-top: 7mm; }
+.c2 .panel .bt { margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 9pt; color: var(--muted); }
+
+/* من نحن */
+.p3 .photo { position: absolute; top: 0; left: 0; right: 0; height: 112mm; }
+.p3 .photo img { width: 100%; height: 100%; object-fit: cover; }
+.p3 .photo::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4mm; background: var(--brown); }
+.p3 .photo .dia { position: absolute; left: 12mm; bottom: 10mm; z-index: 2; }
+.p3 .txt { position: absolute; top: 112mm; bottom: 0; left: 0; right: 0; padding: 14mm 16mm 12mm; display: flex; flex-direction: column; }
+.p3 h2 { font-family: Plex; font-weight: 500; font-size: 28pt; color: var(--brown); }
+.p3 h2 small { display: block; font-family: Corm; font-weight: 300; font-size: 13pt; letter-spacing: .3em; color: var(--tan); margin-top: 1mm; direction: ltr; text-align: right; }
+.p3 .lead { font-size: 11pt; line-height: 2; color: #4b423b; margin-top: 6mm; text-align: justify; }
+.p3 .vm { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; margin-top: 8mm; padding-top: 7mm; border-top: .3mm solid #0001; }
+.p3 .vm b { font-family: Plex; font-weight: 600; font-size: 13pt; color: var(--brown); display: flex; align-items: center; gap: 2mm; }
+.p3 .vm b::before { content: ''; width: 2.2mm; height: 2.2mm; background: var(--tan); transform: rotate(45deg); }
+.p3 .vm p { font-size: 9.6pt; line-height: 1.9; color: var(--muted); margin-top: 2mm; }
+.p3 .ft { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; }
+.p3 .ft .lg { display: flex; align-items: center; gap: 2mm; font-size: 8.6pt; color: var(--muted); }
+.p3 .ft .lg img { width: 9mm; }
+.p3 .ft .n { font-family: Corm; font-size: 15pt; color: var(--tan); }
+
+/* إنجازاتنا */
+.p4 { background: #1a0d0b; }
+.p4 .bg { position: absolute; inset: 0; }
+.p4 .bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.4) brightness(.45); }
+.p4 .bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, #1a0d0bdd 10%, #1a0d0b44 45%, #1a0d0bf2 85%); }
+.p4 .in { position: absolute; inset: 0; padding: 20mm 16mm; color: #fff; }
+.p4 .hd { display: flex; align-items: center; justify-content: space-between; }
+.p4 .hd h2 { font-family: Plex; font-weight: 500; font-size: 32pt; }
+.p4 .hd h2 small { display: block; font-family: Corm; font-weight: 300; font-size: 14pt; letter-spacing: .3em; color: var(--tan); direction: ltr; text-align: right; }
+.p4 .hd img { width: 18mm; background: #fff; padding: 2mm; box-sizing: content-box; }
+.p4 .stats { position: absolute; left: 16mm; right: 16mm; top: 140mm; display: grid; grid-template-columns: 1fr 1fr; border-top: .3mm solid #ffffff44; }
+.p4 .st { padding: 7mm 6mm 6mm; border-bottom: .3mm solid #ffffff22; }
+.p4 .st:nth-child(odd) { border-left: .3mm solid #ffffff22; }
+.p4 .st small { font-size: 9.4pt; color: #d8c9b8; }
+.p4 .st b { display: block; font-family: Corm; font-weight: 500; font-size: 44pt; direction: ltr; text-align: right; line-height: 1.1; margin-top: 1mm; }
+.p4 .st p { font-size: 10pt; color: #e9dfd4; }
+.p4 .box { position: absolute; left: 16mm; right: 16mm; bottom: 16mm; background: #fff; color: var(--ink); display: grid; grid-template-columns: repeat(3, 1fr); padding: 6mm 4mm; }
+.p4 .box::before { content: ''; position: absolute; top: -6mm; right: 0; width: 46mm; height: 6mm; background: var(--tan); }
+.p4 .box div { display: flex; flex-direction: column; gap: 1mm; padding: 0 4mm; border-left: .3mm solid #0001; }
+.p4 .box div:last-child { border: 0; }
+.p4 .box small { font-size: 8.4pt; color: var(--muted); }
+.p4 .box b { font-family: TajL; font-size: 13.4pt; color: var(--brown); direction: ltr; text-align: right; }
+</style></head>
+<body>
+
+<section class="pg c1">
+  <div class="photo"><img src="assets/img/svc-arch.jpg" alt=""></div>
+  <div class="title"><h1>ركن الكيان</h1><span class="lat">ROUKN AL-KAYAN</span><small>للاستشارات الهندسية</small></div>
+  <div class="band">
+    <div class="lg"><img src="assets/img/company-logo.png" alt=""></div>
+    <p>نصمّم المساحة، ونحمي قيمتها</p>
+    <div class="row"><bdi>053 422 4100</bdi><bdi>roukn-alkayan.com</bdi></div>
+    <div class="yr">2026</div>
+  </div>
+</section>
+
+<section class="pg c2">
+  <div class="photo"><img src="assets/img/svc-arch.jpg" alt=""></div>
+  <div class="tag"><b>Company Profile</b><small>الملف التعريفي 2026</small></div>
+  <div class="panel">
+    <div class="top">
+      <div><div class="k">مكتب هندسي معتمد في جدة</div><h1>شركة <b>ركن الكيان</b></h1><div class="lat">ROUKN AL-KAYAN</div><div class="bar"></div></div>
+      <img class="logo" src="assets/img/company-logo.png" alt="">
+    </div>
+    <div class="bt"><bdi>roukn-alkayan.com</bdi><span class="dia"><i></i><i></i></span><bdi>053 422 4100</bdi></div>
+  </div>
+</section>
+
+<section class="pg p3">
+  <div class="photo"><img src="assets/img/about.jpg" alt=""><span class="dia l"><i></i><i></i></span></div>
+  <div class="txt">
+    <h2>من نحن<small>ABOUT US</small></h2>
+    <p class="lead">شركة ركن الكيان للاستشارات الهندسية، شركة هندسية استشارية سعودية معتمدة لدى الهيئة السعودية للمهندسين وأمانة جدة والدفاع المدني ومنصة بلدي، تقدم خدماتها الاستشارية في عدة مجالات هندسية، منها استخراج التراخيص الهندسية الكاملة، وأعمال الأمن والسلامة، والتصاميم المعمارية والإنشائية، وتخطيط وتنسيق الموقع، والتصميم الداخلي، والأعمال المساحية ونظم المعلومات الجغرافية، وإدارة المشاريع والتصميم والإشراف على المباني.</p>
+    <div class="vm">
+      <div><b>رؤيتنا</b><p>تحقيق تصاميم معمارية اقتصادية تتلاقى مع أهداف رؤية المملكة 2030، وأن تصبح ركن الكيان رائدة في مجال الهندسة المدنية والعمرانية والأمن والسلامة على مستوى المملكة.</p></div>
+      <div><b>رسالتنا</b><p>تقديم خدمات الدفاع المدني والهندسة المعمارية عالية الجودة بتطبيق كود البناء السعودي والمعايير العالمية، بما يحقق قيمة اقتصادية تنافسية لعملائنا.</p></div>
+    </div>
+    <div class="ft"><div class="lg"><img src="assets/img/company-logo.png" alt="">شركة ركن الكيان</div><span class="n">02</span></div>
+  </div>
+</section>
+
+<section class="pg p4">
+  <div class="bg"><img src="assets/img/arch-contemporary.jpg" alt=""></div>
+  <div class="in">
+    <div class="hd"><h2>إنجازاتنا<small>ACHIEVEMENTS</small></h2><img src="assets/img/company-logo.png" alt=""></div>
+    <div class="stats">
+      <div class="st"><small>أكثر من</small><b>120+</b><p>مشروع منجز</p></div>
+      <div class="st"><small>أكثر من</small><b>16+</b><p>خدمة هندسية متكاملة</p></div>
+      <div class="st"><small>اعتماد من</small><b>4</b><p>جهات رسمية</p></div>
+      <div class="st"><small>مقرنا</small><b>JED</b><p>جدة — حي العزيزية</p></div>
+    </div>
+    <div class="box">
+      <div><small>الهيئة السعودية للمهندسين</small><b>5100002715</b></div>
+      <div><small>أمانة جدة (بلدي)</small><b>4400377930</b></div>
+      <div><small>الدفاع المدني</small><b>100000259</b></div>
+    </div>
+  </div>
+</section>
+</body></html>
