@@ -292,45 +292,64 @@ img { display: block; }
 .back-creds b { display: block; font-size: 8pt; line-height: 1.5; }
 .back-creds small { font-size: 7.6pt; color: var(--muted); }
 .back-creds bdi { color: var(--red-deep); font-size: 8.4pt; }
+
+/* ---------- الغلاف (مستوحى من أول شاشة في الموقع) ---------- */
+.kcover { background: var(--paper) var(--roshan); }
+.kc-hero { position: relative; height: 196mm; flex: none; }
+.kc-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.kc-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, #1d0f0bd9 0%, #1d0f0b88 55%, #1d0f0b33 100%); z-index: 1; }
+.kc-pat { position: absolute; inset: 0; background: var(--roshan-light); background-size: 44px 44px; z-index: 1; opacity: .7; -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 60%); }
+.kc-edge { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; }
+.kc-nav { position: absolute; z-index: 2; top: 10mm; left: 10mm; right: 10mm; background: var(--card); border-radius: 99px; padding: 2.4mm 3mm 2.4mm 5mm; display: flex; align-items: center; justify-content: space-between; }
+.kc-lg { display: flex; align-items: center; gap: 2.4mm; }
+.kc-lg span { width: 10mm; height: 10mm; border-radius: 2.6mm; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; }
+.kc-lg img { width: 7.4mm; }
+.kc-lg b { display: block; font-family: var(--head); font-weight: 600; font-size: 10.4pt; color: var(--ink); }
+.kc-lg small { font-size: 7.4pt; color: var(--muted); }
+.kc-btn { background: var(--red); color: #fff; border-radius: 99px; padding: 2mm 4.4mm; font-size: 8.6pt; font-weight: 700; }
+.kc-copy { position: absolute; z-index: 2; right: 14mm; left: 40mm; bottom: 24mm; color: #fff; }
+.kc-k { display: inline-flex; align-items: center; gap: 2mm; font-size: 10pt; font-weight: 700; }
+.kc-k .kw { width: 4.6mm; height: 5.4mm; }
+.kc-copy h1 { font-family: var(--head); font-weight: 600; font-size: 46pt; line-height: 1.15; margin-top: 4mm; }
+.kc-copy h1 span { color: var(--cream); font-weight: 500; }
+.kc-copy p { font-size: 11pt; line-height: 1.85; color: #f3e9dd; margin-top: 4mm; }
+.kc-low { flex: 1; padding: 9mm 12mm; display: flex; flex-direction: column; justify-content: center; gap: 7mm; }
+.kc-id b { display: block; font-family: var(--head); font-weight: 600; font-size: 18pt; color: var(--red-deep); }
+.kc-id small { font-size: 9.4pt; color: var(--muted); font-family: TajawalLatin, sans-serif; }
+.kc-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; }
+.kc-trust > div { background: var(--card); border: 1px solid var(--line); border-radius: 5mm; display: flex; align-items: center; gap: 3.4mm; padding: 5mm; }
+.kc-ic { width: 11mm; height: 11mm; border-radius: 3mm; background: #efe4dc; display: grid; place-items: center; color: var(--red-deep); flex: none; }
+.kc-ic .ic { font-size: 15pt; }
+.kc-trust b { display: block; font-family: var(--head); font-weight: 600; font-size: 14pt; color: var(--ink); line-height: 1.1; }
+.kc-trust small { font-size: 8.8pt; color: var(--muted); }
+.kc-foot { justify-content: center; }
 </style></head>
-<body><section class="page cover">
-  <div class="cover-pattern"></div>
-  <div class="cover-top">
-    <div class="cover-logo"><img src="assets/img/company-logo.png" alt=""></div>
-    <div class="cover-name"><h1>شركة ركن الكيان</h1><p>للاستشارات الهندسية</p><em>Roukn Al-Kayan Engineering Consultancy Company</em></div>
-  </div>
-  <div class="cover-mid">
-    <div class="cover-copy">
-      <span class="pill">مكتب هندسي معتمد في جدة</span>
-      <h2>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h2>
-      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
-      <div class="cover-trust">
-        <div><b>معتمد</b><small>لدى أمانة جدة</small></div>
-        <div><b>معتمد</b><small>لدى الدفاع المدني</small></div>
-        <div><b>+120</b><small>مشروع منجز</small></div>
-      </div>
+<body><section class="page kcover">
+  <div class="kc-hero">
+    <img class="kc-bg" src="assets/img/svc-arch.jpg" alt=""><div class="kc-pat"></div>
+    <div class="kc-nav">
+      <div class="kc-lg"><span><img src="assets/img/company-logo.png" alt=""></span><div><b>شركة ركن الكيان</b><small>هندسة · استشارات · أمن وسلامة</small></div></div>
+      <span class="kc-btn">الملف التعريفي 2026</span>
     </div>
-    <div class="cover-arch"><img src="assets/img/hero-interior.jpg" alt=""></div>
-    
-<svg class="roshan cv" viewBox="0 0 120 300" fill="none" stroke="#ead9bd" stroke-width="1.4">
-  <defs>
-    <pattern id="lat-cv" width="12" height="12" patternUnits="userSpaceOnUse">
-      <path d="M6 0L12 6 6 12 0 6z"/><circle cx="6" cy="6" r="1.4"/>
-    </pattern>
-    <clipPath id="clip-cv"><path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/></clipPath>
-  </defs>
-  <path d="M6 298V68Q6 14 60 4q54 10 54 64v230z" stroke-width="2"/>
-  <path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/>
-  <rect x="0" y="0" width="120" height="300" fill="url(#lat-cv)" clip-path="url(#clip-cv)" stroke="none" style="fill-opacity:1"/>
-  <g clip-path="url(#clip-cv)" stroke-width="2.2">
-    <path d="M14 112h92M14 186h92M14 252h92M60 12v284"/>
-  </g>
-  <path d="M0 298h120"/>
-</svg>
+    <div class="kc-copy">
+      <span class="kc-k"><svg class="kw" viewBox="0 0 20 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 23V9a7 7 0 0114 0v14z"/><path d="M3 15h14M10 3v20M3 19h14M6.5 11h7"/><path d="M1 23h18"/></svg>مكتب هندسي معتمد في جدة</span>
+      <h1>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h1>
+      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، وخدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
+    </div>
+    <div class="shurfat shurfat-paper kc-edge"></div>
+  </div>
+  <div class="kc-low">
+    <div class="kc-id"><b>شركة ركن الكيان للاستشارات الهندسية</b><small>Roukn Al-Kayan Engineering Consultancy Company</small></div>
+    <div class="kc-trust">
+      <div><span class="kc-ic"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div><b>معتمد</b><small>لدى أمانة جدة</small></div></div>
+      <div><span class="kc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-3.5 0-6-2.5-6-5.6 0-3.6 3-5.4 3.6-9.4 2.4 1.6 3.6 3.6 3.4 6 1-.6 1.8-1.6 2-3 1.8 1.6 3 3.8 3 6.4 0 3.1-2.5 5.6-6 5.6z"/></svg></span><div><b>معتمد</b><small>لدى الدفاع المدني</small></div></div>
+      <div><span class="kc-ic"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5M8 10h2M14 10h2M8 13.5h2M14 13.5h2"/></svg></span><div><b>+120</b><small>مشروع منجز</small></div></div>
+      <div><span class="kc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div><b>+16</b><small>خدمة هندسية متكاملة</small></div></div>
+    </div>
   </div>
   <div class="cover-bottom">
-    <div class="shurfat shurfat-paper"></div>
-    <div class="cover-bottom-in">
+    <div class="shurfat shurfat-deep"></div>
+    <div class="foot-in kc-foot">
       <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
       <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M11 11h2M14 11h2M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2M14 17h2"/></svg><bdi>012 614 1093</bdi></span>
       <span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
