@@ -366,6 +366,15 @@ img { display: block; }
 .r2 .ct .ci { width: 7mm; height: 7mm; background: #fff; display: grid; place-items: center; color: var(--red-deep); flex: none; }
 .r2 .ct .ci .ic { width: 4.4mm; height: 4.4mm; font-size: inherit; }
 .r2 .feats { bottom: 27mm; }
+
+/* العنوان: كلمة نصمم أصغر وبنفس عرض السطر اللي تحتها */
+.r2 .hl { position: absolute; z-index: 3; top: 45mm; right: 19mm; display: flex; flex-direction: column; align-items: flex-end; }
+.r2 .hl .t1, .r2 .hl .t2 { position: static; white-space: nowrap; }
+.r2 .hl .t1 { font-size: 50pt; line-height: 1.05; }
+.r2 .hl .t2 { font-size: 23pt; line-height: 1; margin-top: 2mm; }
+/* أيقونات التواصل بدون خلفية */
+.r2 .ct .ci { background: none; color: #fff; width: auto; height: auto; }
+.r2 .ct .ci .ic { width: 5.4mm; height: 5.4mm; }
 </style></head>
 <body><section class="page r2">
   <div class="ph"><img src="assets/img/svc-arch.jpg" alt=""></div>
@@ -377,8 +386,7 @@ img { display: block; }
     </div>
     <div class="star">✦</div>
   </div>
-  <div class="t1 X">نُصمّـــــم</div>
-  <div class="t2 X">المساحة ونحمي قيمتهــا</div>
+  <div class="hl"><div class="t1 X" data-fit>نُصمّـــــم</div><div class="t2 X">المساحة ونحمي قيمتهــا</div></div>
   <div class="arrow"></div>
   <div class="box X">في جدّة</div>
   <div class="feats">
@@ -863,4 +871,16 @@ img { display: block; }
   <div class="cover-bottom"><div class="shurfat shurfat-paper"></div>
     <div class="back-creds"><div><b>معتمد لدى الهيئة السعودية للمهندسين</b><small>رقم الترخيص: <bdi>5100002715</bdi></small></div><div><b>معتمد لدى أمانة جدة (بلدي)</b><small>رقم الترخيص: <bdi>4400377930</bdi></small></div><div><b>معتمد لدى الدفاع المدني (الأمن والسلامة)</b><small>رقم الترخيص: <bdi>100000259</bdi></small></div><div><b>السجل التجاري</b><small>الرقم الوطني الموحد: <bdi>7032491412</bdi></small></div></div>
   </div>
-</section></body></html>
+</section>
+<script>
+document.fonts.ready.then(() => document.querySelectorAll('[data-fit]').forEach((el) => {
+  const target = el.nextElementSibling.getBoundingClientRect().width;
+  const base = el.textContent.replace(/ـ/g, '');
+  let best = 1;
+  for (let n = 1; n < 40; n++) { el.textContent = base.slice(0, 5) + 'ـ'.repeat(n) + base.slice(5); if (el.getBoundingClientRect().width <= target) best = n; else break; }
+  el.textContent = base.slice(0, 5) + 'ـ'.repeat(best) + base.slice(5);
+  const w = el.getBoundingClientRect().width;
+  el.style.transformOrigin = 'right center'; el.style.transform = 'scaleX(' + (target / w) + ')';
+  document.body.dataset.fitted = '1';
+}));
+</script></body></html>

@@ -198,8 +198,7 @@ const cover = () => page('r2', `
     </div>
     <div class="star">✦</div>
   </div>
-  <div class="t1 X">نُصمّـــــم</div>
-  <div class="t2 X">المساحة ونحمي قيمتهــا</div>
+  <div class="hl"><div class="t1 X" data-fit>نُصمّـــــم</div><div class="t2 X">المساحة ونحمي قيمتهــا</div></div>
   <div class="arrow"></div>
   <div class="box X">في جدّة</div>
   <div class="feats">
@@ -401,7 +400,19 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>بروشور ركن الكيان</title>
 <style>${css}</style></head>
-<body>${pages.join('\n')}</body></html>`;
+<body>${pages.join('\n')}
+<script>
+document.fonts.ready.then(() => document.querySelectorAll('[data-fit]').forEach((el) => {
+  const target = el.nextElementSibling.getBoundingClientRect().width;
+  const base = el.textContent.replace(/ـ/g, '');
+  let best = 1;
+  for (let n = 1; n < 40; n++) { el.textContent = base.slice(0, 5) + 'ـ'.repeat(n) + base.slice(5); if (el.getBoundingClientRect().width <= target) best = n; else break; }
+  el.textContent = base.slice(0, 5) + 'ـ'.repeat(best) + base.slice(5);
+  const w = el.getBoundingClientRect().width;
+  el.style.transformOrigin = 'right center'; el.style.transform = 'scaleX(' + (target / w) + ')';
+  document.body.dataset.fitted = '1';
+}));
+</script></body></html>`;
 
 fs.mkdirSync(OUT, { recursive: true });
 const htmlPath = path.join(ROOT, 'brochure.html');

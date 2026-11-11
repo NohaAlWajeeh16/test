@@ -362,3 +362,12 @@ img { display: block; }
 .r2 .ct .ci { width: 7mm; height: 7mm; background: #fff; display: grid; place-items: center; color: var(--red-deep); flex: none; }
 .r2 .ct .ci .ic { width: 4.4mm; height: 4.4mm; font-size: inherit; }
 .r2 .feats { bottom: 27mm; }
+
+/* العنوان: كلمة نصمم أصغر وبنفس عرض السطر اللي تحتها */
+.r2 .hl { position: absolute; z-index: 3; top: 45mm; right: 19mm; display: flex; flex-direction: column; align-items: flex-end; }
+.r2 .hl .t1, .r2 .hl .t2 { position: static; white-space: nowrap; }
+.r2 .hl .t1 { font-size: 50pt; line-height: 1.05; }
+.r2 .hl .t2 { font-size: 23pt; line-height: 1; margin-top: 2mm; }
+/* أيقونات التواصل بدون خلفية */
+.r2 .ct .ci { background: none; color: #fff; width: auto; height: auto; }
+.r2 .ct .ci .ic { width: 5.4mm; height: 5.4mm; }

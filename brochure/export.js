@@ -19,6 +19,7 @@ const PX_PER_IN = 96;
   const p = await browser.newPage({ viewport: { width: 900, height: 1200 }, deviceScaleFactor: 2.5 });
   await p.goto('file://' + path.join(ROOT, 'brochure.html'), { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
+  await p.waitForFunction(() => document.body.dataset.fitted === '1', null, { timeout: 10000 }).catch(() => {});
   await p.addStyleTag({ content: '@media screen { .page { margin: 0 auto !important; box-shadow: none !important; } }' });
 
   const pages = await p.$$('section.page');
