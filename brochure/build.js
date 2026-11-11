@@ -198,18 +198,15 @@ const cover = () => page('r2', `
     </div>
     <div class="star">✦</div>
   </div>
-  <div class="t1 X">نصمّـــــم</div>
+  <div class="t1 X">نُصمّـــــم</div>
   <div class="t2 X">المساحة ونحمي قيمتهــا</div>
   <div class="arrow"></div>
   <div class="box X">في جدّة</div>
   <div class="feats">
-    <div class="f"><span class="i">${icon('building')}</span><span class="l"></span><span class="t">تصاميم معمارية</span></div>
-    <div class="f"><span class="i">${icon('shield')}</span><span class="l"></span><span class="t">أمن وسلامة</span></div>
-    <div class="f"><span class="i">${icon('sofa')}</span><span class="l"></span><span class="t">تصاميم داخلية</span></div>
-    <div class="f"><span class="i">${icon('stamp')}</span><span class="l"></span><span class="t">اعتمادات بلدي</span></div>
+    ${services.map((s) => `<div class="f"><span class="i">${icon(s.icon)}</span><span class="l"></span><span class="t">${s.title}</span></div>`).join('')}
   </div>
   <div class="soc"><bdi>${site.handle}</bdi></div>
-  <div class="cr"><bdi>${site.web}</bdi><i></i><bdi>${site.phone}</bdi></div>
+  <div class="cr"><bdi>${site.web}</bdi><i></i><span class="ph-wa"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c0 3.4 3 6.4 6.4 6.4l1.2-1.6-2-1-.9.8a5 5 0 0 1-2.9-2.9l.8-.9-1-2z" fill="currentColor" stroke-width="1"/></svg><bdi>${site.phone}</bdi></span></div>
 `, { bare: true });
 
 /* ---------------- المقدمة ---------------- */

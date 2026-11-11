@@ -341,3 +341,14 @@ img { display: block; }
 .r2 .card .lg .nm small { display: flex; align-items: center; gap: 1.6mm; font-size: 8.4pt; color: var(--muted); }
 .r2 .card .lg .nm small i { width: 6mm; height: .3mm; background: var(--tan, #a8896b); }
 .r2 .card .star { top: 11mm; left: 9mm; font-size: 14pt; }
+
+.r2 .feats { bottom: 26mm; gap: 3.4mm 8mm; }
+.r2 .f .t { min-width: 40mm; font-size: 9.6pt; }
+.r2 .soc { bottom: 27mm; }
+.r2 .cr .ph-wa { display: inline-flex; align-items: center; gap: 1.8mm; }
+.r2 .cr .wa { width: 5.4mm; height: 5.4mm; color: #fff; background: #25d366; border-radius: 50%; padding: .9mm; }
+.r2 .card { height: 100mm; }
+.r2 .t1 { top: 48mm; }
+.r2 .t2 { top: 73mm; }
+.r2 .box { top: 90.5mm; }
+.r2 .arrow { top: 98.1mm; }
