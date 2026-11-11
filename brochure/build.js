@@ -101,15 +101,13 @@ const services = [
   },
 ];
 
-// خانات الشهادات (تُترك فارغة حتى تُضاف الصور)
+// صفحات الشهادات (الصور في مجلد certificates بالأسماء cert-01 ... cert-08)
 const certPages = [
-  { layout: 'single', slots: [{ id: 'cert-01', label: 'السجل التجاري' }] },
-  { layout: 'single', slots: [{ id: 'cert-02', label: 'ترخيص الهيئة السعودية للمهندسين' }] },
-  { layout: 'single', slots: [{ id: 'cert-03', label: 'شهادة تسجيل مكتب هندسي — أمانة جدة' }] },
-  { layout: 'single', slots: [{ id: 'cert-04', label: 'رخصة نشاط تجاري — بلدي' }] },
-  { layout: 'double', slots: [{ id: 'cert-05', label: 'ترخيص الدفاع المدني' }, { id: 'cert-06', label: 'ترخيص مزاولة نشاط — سلامة' }] },
-  { layout: 'double', slots: [{ id: 'cert-07', label: 'شهادة ضريبة القيمة المضافة' }, { id: 'cert-08', label: 'شهادة / اعتماد' }] },
-  { layout: 'double', slots: [{ id: 'cert-09', label: 'شهادة / اعتماد' }, { id: 'cert-10', label: 'شهادة / اعتماد' }] },
+  { layout: 'double', slots: [{ id: 'cert-01', label: 'ترخيص الهيئة السعودية للمهندسين — ترخيص نهائي' }, { id: 'cert-02', label: 'ترخيص مزاولة نشاط — سلامة (الدفاع المدني)' }] },
+  { layout: 'single', slots: [{ id: 'cert-03', label: 'رخصة نشاط تجاري — بلدي (أمانة جدة)' }] },
+  { layout: 'single', slots: [{ id: 'cert-04', label: 'ترخيص الدفاع المدني — سلامة' }] },
+  { layout: 'pair', slots: [{ id: 'cert-05', label: 'موافقة الهيئة العليا للأمن الصناعي' }, { id: 'cert-06', label: 'خطاب الهيئة العليا للأمن الصناعي' }] },
+  { layout: 'pair', title: 'نماذج من رخص البناء الصادرة', slots: [{ id: 'cert-07', label: 'رخصة بناء — عمارة سكنية' }, { id: 'cert-08', label: 'رخصة بناء — فيلا سكنية' }] },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -336,6 +334,17 @@ const servicesDivider = () => page('divider', `
   <div class="cover-bottom"><div class="${shurfatClass('paper')}"></div><div class="cover-bottom-in"><span>${icon('globe')}<bdi>${site.web}</bdi></span><span class="pno">${String(pageNo + 1).padStart(2, '0')}</span></div></div>
 `, { bare: true });
 
+
+/* ---------------- عملاؤنا ---------------- */
+const clients = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/clients/clients.json'), 'utf8'));
+const clientsPage = () => page('clients', `
+  ${kicker('من بعض عملائنا')}
+  <h2 class="h">ثقة نعتز بها.<span>شركاء في مسيرة العمل والإنجاز.</span></h2>
+  <div class="cl-grid">${clients.map((c) => `
+    <div class="cl"><div class="cl-logo">${c.file ? `<img src="assets/clients/${c.file}" alt="${c.ar}">` : `<span class="cl-txt">${c.ar}</span>`}</div><b>${c.ar}</b></div>`).join('')}
+  </div>
+`, { section: 'عملاؤنا' });
+
 /* ---------------- الشهادات ---------------- */
 const findCert = (id) => {
   if (!fs.existsSync(CERT_DIR)) return null;
@@ -351,12 +360,13 @@ const certIntro = () => page('cert-intro', `
   </div>
   <div class="cert-index">
     <h4 class="sub">محتوى قسم الشهادات</h4>
-    <ol>${certPages.flatMap((p) => p.slots).filter((s) => !s.label.startsWith('شهادة / اعتماد')).map((s) => `<li>${s.label}</li>`).join('')}</ol>
+    <ol>${certPages.flatMap((p) => p.slots).map((s) => `<li>${s.label}</li>`).join('')}</ol>
   </div>
   ${roshan('ci', '#702820')}
 `, { section: 'التراخيص والشهادات' });
 
 const certPage = (p) => page(`cert cert-${p.layout}`, `
+  ${p.title ? `<h4 class="sub">${p.title}</h4>` : ''}
   <div class="cert-slots">${p.slots.map((s) => {
     const f = findCert(s.id);
     return `<figure class="slot ${f ? 'filled' : ''}">
@@ -392,7 +402,7 @@ const back = () => page('back', `
 `, { bare: true });
 
 /* ------------------------------------------------------------------ */
-const pages = [cover(), intro(), about(), servicesDivider(), ...services.map(servicePage), certIntro(), ...certPages.map(certPage), back()];
+const pages = [cover(), intro(), about(), servicesDivider(), ...services.map(servicePage), clientsPage(), certIntro(), ...certPages.map(certPage), back()];
 
 const css = fs.readFileSync(path.join(ROOT, 'brochure.css'), 'utf8');
 const html = `<!doctype html>
