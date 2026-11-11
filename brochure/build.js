@@ -175,9 +175,30 @@ const footer = () => `
     </div>
   </footer>`;
 
+
+// يرسم نقش الروشان والنجمة كخطوط فعلية على الصفحة كاملة (بدون تكرار بلاطات) حتى يطلع حاد في كل برامج PDF
+const PW = 794, PH = 1123;
+const roshanPath = (() => {
+  const T = 44; let d = '';
+  for (let x = 0; x < PW + T; x += T) for (let y = 0; y < PH + T; y += T)
+    d += `M${x + 1} ${y + 1}h42v42h-42zM${x + 22} ${y + 1}L${x + 43} ${y + 22}L${x + 22} ${y + 43}L${x + 1} ${y + 22}zM${x + 27} ${y + 22}a5 5 0 1 0 -10 0a5 5 0 1 0 10 0`;
+  return d;
+})();
+const starPath = (() => {
+  const T = 64; let d = '';
+  for (let x = 0; x < PW + T; x += T) for (let y = 0; y < PH + T; y += T) {
+    d += `M${x + 32} ${y + 8}l7 17 17 7-17 7-7 17-7-17-17-7 17-7z`;
+    d += `M${x + 18} ${y + 18}h28v28h-28z`;
+    d += `M${x + 32} ${y + 12.2}L${x + 51.8} ${y + 32}L${x + 32} ${y + 51.8}L${x + 12.2} ${y + 32}z`;
+  }
+  return d;
+})();
+const bgPaper = `<svg class="bgpat" viewBox="0 0 ${PW} ${PH}" preserveAspectRatio="xMidYMid slice"><path d="${roshanPath}" fill="none" stroke="#702820" stroke-opacity=".07" stroke-width="1.2"/></svg>`;
+const bgDark = `<svg class="bgpat" viewBox="0 0 ${PW} ${PH}" preserveAspectRatio="xMidYMid slice"><path d="${roshanPath}" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.2"/><path d="${starPath}" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="1.2"/></svg>`;
+
 const page = (cls, inner, { bare = false, section = '' } = {}) => {
   pageNo += 1;
-  return `<section class="page ${cls}">${bare ? inner : topbar(section) + `<div class="body">${inner}</div>` + footer()}</section>`;
+  return `<section class="page ${cls}">${bare ? '' : bgPaper}${bare ? inner : topbar(section) + `<div class="body">${inner}</div>` + footer()}</section>`;
 };
 
 const kicker = (t) => `<div class="kicker"><span class="lantern"></span>${t}</div>`;
@@ -321,7 +342,7 @@ const servicePage = (s) => {
 
 /* ---------------- فاصل الخدمات ---------------- */
 const servicesDivider = () => page('divider', `
-  <div class="cover-pattern"></div>
+  <div class="cover-pattern">${bgDark}</div>
   <div class="div-in">
     ${roshan('dv', '#ead9bd')}
     <div>
@@ -377,7 +398,7 @@ const certPage = (p) => page(`cert cert-${p.layout}`, `
 
 /* ---------------- الغلاف الخلفي ---------------- */
 const back = () => page('back', `
-  <div class="cover-pattern"></div>
+  <div class="cover-pattern">${bgDark}</div>
   <div class="back-in">
     <div class="cover-logo big"><img src="${img('company-logo.png')}" alt=""></div>
     <h1>${site.nameAr}</h1><p class="sub-name">${site.subAr}</p>
@@ -410,7 +431,11 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>بروشور ركن الكيان</title>
 <style>${css}</style></head>
-<body>${pages.join('\n')}
+<body><svg width="0" height="0" style="position:absolute"><defs>
+<pattern id="pat-paper" width="44" height="44" patternUnits="userSpaceOnUse"><g fill="none" stroke="#702820" stroke-opacity=".07" stroke-width="1.2"><rect x="1" y="1" width="42" height="42"/><path d="M22 1 43 22 22 43 1 22z"/><circle cx="22" cy="22" r="5"/></g></pattern>
+<pattern id="pat-light" width="44" height="44" patternUnits="userSpaceOnUse"><g fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="1.2"><rect x="1" y="1" width="42" height="42"/><path d="M22 1 43 22 22 43 1 22z"/><circle cx="22" cy="22" r="5"/></g></pattern>
+<pattern id="pat-star" width="64" height="64" patternUnits="userSpaceOnUse"><g fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="1.2"><path d="M32 8l7 17 17 7-17 7-7 17-7-17-17-7 17-7z"/><rect x="18" y="18" width="28" height="28" transform="rotate(45 32 32)"/><rect x="18" y="18" width="28" height="28"/></g></pattern>
+</defs></svg>${pages.join('\n')}
 <script>
 document.fonts.ready.then(() => document.querySelectorAll('[data-fit]').forEach((el) => {
   const target = el.nextElementSibling.getBoundingClientRect().width;
