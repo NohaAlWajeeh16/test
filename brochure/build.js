@@ -104,10 +104,10 @@ const services = [
 // صفحات الشهادات (الصور في مجلد certificates بالأسماء cert-01 ... cert-08)
 const certPages = [
   { layout: 'double', slots: [{ id: 'cert-01', label: 'ترخيص الهيئة السعودية للمهندسين — ترخيص نهائي' }, { id: 'cert-02', label: 'ترخيص مزاولة نشاط — سلامة (الدفاع المدني)' }] },
-  { layout: 'single', slots: [{ id: 'cert-03', label: 'رخصة نشاط تجاري — بلدي (أمانة جدة)' }] },
-  { layout: 'single', slots: [{ id: 'cert-04', label: 'ترخيص الدفاع المدني — سلامة' }] },
-  { layout: 'pair', slots: [{ id: 'cert-05', label: 'موافقة الهيئة العليا للأمن الصناعي' }, { id: 'cert-06', label: 'خطاب الهيئة العليا للأمن الصناعي' }] },
-  { layout: 'pair', title: 'نماذج من رخص البناء الصادرة', slots: [{ id: 'cert-07', label: 'رخصة بناء — عمارة سكنية' }, { id: 'cert-08', label: 'رخصة بناء — فيلا سكنية' }] },
+  { layout: 'single', slots: [{ id: 'cert-03', label: 'شهادة تسجيل مكتب هندسي — أمانة محافظة جدة' }] },
+  { layout: 'single', slots: [{ id: 'cert-04', label: 'رخصة نشاط تجاري — بلدي (أمانة جدة)' }] },
+  { layout: 'single', slots: [{ id: 'cert-05', label: 'ترخيص الدفاع المدني — سلامة' }] },
+  { layout: 'pair', title: 'نماذج من رخص البناء الصادرة', slots: [{ id: 'cert-06', label: 'رخصة بناء — عمارة سكنية' }, { id: 'cert-07', label: 'رخصة بناء — فيلا سكنية' }] },
 ];
 
 /* ------------------------------------------------------------------ */
