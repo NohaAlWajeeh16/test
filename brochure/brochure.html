@@ -407,6 +407,9 @@ img { display: block; }
 .cover-pattern { background: none; }
 .bgpat { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .cover-pattern .bgpat { z-index: auto; }
+/* إصلاح قص شعارات العملاء: الشعار يحتوى كاملًا داخل مساحته */
+.cl-logo { position: relative; }
+.cl-logo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: contain; }
 </style></head>
 <body><svg width="0" height="0" style="position:absolute"><defs>
 <pattern id="pat-paper" width="44" height="44" patternUnits="userSpaceOnUse"><g fill="none" stroke="#702820" stroke-opacity=".07" stroke-width="1.2"><rect x="1" y="1" width="42" height="42"/><path d="M22 1 43 22 22 43 1 22z"/><circle cx="22" cy="22" r="5"/></g></pattern>

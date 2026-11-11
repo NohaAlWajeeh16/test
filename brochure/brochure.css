@@ -403,3 +403,6 @@ img { display: block; }
 .cover-pattern { background: none; }
 .bgpat { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .cover-pattern .bgpat { z-index: auto; }
+/* إصلاح قص شعارات العملاء: الشعار يحتوى كاملًا داخل مساحته */
+.cl-logo { position: relative; }
+.cl-logo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: contain; }
