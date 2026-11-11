@@ -375,6 +375,14 @@ img { display: block; }
 /* أيقونات التواصل بدون خلفية */
 .r2 .ct .ci { background: none; color: #fff; width: auto; height: auto; }
 .r2 .ct .ci .ic { width: 5.4mm; height: 5.4mm; }
+
+/* أيقونات التواصل بخلفية بيضاء مثل باقي الأيقونات */
+.r2 .ct .ci { background: #fff; color: var(--red-deep); width: 7mm; height: 7mm; }
+.r2 .ct .ci .ic { width: 4.4mm; height: 4.4mm; }
+/* تنعيم أسفل الصورة حتى يختفي المربع الغامق خلف الرقم */
+.r2 .ph::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 24mm; z-index: 1;
+  backdrop-filter: blur(5px); -webkit-mask-image: linear-gradient(to top, #000 60%, transparent); }
+.r2 .ph::after { z-index: 2; background: linear-gradient(to top, #2b1a14e6 0%, #2b1a14b3 9%, #2b1a1455 24%, transparent 42%); }
 </style></head>
 <body><section class="page r2">
   <div class="ph"><img src="assets/img/svc-arch.jpg" alt=""></div>
@@ -881,6 +889,13 @@ document.fonts.ready.then(() => document.querySelectorAll('[data-fit]').forEach(
   el.textContent = base.slice(0, 5) + 'ـ'.repeat(best) + base.slice(5);
   const w = el.getBoundingClientRect().width;
   el.style.transformOrigin = 'right center'; el.style.transform = 'scaleX(' + (target / w) + ')';
+  // توسيط العنوان بين سطر الشعار وسطر السهم
+  const hl = el.parentElement, pg = hl.closest('section').getBoundingClientRect();
+  const top = hl.closest('section').querySelector('.card .lg').getBoundingClientRect().bottom;
+  const bottom = hl.closest('section').querySelector('.box').getBoundingClientRect().top;
+  const hh = hl.getBoundingClientRect().height;
+  const mm = 96 / 25.4; // تعويض الضمة والشدة فوق السطر
+  hl.style.top = ((top + bottom) / 2 - hh / 2 - pg.top + 5.2 * mm) + 'px';
   document.body.dataset.fitted = '1';
 }));
 </script></body></html>

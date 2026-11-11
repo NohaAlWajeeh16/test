@@ -410,6 +410,13 @@ document.fonts.ready.then(() => document.querySelectorAll('[data-fit]').forEach(
   el.textContent = base.slice(0, 5) + 'ـ'.repeat(best) + base.slice(5);
   const w = el.getBoundingClientRect().width;
   el.style.transformOrigin = 'right center'; el.style.transform = 'scaleX(' + (target / w) + ')';
+  // توسيط العنوان بين سطر الشعار وسطر السهم
+  const hl = el.parentElement, pg = hl.closest('section').getBoundingClientRect();
+  const top = hl.closest('section').querySelector('.card .lg').getBoundingClientRect().bottom;
+  const bottom = hl.closest('section').querySelector('.box').getBoundingClientRect().top;
+  const hh = hl.getBoundingClientRect().height;
+  const mm = 96 / 25.4; // تعويض الضمة والشدة فوق السطر
+  hl.style.top = ((top + bottom) / 2 - hh / 2 - pg.top + 5.2 * mm) + 'px';
   document.body.dataset.fitted = '1';
 }));
 </script></body></html>`;
