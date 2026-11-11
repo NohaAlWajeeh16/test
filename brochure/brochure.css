@@ -354,3 +354,11 @@ img { display: block; }
 .r2 .arrow { top: 98.1mm; }
 .r2 .cr .wa { width: 6.4mm; height: 6.4mm; background: #fff; color: var(--red-deep); border-radius: 0; padding: 1.1mm; }
 .r2 .cr .wa path:last-child { fill: none; stroke-width: 1.4; }
+
+/* صف التواصل في الغلاف */
+.r2 .ct { position: absolute; z-index: 3; right: 12mm; left: 12mm; bottom: 10mm; display: flex; align-items: center; justify-content: space-between; border-top: .3mm solid #ffffff66; padding-top: 4.4mm; }
+.r2 .ct > div { display: flex; align-items: center; gap: 2.4mm; color: #fff; font-size: 10pt; }
+.r2 .ct > i { width: .3mm; height: 5mm; background: #ffffff66; }
+.r2 .ct .ci { width: 7mm; height: 7mm; background: #fff; display: grid; place-items: center; color: var(--red-deep); flex: none; }
+.r2 .ct .ci .ic { width: 4.4mm; height: 4.4mm; font-size: inherit; }
+.r2 .feats { bottom: 27mm; }

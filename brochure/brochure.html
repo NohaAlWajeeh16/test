@@ -358,6 +358,14 @@ img { display: block; }
 .r2 .arrow { top: 98.1mm; }
 .r2 .cr .wa { width: 6.4mm; height: 6.4mm; background: #fff; color: var(--red-deep); border-radius: 0; padding: 1.1mm; }
 .r2 .cr .wa path:last-child { fill: none; stroke-width: 1.4; }
+
+/* صف التواصل في الغلاف */
+.r2 .ct { position: absolute; z-index: 3; right: 12mm; left: 12mm; bottom: 10mm; display: flex; align-items: center; justify-content: space-between; border-top: .3mm solid #ffffff66; padding-top: 4.4mm; }
+.r2 .ct > div { display: flex; align-items: center; gap: 2.4mm; color: #fff; font-size: 10pt; }
+.r2 .ct > i { width: .3mm; height: 5mm; background: #ffffff66; }
+.r2 .ct .ci { width: 7mm; height: 7mm; background: #fff; display: grid; place-items: center; color: var(--red-deep); flex: none; }
+.r2 .ct .ci .ic { width: 4.4mm; height: 4.4mm; font-size: inherit; }
+.r2 .feats { bottom: 27mm; }
 </style></head>
 <body><section class="page r2">
   <div class="ph"><img src="assets/img/svc-arch.jpg" alt=""></div>
@@ -376,8 +384,13 @@ img { display: block; }
   <div class="feats">
     <div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 6l-6 15M12 6l6 15M7.5 16h9"/><circle cx="12" cy="6" r="1.6"/></svg></span><span class="l"></span><span class="t">استشارات هندسية</span></div><div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><span class="l"></span><span class="t">أمن وسلامة</span></div><div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l-1.5 3h-3L9 8z"/><path d="M4 15h16v3H4zM6 21h12"/></svg></span><span class="l"></span><span class="t">اعتمادات منصة بلدي</span></div><div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l2.5 2.5M18.5 4.5L21 7"/></svg></span><span class="l"></span><span class="t">خدمات فندقية متكاملة</span></div><div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5M8 10h2M14 10h2M8 13.5h2M14 13.5h2"/></svg></span><span class="l"></span><span class="t">تصاميم معمارية</span></div><div class="f"><span class="i"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 12a2 2 0 014 0v2h10v-2a2 2 0 014 0v5H3zM5 17v2M19 17v2"/></svg></span><span class="l"></span><span class="t">تصاميم داخلية</span></div>
   </div>
-  <div class="soc"><bdi>@ruoknalkayan</bdi></div>
-  <div class="cr"><bdi>roukn-alkayan.com</bdi><i></i><span class="ph-wa"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c0 3.4 3 6.4 6.4 6.4l1.2-1.6-2-1-.9.8a5 5 0 0 1-2.9-2.9l.8-.9-1-2z" fill="currentColor" stroke-width="1"/></svg><bdi>053 422 4100</bdi></span></div>
+  <div class="ct">
+    <div><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c0 3.4 3 6.4 6.4 6.4l1.2-1.6-2-1-.9.8a5 5 0 0 1-2.9-2.9l.8-.9-1-2z"/></svg></span><bdi>053 422 4100</bdi></div>
+    <i></i>
+    <div><span class="ci"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg></span><bdi>roukn-alkayan.com</bdi></div>
+    <i></i>
+    <div><span class="ci"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 005 0V12a9 9 0 10-3.5 7.1"/></svg></span><bdi>@ruoknalkayan</bdi></div>
+  </div>
 </section>
 <section class="page intro">
   <header class="topbar">
