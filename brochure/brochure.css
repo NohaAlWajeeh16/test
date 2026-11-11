@@ -406,3 +406,9 @@ img { display: block; }
 /* إصلاح قص شعارات العملاء: الشعار يحتوى كاملًا داخل مساحته */
 .cl-logo { position: relative; }
 .cl-logo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: contain; }
+/* شعار الغلاف أكبر */
+.r2 .card .lg img { width: 21mm; }
+.r2 .card .lg .dv { height: 17mm; }
+.r2 .card .lg .nm b { font-size: 14pt; }
+.r2 .card .lg .nm em { font-size: 8pt; }
+.r2 .card .lg .nm small { font-size: 9pt; }
