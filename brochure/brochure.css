@@ -412,3 +412,11 @@ img { display: block; }
 .r2 .card .lg .nm b { font-size: 14pt; }
 .r2 .card .lg .nm em { font-size: 8pt; }
 .r2 .card .lg .nm small { font-size: 9pt; }
+
+/* مجالات التصميم الداخلي */
+.svc-interior .mosaic { height: 74mm; }
+.areas { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; }
+.areas div { background: #fff; border: 1px solid var(--line); border-radius: 3.4mm; padding: 3.6mm 4.4mm; border-top: 1.2mm solid var(--red); }
+.areas span { font-family: var(--head); color: var(--red); font-size: 12pt; }
+.areas b { display: inline-block; font-family: var(--head); font-weight: 600; font-size: 12pt; color: var(--ink); margin-inline-start: 2mm; }
+.areas p { font-size: 9.4pt; line-height: 1.7; color: var(--muted); margin-top: 1.2mm; }
