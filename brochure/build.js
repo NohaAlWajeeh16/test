@@ -214,7 +214,7 @@ const startBand = () => `<div class="start"><div><b>كيف نبدأ؟</b><p>${ST
 
 /* ---------------- الغلاف ---------------- */
 const cover = () => page('r2', `
-  <div class="ph"><img src="${img('svc-arch.jpg')}" alt=""></div>
+  <div class="ph"><img class="sky" src="${img('cover-sky.jpg')}" alt=""><img class="main" src="${img('cover-villa.jpg')}" alt=""></div>
   <div class="card">
     <div class="lg">
       <img src="${img('company-logo.png')}" alt="">
