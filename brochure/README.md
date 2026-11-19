@@ -27,3 +27,8 @@
   اضغطي على أيقونة الصورة داخل الإطار واختاري صورة الشهادة، ثم احفظي أو صدّري PDF من PowerPoint.
 - `output/pages/` — صور JPG عالية الدقة لكل صفحة (للنشر أو للتعديل في Canva).
 - التصدير: `node brochure/export.js` (بعد `node brochure/build.js`).
+
+## نسختين للغلاف
+- الغلاف الليلي (الافتراضي): `node brochure/build.js` ثم `node brochure/export.js`
+- الغلاف النهاري: `COVER=day node brochure/build.js` ثم `COVER=day node brochure/export.js`
+  الملفات تطلع باسم `roukn-alkayan-brochure-day.pdf` و `roukn-alkayan-brochure-day.pptx`

@@ -5,6 +5,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+const VARIANT = process.env.COVER === 'day' ? 'day' : '';
+const SUF = VARIANT ? '-' + VARIANT : '';
 const OUT = path.join(ROOT, 'output');
 const CERT_DIR = path.join(ROOT, 'certificates');
 
@@ -204,7 +206,7 @@ const bgDark = `<svg class="bgpat" viewBox="0 0 ${PW} ${PH}" preserveAspectRatio
 
 const page = (cls, inner, { bare = false, section = '' } = {}) => {
   pageNo += 1;
-  return `<section class="page ${cls}">${bare ? '' : bgPaper}${bare ? inner : topbar(section) + `<div class="body">${inner}</div>` + footer()}</section>`;
+  return `<section class="page ${cls}${VARIANT ? ' v-' + VARIANT : ''}">${bare ? '' : bgPaper}${bare ? inner : topbar(section) + `<div class="body">${inner}</div>` + footer()}</section>`;
 };
 
 const kicker = (t) => `<div class="kicker"><span class="lantern"></span>${t}</div>`;
@@ -214,7 +216,7 @@ const startBand = () => `<div class="start"><div><b>كيف نبدأ؟</b><p>${ST
 
 /* ---------------- الغلاف ---------------- */
 const cover = () => page('r2', `
-  <div class="ph"><img class="sky" src="${img('cover-sky.jpg')}" alt=""><img class="main" src="${img('cover-villa.jpg')}" alt=""></div>
+  <div class="ph"><img class="sky" src="${img('cover-sky' + SUF + '.jpg')}" alt=""><img class="main" src="${img('cover-villa' + SUF + '.jpg')}" alt=""></div>
   <div class="card">
     <div class="lg">
       <img src="${img('company-logo.png')}" alt="">
@@ -463,7 +465,7 @@ document.fonts.ready.then(() => document.querySelectorAll('[data-fit]').forEach(
 </script></body></html>`;
 
 fs.mkdirSync(OUT, { recursive: true });
-const htmlPath = path.join(ROOT, 'brochure.html');
+const htmlPath = path.join(ROOT, `brochure${SUF}.html`);
 fs.writeFileSync(htmlPath, html);
 console.log(`HTML: ${htmlPath} (${pages.length} pages)`);
 
@@ -474,7 +476,7 @@ if (process.argv.includes('--no-pdf')) process.exit(0);
   const p = await browser.newPage();
   await p.goto('file://' + htmlPath, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
-  const pdfPath = path.join(OUT, 'roukn-alkayan-brochure.pdf');
+  const pdfPath = path.join(OUT, `roukn-alkayan-brochure${SUF}.pdf`);
   await p.pdf({ path: pdfPath, preferCSSPageSize: true, printBackground: true });
   if (process.argv.includes('--png')) {
     await p.setViewportSize({ width: 794, height: 1123 });

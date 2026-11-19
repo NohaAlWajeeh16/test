@@ -432,6 +432,13 @@ img { display: block; }
 .r2 .ph img.main { position: absolute; left: 0; right: 0; top: auto; bottom: 0; width: 100%; height: 210mm; object-fit: cover; transform: none;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18%); mask-image: linear-gradient(to bottom, transparent 0, #000 18%); }
 .r2 .ph img.sky { transform: none; filter: none; object-fit: fill; }
+
+/* نسخة الغلاف النهاري */
+.r2.v-day .ph { background: #6fa3dd; }
+.r2.v-day .ph img.main { height: 186mm; object-position: 59% 50%; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%); mask-image: linear-gradient(to bottom, transparent 0, #000 12%); }
+.r2.v-day .ph { background: #8bb1e4; }
+.r2.v-day .ph img.main { height: 158mm; object-position: 60% 50%; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%); mask-image: linear-gradient(to bottom, transparent 0, #000 8%); }
+.r2.v-day .ph::after { background: linear-gradient(to top, #2b1a14ee 0%, #2b1a14c0 14%, #2b1a1455 30%, transparent 46%); }
 </style></head>
 <body><svg width="0" height="0" style="position:absolute"><defs>
 <pattern id="pat-paper" width="44" height="44" patternUnits="userSpaceOnUse"><g fill="none" stroke="#702820" stroke-opacity=".07" stroke-width="1.2"><rect x="1" y="1" width="42" height="42"/><path d="M22 1 43 22 22 43 1 22z"/><circle cx="22" cy="22" r="5"/></g></pattern>
