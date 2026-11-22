@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>ستايل الموقع — عينات</title>
+<link rel="stylesheet" href="brochure.css">
+<style>
+.pg { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: var(--paper); margin: 8mm auto; display: flex; flex-direction: column; }
+.sec-red { background: var(--red) var(--roshan-light); background-size: 44px 44px; color: #fff; position: relative; }
+.sec-sand { background: var(--sand) var(--roshan); background-size: 44px 44px; }
+.edge-top::before, .edge-bot::after { content: ''; position: absolute; left: 0; right: 0; height: 3.6mm; background-repeat: repeat-x; background-size: auto 100%; z-index: 3; }
+.edge-top::before { top: 0; transform: translateY(-100%); }
+.edge-bot::after { bottom: 0; }
+.e-paper-bot::after { background-image: var(--shurfat-paper); }
+.e-red-top::before { background-image: var(--shurfat-red); }
+.e-deep-top::before { background-image: var(--shurfat-deep); }
+/* أيقونة الموقع: نافذة روشان صغيرة */
+.kk { display: inline-flex; align-items: center; gap: 2mm; font-size: 10pt; font-weight: 700; color: var(--red); }
+.kk svg { width: 4.6mm; height: 5.4mm; }
+.sec-red .kk { color: var(--cream); }
+.H { font-family: var(--head); font-weight: 600; color: var(--ink); line-height: 1.18; }
+.H .m { display: block; color: #8f857b; font-weight: 500; }
+.sec-red .H { color: #fff; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 5mm; }
+.trst { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; }
+.trst .card { display: flex; align-items: center; gap: 3.4mm; padding: 5.4mm 5mm; }
+.trst .ic2 { width: 11mm; height: 11mm; border-radius: 3mm; background: #efe4dc; display: grid; place-items: center; color: var(--red-deep); flex: none; }
+.trst .ic2 svg { width: 5.6mm; height: 5.6mm; }
+.trst b { display: block; font-family: var(--head); font-weight: 600; font-size: 14pt; color: var(--ink); line-height: 1.1; }
+.trst small { font-size: 8.8pt; color: var(--muted); }
+.pill2 { display: inline-flex; align-items: center; gap: 2mm; background: #ffffffee; border-radius: 99px; padding: 1.6mm 4mm; font-size: 8.6pt; color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 2mm; border-radius: 99px; padding: 2.6mm 5.4mm; font-size: 10pt; font-weight: 700; }
+.btn.red { background: var(--red); color: #fff; }
+.btn.ghost { border: 1px solid #ffffff88; color: #fff; }
+.ft { background: var(--red-deep) var(--roshan-light); background-size: 44px 44px; color: var(--cream); position: relative; }
+.ft-in { display: flex; justify-content: space-between; align-items: center; padding: 5mm 14mm; font-size: 9.4pt; }
+.ft-in .n { font-family: var(--head); font-weight: 600; color: #fff; border: 1px solid #ead9bd55; border-radius: 99px; padding: .4mm 3.4mm; }
+.ft-in span { display: flex; align-items: center; gap: 2mm; }
+
+/* ====== غلاف 1: هيرو الموقع ====== */
+.k1 .hero { position: relative; height: 196mm; }
+.k1 .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.k1 .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, #1d0f0bd9 0%, #1d0f0b88 55%, #1d0f0b33 100%); z-index: 1; }
+.k1 .hero .pat { position: absolute; inset: 0; background: var(--roshan-light); background-size: 44px 44px; z-index: 1; opacity: .7; -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 60%); }
+.k1 .nav { position: absolute; z-index: 2; top: 10mm; left: 10mm; right: 10mm; background: #fcf8f2; border-radius: 99px; padding: 2.4mm 3mm 2.4mm 5mm; display: flex; align-items: center; justify-content: space-between; }
+.k1 .nav .lg { display: flex; align-items: center; gap: 2.4mm; }
+.k1 .nav .lg span { width: 10mm; height: 10mm; border-radius: 2.6mm; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; }
+.k1 .nav .lg img { width: 7.4mm; }
+.k1 .nav b { display: block; font-family: var(--head); font-weight: 600; font-size: 10.4pt; color: var(--ink); }
+.k1 .nav small { font-size: 7.4pt; color: var(--muted); }
+.k1 .nav .btn { font-size: 8.6pt; padding: 2mm 4mm; }
+.k1 .copy { position: absolute; z-index: 2; right: 14mm; left: 40mm; bottom: 24mm; color: #fff; }
+.k1 .copy .kk { color: #fff; }
+.k1 .copy h1 { font-family: var(--head); font-weight: 600; font-size: 46pt; line-height: 1.15; margin-top: 4mm; }
+.k1 .copy h1 span { color: var(--cream); font-weight: 500; }
+.k1 .copy p { font-size: 11pt; line-height: 1.85; color: #f3e9dd; margin-top: 4mm; }
+.k1 .copy .btns { display: flex; gap: 3mm; margin-top: 6mm; }
+.k1 .low { flex: 1; padding: 10mm 12mm 10mm; display: flex; flex-direction: column; justify-content: center; gap: 7mm; }
+.k1 .low .id { display: flex; align-items: center; justify-content: space-between; }
+.k1 .low .id .t b { display: block; font-family: var(--head); font-weight: 600; font-size: 18pt; color: var(--red-deep); }
+.k1 .low .id .t small { font-size: 10pt; color: var(--muted); }
+.k1 .low .id .yr { font-family: TajawalLatin; font-weight: 700; font-size: 9pt; color: var(--red); border: 1px solid #70282044; border-radius: 99px; padding: 1.4mm 4mm; }
+
+/* ====== غلاف 2: قسم الخدمات الأحمر + بطاقة صورة ====== */
+.k2 .top { padding: 14mm 14mm 44mm; height: 150mm; }
+.k2 .top .lg { display: flex; align-items: center; gap: 3.4mm; }
+.k2 .top .lg span { width: 17mm; height: 17mm; border-radius: 4mm; background: var(--paper); display: grid; place-items: center; }
+.k2 .top .lg img { width: 12.4mm; }
+.k2 .top .lg b { display: block; font-family: var(--head); font-weight: 600; font-size: 13pt; }
+.k2 .top .lg small { font-size: 9pt; color: var(--cream); }
+.k2 .top .H { font-size: 42pt; margin-top: 14mm; }
+.k2 .top .H .m { color: var(--cream); font-size: 42pt; }
+.k2 .top p { font-size: 11pt; color: #f3e5da; margin-top: 4mm; line-height: 1.8; width: 140mm; }
+.k2 .pcard { position: relative; z-index: 4; margin: -40mm 12mm 0; padding: 3.4mm; background: var(--card); border-radius: 6mm; box-shadow: 0 6mm 16mm -8mm #4a181366; }
+.k2 .pcard .im { height: 86mm; border-radius: 4mm; overflow: hidden; position: relative; }
+.k2 .pcard .im img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.k2 .pcard .im .pill2 { position: absolute; left: 3.4mm; bottom: 3.4mm; }
+.k2 .pcard .row { display: flex; align-items: center; justify-content: space-between; padding: 4mm 3mm 1.4mm; }
+.k2 .pcard .row b { font-family: var(--head); font-weight: 600; font-size: 13pt; color: var(--ink); }
+.k2 .pcard .row small { display: block; font-size: 9pt; color: var(--muted); }
+.k2 .pcard .row .no { font-family: var(--head); color: var(--red); font-size: 10pt; font-weight: 600; }
+.k2 .chips { display: flex; flex-wrap: wrap; gap: 2.4mm; padding: 7mm 12mm 0; }
+.k2 .chips span { background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: 1.8mm 4mm; font-size: 9.4pt; }
+.k2 .chips span.on { background: var(--red); color: #fff; border-color: var(--red); }
+
+/* ====== من نحن: قسم "عن ركن الكيان" ====== */
+.k3 .body2 { flex: 1; padding: 14mm 12mm 8mm; display: flex; flex-direction: column; gap: 6mm; }
+.k3 .H { font-size: 32pt; margin-top: 2mm; }
+.k3 .H .m { font-size: 26pt; }
+.k3 .ph { height: 74mm; border-radius: 5mm; overflow: hidden; position: relative; }
+.k3 .ph img { width: 100%; height: 100%; object-fit: cover; }
+.k3 .ph .pill2 { position: absolute; left: 4mm; bottom: 4mm; }
+.k3 .lead { font-size: 10.6pt; color: var(--muted); line-height: 1.9; }
+.k3 .credp { border-right: .9mm solid var(--red); padding-right: 4mm; font-size: 10.4pt; font-weight: 700; line-height: 1.95; color: var(--ink); }
+.k3 .vm { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; }
+.k3 .vm .card { padding: 4.4mm 5mm; }
+.k3 .vm .no { font-family: var(--head); color: var(--red); font-size: 9pt; font-weight: 600; }
+.k3 .vm b { display: block; font-family: var(--head); font-weight: 600; font-size: 13pt; margin: 1mm 0 1.4mm; }
+.k3 .vm p { font-size: 8.8pt; color: var(--muted); line-height: 1.8; }
+.k3 .hd { display: flex; justify-content: space-between; align-items: center; padding: 9mm 12mm 0; }
+.k3 .hd .lg { display: flex; align-items: center; gap: 2.4mm; font-family: var(--head); font-weight: 600; font-size: 10pt; color: var(--red-deep); }
+.k3 .hd .lg span { width: 10mm; height: 10mm; border-radius: 2.6mm; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; }
+.k3 .hd .lg img { width: 7.4mm; }
+
+/* ====== إنجازاتنا: قسم أحمر ====== */
+.k4 .red { flex: 1; padding: 16mm 12mm 12mm; display: flex; flex-direction: column; gap: 7mm; }
+.k4 .H { font-size: 38pt; }
+.k4 .H .m { color: var(--cream); font-size: 26pt; }
+.k4 .note { font-size: 10.6pt; color: #f3e5da; line-height: 1.8; }
+.k4 .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4mm; }
+.k4 .stats .card { background: #ffffff10; border-color: #ffffff2a; padding: 6mm; color: #fff; }
+.k4 .stats b { display: block; font-family: var(--head); font-weight: 600; font-size: 34pt; line-height: 1; }
+.k4 .stats small { font-size: 9.6pt; color: var(--cream); }
+.k4 .stats .ic2 { width: 10mm; height: 10mm; border-radius: 3mm; background: #ffffff1a; display: grid; place-items: center; color: var(--cream); margin-bottom: 4mm; }
+.k4 .stats .ic2 svg { width: 5.4mm; height: 5.4mm; }
+.k4 .lic { padding: 9mm 12mm 6mm; background: var(--paper); display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.4mm; }
+.k4 .lic .card { display: flex; gap: 3mm; align-items: center; padding: 3.6mm 4mm; }
+.k4 .lic .ic2 { width: 9mm; height: 9mm; border-radius: 2.6mm; background: #efe4dc; display: grid; place-items: center; color: var(--red-deep); flex: none; }
+.k4 .lic .ic2 svg { width: 4.8mm; height: 4.8mm; }
+.k4 .lic b { display: block; font-size: 9.4pt; font-weight: 700; }
+.k4 .lic small { font-size: 8.2pt; color: var(--muted); }
+.k4 .lic bdi { color: var(--red-deep); }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="kw" viewBox="0 0 20 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 23V9a7 7 0 0114 0v14z"/><path d="M3 15h14M10 3v20M3 19h14M6.5 11h7"/><path d="M1 23h18"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-3.5 0-6-2.5-6-5.6 0-3.6 3-5.4 3.6-9.4 2.4 1.6 3.6 3.6 3.4 6 1-.6 1.8-1.6 2-3 1.8 1.6 3 3.8 3 6.4 0 3.1-2.5 5.6-6 5.6z"/></g></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11z"/><path d="M9 21v-6h6v6"/></g></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 7L7 17M8 7h9v9"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- ============ غلاف 1 ============ -->
+<section class="pg k1">
+  <div class="hero edge-bot e-paper-bot">
+    <img src="assets/img/svc-arch.jpg" alt=""><div class="pat"></div>
+    <div class="nav">
+      <div class="lg"><span><img src="assets/img/company-logo.png" alt=""></span><div><b>شركة ركن الكيان</b><small>هندسة · استشارات · أمن وسلامة</small></div></div>
+      <span class="btn red"><svg width="12" height="12"><use href="#i-arrow"/></svg>الملف التعريفي 2026</span>
+    </div>
+    <div class="copy">
+      <span class="kk"><svg><use href="#kw"/></svg>مكتب هندسي معتمد في جدة</span>
+      <h1>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h1>
+      <p>تصاميم معمارية وداخلية، أمن وسلامة، واعتمادات منصة بلدي، خدمات فندقية متكاملة — مسار واحد واضح من أول فكرة حتى التسليم.</p>
+    </div>
+  </div>
+  <div class="low">
+    <div class="id"><div class="t"><b>شركة ركن الكيان للاستشارات الهندسية</b><small>Roukn Al-Kayan Engineering Consultancy</small></div></div>
+    <div class="trst">
+      <div class="card"><span class="ic2"><svg><use href="#i-shield"/></svg></span><div><b>معتمد</b><small>لدى أمانة جدة</small></div></div>
+      <div class="card"><span class="ic2"><svg><use href="#i-flame"/></svg></span><div><b>معتمد</b><small>لدى الدفاع المدني</small></div></div>
+      <div class="card"><span class="ic2"><svg><use href="#i-home"/></svg></span><div><b>+120</b><small>مشروع منجز</small></div></div>
+      <div class="card"><span class="ic2"><svg><use href="#i-layers"/></svg></span><div><b>+16</b><small>خدمة هندسية متكاملة</small></div></div>
+    </div>
+  </div>
+  <div class="ft edge-top e-deep-top"><div class="ft-in"><span><bdi>053 422 4100</bdi></span><span><bdi>012 614 1093</bdi></span><span><bdi>roukn-alkayan.com</bdi></span></div></div>
+</section>
+
+<!-- ============ غلاف 2 ============ -->
+<section class="pg k2">
+  <div class="top sec-red">
+    <div class="lg"><span><img src="assets/img/company-logo.png" alt=""></span><div><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></div></div>
+    <span class="kk" style="margin-top:12mm"><svg><use href="#kw"/></svg>الملف التعريفي 2026</span>
+    <h1 class="H">نصمّم المساحة،<span class="m">ونحمي قيمتها.</span></h1>
+    <p>من الفكرة وحتى التسليم، خدمات مترابطة تقلل التعقيد وتمنح المشروع مسارًا أوضح.</p>
+  </div>
+  <div class="pcard">
+    <div class="im"><img src="assets/img/svc-arch.jpg" alt=""><span class="pill2">مكتب هندسي معتمد في جدة</span></div>
+    <div class="row"><div><b>تصاميم معمارية · أمن وسلامة · اعتمادات بلدي</b><small>تصاميم داخلية · خدمات فندقية متكاملة · استشارات هندسية</small></div><span class="no">01</span></div>
+  </div>
+  <div class="chips"><span class="on">معتمد لدى الهيئة السعودية للمهندسين</span><span>أمانة جدة · بلدي</span><span>الدفاع المدني</span><span>+120 مشروع</span></div>
+  <div class="ft edge-top e-deep-top" style="margin-top:auto"><div class="ft-in"><span><bdi>053 422 4100</bdi></span><span><bdi>012 614 1093</bdi></span><span><bdi>roukn-alkayan.com</bdi></span></div></div>
+</section>
+
+<!-- ============ من نحن ============ -->
+<section class="pg k3">
+  <div class="hd"><div class="lg"><span><img src="assets/img/company-logo.png" alt=""></span>شركة ركن الكيان</div><span class="kk"><svg><use href="#kw"/></svg>من نحن</span></div>
+  <div class="body2">
+    <div><span class="kk"><svg><use href="#kw"/></svg>عن ركن الكيان</span>
+      <h2 class="H">كل مشروع يبدأ بفكرة.<span class="m">ودورنا أن نمنحها شكلًا يستحق.</span></h2></div>
+    <div class="ph"><img src="assets/img/about.jpg" alt=""><span class="pill2">التفاصيل الصغيرة تصنع تجربة متكاملة.</span></div>
+    <p class="lead">نربط الجمال بالوظيفة، والتخطيط بالسلامة. نعمل معك لفهم احتياجك وتطوير حلول هندسية واضحة، من التصور الأول وحتى متابعة التنفيذ.</p>
+    <p class="credp">شركة ركن الكيان للاستشارات الهندسية، شركة هندسية استشارية سعودية معتمدة لدى الهيئة السعودية للمهندسين وأمانة جدة والدفاع المدني ومنصة بلدي، تقدم خدماتها في استخراج التراخيص الهندسية الكاملة، وأعمال الأمن والسلامة، والتصاميم المعمارية والإنشائية والداخلية، والأعمال المساحية، وإدارة المشاريع والإشراف على المباني.</p>
+    <div class="vm">
+      <div class="card"><span class="no">01</span><b>رؤيتنا</b><p>تصاميم معمارية اقتصادية تتلاقى مع رؤية المملكة 2030، وأن نكون روّادًا في الهندسة المدنية والعمرانية والأمن والسلامة.</p></div>
+      <div class="card"><span class="no">02</span><b>رسالتنا</b><p>خدمات هندسية عالية الجودة بتطبيق كود البناء السعودي والمعايير العالمية، بقيمة تنافسية لعملائنا.</p></div>
+    </div>
+  </div>
+  <div class="ft edge-top e-deep-top"><div class="ft-in"><span><bdi>roukn-alkayan.com</bdi></span><span class="n">02</span></div></div>
+</section>
+
+<!-- ============ إنجازاتنا ============ -->
+<section class="pg k4">
+  <div class="red sec-red">
+    <span class="kk"><svg><use href="#kw"/></svg>ثقة نعتز بها</span>
+    <h2 class="H">أرقام تتحدث عنّا.<span class="m">شركاء في مسيرة العمل والإنجاز.</span></h2>
+    <p class="note">أربع مراحل واضحة لكل مشروع: نفهم، نصمم، نراجع، نشرف — ولكل مرحلة مخرج تستلمه وتراجعه.</p>
+    <div class="stats">
+      <div class="card"><span class="ic2"><svg><use href="#i-home"/></svg></span><b>+120</b><small>مشروع منجز</small></div>
+      <div class="card"><span class="ic2"><svg><use href="#i-layers"/></svg></span><b>+16</b><small>خدمة هندسية متكاملة</small></div>
+      <div class="card"><span class="ic2"><svg><use href="#i-shield"/></svg></span><b>4</b><small>اعتمادات من جهات رسمية</small></div>
+      <div class="card"><span class="ic2"><svg><use href="#i-flame"/></svg></span><b>جدة</b><small>حي العزيزية — مركز سولدير</small></div>
+    </div>
+  </div>
+  <div class="lic edge-top" style="position:relative">
+    <div class="card"><span class="ic2"><svg><use href="#i-shield"/></svg></span><div><b>الهيئة السعودية للمهندسين</b><small>رقم الترخيص: <bdi>5100002715</bdi></small></div></div>
+    <div class="card"><span class="ic2"><svg><use href="#i-doc"/></svg></span><div><b>أمانة جدة (بلدي)</b><small>رقم الترخيص: <bdi>4400377930</bdi></small></div></div>
+    <div class="card"><span class="ic2"><svg><use href="#i-flame"/></svg></span><div><b>الدفاع المدني (الأمن والسلامة)</b><small>رقم الترخيص: <bdi>100000259</bdi></small></div></div>
+    <div class="card"><span class="ic2"><svg><use href="#i-doc"/></svg></span><div><b>السجل التجاري</b><small>الرقم الوطني الموحد: <bdi>7032491412</bdi></small></div></div>
+  </div>
+  <div class="ft edge-top e-deep-top"><div class="ft-in"><span><bdi>roukn-alkayan.com</bdi></span><span class="n">12</span></div></div>
+</section>
+</body></html>

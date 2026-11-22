@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>مقترحات الغلاف</title>
+<link rel="stylesheet" href="brochure.css">
+<style>
+/* ===== مقترح A: غلاف فاتح مع قوس حجازي كبير ===== */
+.cA { background: var(--paper) var(--roshan); color: var(--ink); align-items: center; text-align: center; }
+.cA .frame { position: absolute; inset: 9mm; border: .5mm solid #70282040; border-radius: 3mm; pointer-events: none; }
+.cA .frame::before { content: ''; position: absolute; inset: 2mm; border: .3mm solid #70282026; border-radius: 2mm; }
+.cA .top { margin-top: 20mm; display: flex; flex-direction: column; align-items: center; gap: 3mm; position: relative; z-index: 2; }
+.cA .top img { width: 24mm; }
+.cA .top b { font-family: var(--head); font-weight: 600; font-size: 14pt; color: var(--red-deep); }
+.cA .top small { font-size: 9pt; color: var(--muted); letter-spacing: .02em; }
+.cA .archwrap { position: relative; margin-top: 9mm; width: 118mm; height: 138mm; z-index: 2; }
+.cA .archwrap .ph { position: absolute; inset: 0; border-radius: 59mm 59mm 0 0 / 46mm 46mm 0 0; overflow: hidden; border: 1.6mm solid #fff; box-shadow: 0 0 0 .4mm #70282055, 0 8mm 16mm -10mm #4a181388; }
+.cA .archwrap .ph img { width: 100%; height: 100%; object-fit: cover; }
+.cA .archwrap .lat { position: absolute; inset: -7mm -7mm 0; border-radius: 66mm 66mm 0 0 / 52mm 52mm 0 0; background: var(--roshan); background-size: 22px 22px; border: .4mm solid #70282033; z-index: -1; }
+.cA .archwrap .sill { position: absolute; left: -12mm; right: -12mm; bottom: -5mm; height: 5mm; background: var(--red-deep); border-radius: 1mm; }
+.cA h1 { font-family: var(--head); font-weight: 600; font-size: 36pt; color: var(--red-deep); margin-top: 13mm; line-height: 1.15; position: relative; z-index: 2; }
+.cA h2 { font-size: 15pt; color: var(--ink); font-weight: 500; margin-top: 2mm; }
+.cA .tag { margin-top: 5mm; display: inline-flex; align-items: center; gap: 4mm; font-size: 10.5pt; color: var(--red); font-weight: 700; }
+.cA .tag i { width: 2mm; height: 2mm; background: var(--red); transform: rotate(45deg); }
+.cA .foot-in { margin-top: auto; width: 100%; justify-content: center; }
+.cA .foot { width: 100%; margin-top: auto; }
+
+/* ===== مقترح B: صورة كاملة + بطاقة بيضاء (مستوحى من المراجع) ===== */
+.cB { background: #222; }
+.cB .bg { position: absolute; inset: 0; }
+.cB .bg img { width: 100%; height: 100%; object-fit: cover; }
+.cB .bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #1d0907e6 0%, #1d090700 45%), linear-gradient(to bottom, #1d090766, transparent 30%); }
+.cB .logo { position: relative; z-index: 2; margin: 14mm 14mm 0; display: flex; align-items: center; gap: 3mm; }
+.cB .logo span { width: 15mm; height: 15mm; border-radius: 3.4mm; background: var(--paper); display: grid; place-items: center; }
+.cB .logo img { width: 11mm; }
+.cB .logo b { font-family: var(--head); font-weight: 600; color: #fff; font-size: 13pt; display: block; }
+.cB .logo small { color: var(--cream); font-size: 9pt; }
+.cB .card { position: relative; z-index: 2; margin: 30mm 14mm 0 40mm; background: #fcf8f2f2; border-radius: 3mm; padding: 10mm 10mm 9mm; box-shadow: 0 10mm 24mm -12mm #000a; }
+.cB .card::before { content: ''; position: absolute; top: 0; right: 10mm; left: 10mm; height: 3.4mm; background: var(--shurfat-red) repeat-x; background-size: auto 100%; transform: translateY(-100%); }
+.cB .card .k { font-size: 10pt; font-weight: 700; color: var(--red); display: flex; align-items: center; gap: 2mm; }
+.cB .card .k i { width: 2mm; height: 2mm; background: var(--red); transform: rotate(45deg); }
+.cB .card h1 { font-family: var(--head); font-weight: 600; font-size: 44pt; line-height: 1.12; color: var(--red-deep); margin-top: 3mm; }
+.cB .card h1 span { display: block; color: var(--ink); font-size: 26pt; font-weight: 500; margin-top: 2mm; }
+.cB .card .bar { display: flex; align-items: center; gap: 4mm; margin-top: 7mm; }
+.cB .card .bar b { background: var(--red-deep); color: #fff; font-family: var(--head); font-weight: 600; font-size: 13pt; padding: 2.4mm 5mm; border-radius: 1.4mm; }
+.cB .card .bar i { flex: 1; height: .5mm; background: var(--red-deep); position: relative; }
+.cB .card .bar i::after { content: ''; position: absolute; left: 0; top: -1.6mm; width: 3.2mm; height: 3.2mm; border-left: .5mm solid var(--red-deep); border-bottom: .5mm solid var(--red-deep); transform: rotate(45deg); }
+.cB .feats { position: relative; z-index: 2; margin: auto 14mm 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; width: 112mm; }
+.cB .feats div { display: flex; align-items: center; gap: 2.6mm; background: #ffffff14; border: 1px solid #ffffff40; border-radius: 1.6mm; padding: 2.4mm 3mm; color: #fff; font-size: 10pt; font-weight: 700; backdrop-filter: blur(2px); }
+.cB .feats .ic { width: 8mm; height: 8mm; padding: 1.6mm; background: var(--paper); color: var(--red); border-radius: 1.4mm; }
+.cB .bottom { position: relative; z-index: 2; margin-top: 8mm; }
+.cB .bottom .foot-in { background: var(--red-deep); }
+
+/* ===== مقترح C: تقسيم — روشان + صورة ===== */
+.cC { background: var(--paper); flex-direction: row; }
+.cC .side { width: 92mm; background: var(--red-deep) var(--roshan-light); color: var(--cream); display: flex; flex-direction: column; padding: 16mm 12mm 12mm; position: relative; }
+.cC .side::after { content: ''; position: absolute; top: 0; bottom: 0; left: -3.4mm; width: 3.4mm; background: var(--shurfat-deep) repeat-y; background-size: 100% auto; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='36'%3E%3Cpath fill='%234a1813' d='M20 0H12v4H7v4H2v4h5v4h5v4h8z'/%3E%3C/svg%3E"); }
+.cC .logo { width: 30mm; height: 30mm; background: var(--paper); border-radius: 5mm; display: grid; place-items: center; }
+.cC .logo img { width: 22mm; }
+.cC h1 { font-family: var(--head); font-weight: 600; font-size: 30pt; line-height: 1.2; color: #fff; margin-top: 10mm; }
+.cC h2 { font-size: 13pt; color: var(--cream); font-weight: 500; margin-top: 2mm; }
+.cC .en { font-family: TajawalLatin, sans-serif; font-size: 7.6pt; letter-spacing: .08em; color: #c4a69d; margin-top: 3mm; direction: ltr; text-align: right; }
+.cC .roshan { position: relative; width: 50mm; margin: auto auto 0; opacity: .5; color: var(--cream); }
+.cC .list { list-style: none; display: grid; gap: 2mm; margin-top: 10mm; }
+.cC .list li { display: flex; gap: 2.4mm; align-items: center; font-size: 10.4pt; }
+.cC .list li i { width: 1.8mm; height: 1.8mm; background: var(--cream); transform: rotate(45deg); }
+.cC .main { flex: 1; display: flex; flex-direction: column; padding: 16mm 12mm 12mm 12mm; gap: 8mm; }
+.cC .main .ph { flex: 1; border-radius: 52mm 52mm 3mm 3mm / 34mm 34mm 3mm 3mm; overflow: hidden; border: 1.4mm solid #fff; box-shadow: 0 0 0 .4mm #70282044; }
+.cC .main .ph img { width: 100%; height: 100%; object-fit: cover; }
+.cC .main h3 { font-family: var(--head); font-weight: 600; font-size: 24pt; color: var(--ink); line-height: 1.3; }
+.cC .main h3 span { color: var(--red); }
+.cC .main .c { display: grid; gap: 2mm; font-size: 10pt; font-weight: 700; color: var(--red-deep); }
+.cC .main .c span { display: flex; align-items: center; gap: 2mm; }
+.cC .main .c .ic { color: var(--red); }
+
+.label { position: absolute; top: 3mm; left: 3mm; z-index: 9; background: #000c; color: #fff; font: 700 14pt Tajawal; padding: 1mm 4mm; border-radius: 2mm; }
+</style></head>
+<body>
+<!-- A -->
+<section class="page cA">
+  <div class="frame"></div>
+  <div class="top"><img src="assets/img/company-logo.png" alt=""><small>استشارات هندسية • أمن وسلامة</small></div>
+  <div class="archwrap"><div class="lat"></div><div class="ph"><img src="assets/img/svc-arch.jpg" alt=""></div><div class="sill"></div></div>
+  <h1>شركة ركن الكيان</h1>
+  <h2>للاستشارات الهندسية</h2>
+  <div class="tag"><i></i>نصمّم المساحة، ونحمي قيمتها<i></i></div>
+  <footer class="foot"><div class="shurfat shurfat-deep"></div><div class="foot-in">
+    <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><bdi>053 422 4100</bdi></span>
+    <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3"/></svg><bdi>roukn-alkayan.com</bdi></span>
+    <span>جدة — حي العزيزية</span></div></footer>
+</section>
+
+<!-- B -->
+<section class="page cB">
+  <div class="bg"><img src="assets/img/arch-contemporary.jpg" alt=""></div>
+  <div class="logo"><span><img src="assets/img/company-logo.png" alt=""></span><div><b>شركة ركن الكيان</b><small>للاستشارات الهندسية</small></div></div>
+  <div class="card">
+    <div class="k"><i></i>مكتب هندسي معتمد في جدة</div>
+    <h1>نصمّم المساحة،<span>ونحمي قيمتها.</span></h1>
+    <div class="bar"><b>من الفكرة حتى التسليم</b><i></i></div>
+  </div>
+  <div class="feats">
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-5h6v5"/></svg>تصاميم معمارية</div>
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/></svg>أمن وسلامة</div>
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 11V8a2 2 0 012-2h10a2 2 0 012 2v3"/><path d="M3 12a2 2 0 014 0v2h10v-2a2 2 0 014 0v5H3z"/></svg>تصاميم داخلية</div>
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6v5l-1.5 3h-3L9 8z"/><path d="M4 15h16v3H4z"/></svg>اعتمادات منصة بلدي</div>
+  </div>
+  <div class="bottom"><div class="shurfat shurfat-deep"></div><div class="foot-in">
+    <span><bdi>053 422 4100</bdi></span><span><bdi>012 614 1093</bdi></span><span><bdi>roukn-alkayan.com</bdi></span></div></div>
+</section>
+
+<!-- C -->
+<section class="page cC">
+  <div class="main">
+    <div class="ph"><img src="assets/img/hero-interior.jpg" alt=""></div>
+    <h3>نصمّم المساحة،<br><span>ونحمي قيمتها.</span></h3>
+    <div class="c"><span><bdi>053 422 4100</bdi> — <bdi>012 614 1093</bdi></span><span><bdi>roukn-alkayan.com</bdi></span></div>
+  </div>
+  <div class="side">
+    <div class="logo"><img src="assets/img/company-logo.png" alt=""></div>
+    <h1>شركة<br>ركن الكيان</h1>
+    <h2>للاستشارات الهندسية</h2>
+    <div class="en">ROUKN AL-KAYAN ENGINEERING CONSULTANCY</div>
+    <ul class="list"><li><i></i>استشارات هندسية</li><li><i></i>أمن وسلامة</li><li><i></i>اعتمادات منصة بلدي</li><li><i></i>خدمات فندقية متكاملة</li><li><i></i>تصاميم معمارية وداخلية</li></ul>
+    <svg class="roshan" viewBox="0 0 120 300" fill="none" stroke="currentColor" stroke-width="1.4"><defs><pattern id="lc" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M6 0L12 6 6 12 0 6z"/><circle cx="6" cy="6" r="1.4"/></pattern><clipPath id="cc"><path d="M14 296V70Q14 22 60 12q46 10 46 58v226z"/></clipPath></defs><path d="M6 298V68Q6 14 60 4q54 10 54 64v230z" stroke-width="2"/><rect width="120" height="300" fill="url(#lc)" clip-path="url(#cc)" stroke="none"/><path d="M14 112h92M14 186h92M60 12v284" clip-path="url(#cc)" stroke-width="2.2"/></svg>
+  </div>
+</section>
+</body></html>
